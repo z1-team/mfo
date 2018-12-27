@@ -1,6 +1,6 @@
-import { h } from 'preact';
-import { Link } from 'preact-router/match';
-import style from './style';
+import { h } from 'preact'
+import { Link } from 'preact-router/match'
+import style from './style'
 
 const Header = () => (
 	<header class={style.header}>
@@ -11,6 +11,6 @@ const Header = () => (
 			<Link activeClassName={style.active} href="/profile/john">John</Link>
 		</nav>
 	</header>
-);
+)
 
-export default Header;
+export default Header
