@@ -34,7 +34,7 @@ export function fetchTestimonials(partnerId) {
 export function publicTestimonial(testimonial) {
   return async (dispatch, getState) => {
     const token = authToken(getState())
-    dispatch({type: TESTIMONIAL_PUBLIC, status: 1})
+    dispatch({type: TESTIMONIAL_PUBLIC, status: 1, id: testimonial.id})
     try {
       const status = await api.testimonials.public(testimonial, token)
       dispatch({type: TESTIMONIAL_PUBLIC, status})
@@ -47,7 +47,7 @@ export function publicTestimonial(testimonial) {
 export function deleteTestimonial(testimonialId) {
   return async (dispatch, getState) => {
     const token = authToken(getState())
-    dispatch({type: TESTIMONIAL_DELETE, status: 1})
+    dispatch({type: TESTIMONIAL_DELETE, status: 1, id: testimonialId})
     try {
       const status = await api.testimonials.delete(testimonialId, token)
       dispatch({type: TESTIMONIAL_DELETE, status})
