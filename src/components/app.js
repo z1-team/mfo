@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 import { Router } from 'preact-router'
+import { Provider } from 'preact-redux'
+import store from '../store'
 
 import HeaderContainer from '../containers/HeaderContainer'
 
@@ -22,20 +24,22 @@ class App extends Component {
 
 	render() {
 		return (
-			<div id="app">
-				<HeaderContainer />
-				<Match path="/">{displayIntro}</Match>
-				<Router onChange={this.handleRoute}>
-					<Main path="/" partners="mfo" />
-					<Main path="/cards" partners="cards" />
-					<ModerationContainer path="/moderate" />
-					<TestimonialsContainer path="/testimonials/:id" />
-					<NotFound default />
-				</Router>
-				<UsefullInfo />
-				<FooterContainer />
-				<PopupsContainer />
-			</div>
+			<Provider store={store}>
+				<div id="app">
+					<HeaderContainer />
+					<Match path="/">{displayIntro}</Match>
+					<Router onChange={this.handleRoute}>
+						<Main path="/" partners="mfo" />
+						<Main path="/cards" partners="cards" />
+						<ModerationContainer path="/moderate" />
+						<TestimonialsContainer path="/testimonials/:id" />
+						<NotFound default />
+					</Router>
+					<UsefullInfo />
+					<FooterContainer />
+					<PopupsContainer />
+				</div>
+			</Provider>
 		)
 	}
 }

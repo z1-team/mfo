@@ -31,3 +31,5 @@ function popupsReducer(state = initialState, action) {
       return state
   }
 }
+
+export default popupsReducer
