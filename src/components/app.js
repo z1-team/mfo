@@ -17,23 +17,36 @@ import NotFound from '../routes/not-found'
 import UsefullInfo from './usefull-info'
 
 const displayIntro = ({matches, path, url}) => (
-	url === '/' || url === '/cards' ? <IntroContainer /> : null
+	url === '/' || url === '/cards' ? <IntroContainer url={url} /> : null
+)
+const categoriesTitle = (url) => {
+	switch(url) {
+		case '/':
+			return 'Займы по категориям'
+		case '/cards':
+			return 'Кредитные карты по категориям'
+		default:
+			return ''
+	}
+}
+const categoriesToggle = (onToggle) => ({matches, path, url}) => (
+		url === '/' || url === '/cards' ? <button class="categories-button" onClick={onToggle}>{categoriesTitle(url)}</button> : null
 )
 
 class App extends Component {
-	/** Gets fired when the route changes.
-	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
-	 *	@param {string} event.url	The newly routed URL
-	 */
 	handleRoute = e => {
 		this.currentUrl = e.url
+	}
+
+	handleCategories = () => {
+
 	}
 
 	render() {
 		return (
 			<Provider store={store}>
 				<div id="app">
-					<HeaderContainer city="Minsk" />
+					<HeaderContainer />
 					<Match path="/">{displayIntro}</Match>
 					<Router onChange={this.handleRoute}>
 						<Main path="/" partners="mfo" />
@@ -45,6 +58,7 @@ class App extends Component {
 					<UsefullInfo />
 					<FooterContainer />
 					<PopupsContainer />
+					<Match>{categoriesToggle(this.handleCategories)}</Match>
 				</div>
 			</Provider>
 		)

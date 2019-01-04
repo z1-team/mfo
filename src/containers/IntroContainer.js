@@ -1,4 +1,6 @@
 import { h, Component } from 'preact'
 import Intro from '../components/intro'
 
-export default Intro
+const IntroContainer = ({url}) => <Intro url={url} abTests={{}} />
+
+export default IntroContainer
