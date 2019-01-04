@@ -1,16 +1,27 @@
-import { h } from 'preact'
+import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
-import style from './style'
+import style from './style.scss'
 
-const Header = () => (
-	<header class={style.header}>
-		<h1>Preact App</h1>
-		<nav>
-			<Link activeClassName={style.active} href="/">Home</Link>
-			<Link activeClassName={style.active} href="/profile">Me</Link>
-			<Link activeClassName={style.active} href="/profile/john">John</Link>
-		</nav>
-	</header>
-)
+class Header extends Component {
+
+	render({city}) {
+
+		return (
+			<div class="wr-header">
+				<div class="container">
+					<div class={style.header}>
+						<div class={style.contacts}>
+							<p><i class="fas fa-map-marker-alt"></i>{this.props.city}</p>
+						</div>
+            <ul>
+              <li><Link name="mfo" activeClassName="active" href="/">Микрозаймы</Link></li>
+              <li><Link name="cards" activeClassName="active" href="/cards">Кредитные карты</Link></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		)
+	}
+}
 
 export default Header

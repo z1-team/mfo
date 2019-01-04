@@ -1,16 +1,23 @@
 import { h, Component } from 'preact'
 import { Router } from 'preact-router'
+import Match from 'preact-router/match'
 import { Provider } from 'preact-redux'
 import store from '../store'
 
 import HeaderContainer from '../containers/HeaderContainer'
+import IntroContainer from '../containers/IntroContainer'
+import ModerationContainer from '../containers/ModerationContainer'
+import TestimonialsContainer from '../containers/TestimonialsContainer'
+import FooterContainer from '../containers/FooterContainer'
+import PopupsContainer from '../containers/PopupsContainer'
 
-// Code-splitting is automated for routes
-import Home from '../routes/home';
-import Profile from '../routes/profile';
+import Main from '../routes/main'
+import NotFound from '../routes/not-found'
+
+import UsefullInfo from './usefull-info'
 
 const displayIntro = ({matches, path, url}) => (
-	url === '/' ? <IntroContainer /> : null
+	url === '/' || url === '/cards' ? <IntroContainer /> : null
 )
 
 class App extends Component {
@@ -26,7 +33,7 @@ class App extends Component {
 		return (
 			<Provider store={store}>
 				<div id="app">
-					<HeaderContainer />
+					<HeaderContainer city="Minsk" />
 					<Match path="/">{displayIntro}</Match>
 					<Router onChange={this.handleRoute}>
 						<Main path="/" partners="mfo" />
