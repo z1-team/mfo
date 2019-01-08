@@ -2,6 +2,7 @@ import { PARTNERS_FETCH, PARTNER_UPDATE, PARTNER_SELECT,
   PARTNER_CREATE, PARTNER_DELETE, PARTNERS_NEXT } from '../actions/partners'
 import { FILTER_CHANGE, FILTER_RESET } from '../actions/filters'
 import templates from '../partnersTemplates'
+import partner from './partners-mock.json'
 
 const initialState = {
   cardsCount: 8,
@@ -9,8 +10,8 @@ const initialState = {
   selected: null,
   cards: [],
   credits: [],
-  mfo: [],
-  data: {}
+  mfo: ["2"],
+  data: {"2": partner}
 }
 
 const partnersOfType = (type, partners) => (
