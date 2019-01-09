@@ -12,6 +12,8 @@ import FooterContainer from '../containers/FooterContainer'
 import PopupsContainer from '../containers/PopupsContainer'
 
 import Main from '../routes/main'
+import AboutProject from '../routes/about'
+import Confidentiality from '../routes/confidentiality'
 import NotFound from '../routes/not-found'
 
 import UsefullInfo from './usefull-info'
@@ -31,6 +33,9 @@ const categoriesTitle = (url) => {
 }
 const categoriesToggle = (onToggle) => ({matches, path, url}) => (
 		url === '/' || url === '/cards' ? <button class="categories-button" onClick={onToggle}>{categoriesTitle(url)}</button> : null
+)
+const displayPopups = ({matches, path, url}) => (
+	<PopupsContainer url={url} />
 )
 
 class App extends Component {
@@ -53,11 +58,13 @@ class App extends Component {
 						<Main path="/cards" partners="cards" />
 						<ModerationContainer path="/moderate" />
 						<TestimonialsContainer path="/testimonials/:id" />
+						<AboutProject path="/about" />
+						<Confidentiality path="/confidentiality" />
 						<NotFound default />
 					</Router>
 					<UsefullInfo />
 					<FooterContainer />
-					<PopupsContainer />
+					<Match>{displayPopups}</Match>
 					<Match>{categoriesToggle(this.handleCategories)}</Match>
 				</div>
 			</Provider>

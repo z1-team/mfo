@@ -10,7 +10,7 @@ const initialState = {
   login: false,
   edit: false,
   email: false,
-  subscribe: false
+  subscribed: false
 }
 
 function popupsReducer(state = initialState, action) {
@@ -26,7 +26,7 @@ function popupsReducer(state = initialState, action) {
     case PARTNER_CREATE:
       return {...state, edit: true}
     case EMAIL_SUBSCRIBE:
-      return action.status === 2 ? {...initialState, subscribe: true} : state
+      return action.status === 2 ? {...initialState, subscribed: true} : state
     default:
       return state
   }
