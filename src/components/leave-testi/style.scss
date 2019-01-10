@@ -1,0 +1,83 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+.leaveTesti {
+	padding: 40px 0px 0;
+
+	h2 {
+		color: #232935; font-size: 24px; font-family: $m-r; line-height: 30px;
+		margin-bottom: 25px;
+	}
+
+	section {
+		display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; margin-bottom: 20px;
+
+		.form {
+			&Input,
+			&Textarea {
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+        label {
+    			color: #232935; font-size: 16px; font-family: $os-b; line-height: 20px;
+    			margin-bottom: 5px; display: block;
+    		}
+
+    		input, textarea {
+    			color: #161616; font-size: 14px; font-family: $os-r; line-height: 18px;
+    			width: 100%; padding: 8px 10px; display: block;
+    			border: solid 1px #e2e2e2; border-radius: 4px;
+    		}
+
+    		textarea {
+    			min-height: 80px;
+    		}
+
+    		p {
+    			color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 18px;
+    			padding-top: 5px;
+    		}
+			}
+
+			&Input {
+				width: calc(50% - 10px);
+
+				@include respond-to(xs) {
+					width: 100%;
+				}
+			}
+
+			&Textarea {
+				width: 100%;
+			}
+		}
+	}
+
+	button {
+		color: $white; font-size: 16px; font-family: $m-sb; line-height: 20px;
+		display: block; padding: 10px 16px;
+		background: #f96868; border: solid 1px #f96868; border-radius: 5px;
+		cursor: pointer;
+
+		@include respond-to(xs) {
+			width: 100%;
+		}
+
+		&:hover {
+			color: #f96868;
+			background: $white;
+		}
+	}
+}
+
+:global {
+  &Range {
+    label {
+      color: #232935; font-size: 16px; font-family: $os-b; line-height: 20px;
+      margin-bottom: 5px; display: block;
+    }
+  }
+}

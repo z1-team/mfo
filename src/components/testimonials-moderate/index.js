@@ -1,10 +1,11 @@
 import { h } from 'preact'
+
 import style from './style.scss'
 
 const TestimonialsModerate = ({testimonials, onDelete, onPublic}) => (
-  <div class="wr-testimonials">
+  <div class={style.wrTestimonials}>
     <div class="container">
-      <div class="testimonials moderate">
+      <div class={`${style.testimonials} ${style.moderate}`}>
         {!testimonials.length && <h2>Нет отзывов для модерации.</h2>}
         {testimonials.map((item) => (
           <TestiModerate

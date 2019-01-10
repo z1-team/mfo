@@ -1,7 +1,9 @@
 import { h } from 'preact'
 
+import style from './style.scss'
+
 const CardDetails = ({details}) => (
-  <div className="details">
+  <div class={style.details}>
     <ul>
       {details.minSumm && <li>Минимальная сумма: <strong>{details.minSumm}</strong></li>}
       {details.maxSumm && <li>Максимальная сумма: <strong>{details.maxSumm}</strong></li>}

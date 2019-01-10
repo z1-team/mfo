@@ -13,7 +13,7 @@ class SearchModule extends Component {
 
 	render({title, children}) {
 		return (
-			<div class={style.searchModule}>
+			<div class={style.filter}>
 				<h4>{title} <button onClick={this.handleClick}><i class="fas fa-window-close"></i></button></h4>
 				{children}
 			</div>

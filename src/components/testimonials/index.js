@@ -1,6 +1,7 @@
 import { h, Component } from 'preact'
 import Testi from '../testi'
 import LeaveTesti from '../leave-testi'
+import StarRating from '../star-rating'
 import style from './style.scss'
 
 class Testimonials extends Component {
@@ -29,31 +30,16 @@ class Testimonials extends Component {
   render({partner, testimonials, onDelete, onSubmit}) {
 
     const rating = partner && partner.sortBy ? Math.round(partner.sortBy.rating*10)/10 : 0
-    const star = partner && partner.sortBy ? Math.round(partner.sortBy.rating*20) : 0
+    const starRate = partner && partner.sortBy ? partner.sortBy.rating : 0
 
     return (
-      <div className="wr-testimonials">
+      <div className={style.wrTestimonials}>
         <div className="container">
-          <div className="testimonials">
+          <div className={style.testimonials}>
             <header>
               <h2>Отзывы кредита “{partner && partner.main && partner.main.title}”
-                <div className="rating">
-                  <div className="star-rating">
-                    <ul className="highlighted" style={{width: star + '%'}}>
-                      <li><i className="fas fa-star"></i></li>
-                      <li><i className="fas fa-star"></i></li>
-                      <li><i className="fas fa-star"></i></li>
-                      <li><i className="fas fa-star"></i></li>
-                      <li><i className="fas fa-star"></i></li>
-                    </ul>
-                    <ul>
-                      <li><i className="fas fa-star"></i></li>
-                      <li><i className="fas fa-star"></i></li>
-                      <li><i className="fas fa-star"></i></li>
-                      <li><i className="fas fa-star"></i></li>
-                      <li><i className="fas fa-star"></i></li>
-                    </ul>
-                  </div>
+                <div className={style.rating}>
+                  <StarRating rating={starRate} />
                   <p>{testimonials.length} {this.getEnding()}</p>
                   {partner && partner.sortBy && partner.sortBy.rating && <span>({rating} из 5)</span>}
                 </div>

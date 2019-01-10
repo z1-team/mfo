@@ -1,17 +1,8 @@
 import { h, Component } from 'preact'
 
-const sortButtons = {
-  mfo: [
-    {title: "По сумме", id: "summ"},
-    {title: "По срокам", id: "term"},
-    {title: "По процентной ставке", id: "rate"}
-  ],
-  cards: [
-    {title: "По кредитному лимиту", id: "limit"},
-    {title: "По процентной ставке", id: "rate"},
-    {title: "По кэшбэку", id: "cashback"}
-  ]
-}
+import style from './style.scss'
+
+import { sortButtons } from './const'
 
 class ResultsSort extends Component {
   sortButtons() {
@@ -24,10 +15,10 @@ class ResultsSort extends Component {
 
   sortButtonClass(id) {
     const { sortInfo } = this.props
-    const order = sortInfo.isAscending ? " up" : " down"
+    const order = sortInfo.isAscending ? style.up : style.down
 
     if(sortInfo.sortBy === id) {
-      return "active" + order
+      return `${style.active} ${order}`
     }
 
     return ''
@@ -35,7 +26,7 @@ class ResultsSort extends Component {
 
   render({sortInfo, onClick}) {
     return(
-      <div class="sort">
+      <div class={style.sort}>
         <p>Сортировать:</p>
         <ul>
           {this.sortButtons().map(({id, title}) => (

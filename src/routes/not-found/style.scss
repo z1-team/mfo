@@ -1,0 +1,20 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+.wrNotFound {
+  padding: 100px 0 75px; min-height: calc(100vh - 163px); display: flex; align-items: center;
+  background: #fff;
+}
+
+.notFound {
+  text-align: center;
+
+  h2 {
+    color: #232935; font-size: 48px; line-height: 56px; font-family: $m-sb;
+    margin-bottom: 25px;
+  }
+  h3 {
+    color: #232935; font-size: 24px; font-family: $m-sb; line-height: 30px; text-transform: uppercase;
+    display: inline; margin-bottom: 15px;
+  }
+}

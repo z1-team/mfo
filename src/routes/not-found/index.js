@@ -1,8 +1,9 @@
 import { h, Component } from 'preact'
+
 import style from './style.scss'
 
 const NotFound = () => (
-	<div className="wr-inner-text">
+	<div className={style.wrNotFound}>
 		<div className="container">
 			<div className={style.notFound}>
 				<h2>404</h2>

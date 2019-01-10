@@ -1,0 +1,31 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+.stars {
+	position: relative;
+
+	ul {
+		display: flex; align-items: center;
+
+		&.highlighted {
+			position: absolute; left: 0; top: 0;
+			overflow: hidden;
+
+			i {
+				color: #f2a654;
+			}
+		}
+
+		li {
+			margin-right: 2px; display: flex; align-items: center;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		i {
+			color: #c2c2c2; font-size: 14px;
+		}
+	}
+}

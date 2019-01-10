@@ -1,7 +1,9 @@
 import { h, Component } from 'preact'
 
+import style from './style.scss'
+
 const labelClass = (isChecked, isActual) => (
-	isChecked ? 'active' : isActual ? '' : 'disabled'
+	isChecked ? style.checked : isActual ? '' : style.disabled
 )
 
 class RadioFilter extends Component {
@@ -18,7 +20,7 @@ class RadioFilter extends Component {
 
 	render({items, value, name, actual}) {
 		return (
-			<div className="checkbox-module">
+			<div className={style.checkbox}>
 				{items.map((title, index) => (
 					<label key={index} className={labelClass(value[index], actual !== null ? actual[index] > 0 : true)}>
 						<input data-index={index} onChange={this.handleChange} type="checkbox" name={name}/>{title}

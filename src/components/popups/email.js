@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './style.scss'
+
 class EmailPopups extends Component {
 	state = {
 		email: ''

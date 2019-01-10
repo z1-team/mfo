@@ -2,6 +2,8 @@ import { h, Component } from 'preact'
 
 import CardDetails from './details'
 
+import style from './style.scss'
+
 class CardInfo extends Component {
   state = {
     isOpen: false
@@ -17,11 +19,11 @@ class CardInfo extends Component {
 
 	render({details, main}, {isOpen}) {
 		return (
-			<footer class={isOpen ? 'active' : ''}>
+			<footer class={isOpen ? style.active : ''}>
 				<CardDetails details={details} />
 				<ul>
 					<li>{main.firstLoan && main.firstLoan}</li>
-					<li><button onClick={this.handleClick}>Подробнее <img src="/img/more.png"/></button></li>
+					<li><button onClick={this.handleClick}>Подробнее <img src="/assets/img/more.png"/></button></li>
 				</ul>
 			</footer>
 		)

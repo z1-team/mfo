@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './style.scss'
+
 class Categories extends Component {
 	handleClick = ({target}) => {
 		const { onChange } = this.props

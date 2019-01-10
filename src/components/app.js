@@ -12,8 +12,8 @@ import FooterContainer from '../containers/FooterContainer'
 import PopupsContainer from '../containers/PopupsContainer'
 
 import Main from '../routes/main'
-import AboutProject from '../routes/about'
-import Confidentiality from '../routes/confidentiality'
+import AboutProject from '../routes/inner/about'
+import Confidentiality from '../routes/inner/confidentiality'
 import NotFound from '../routes/not-found'
 
 import UsefullInfo from './usefull-info'

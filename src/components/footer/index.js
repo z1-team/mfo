@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
+
 import style from './style.scss'
 
 class Footer extends Component {
@@ -8,10 +9,10 @@ class Footer extends Component {
 		const isLoggedIn = false
 
 		return (
-      <div class="wr-footer">
+      <div class={style.wrFooter}>
 				<div class="container">
 					<div class={style.footer}>
-						<span class={style.logo}><img src="/img/logo-footer.png"/></span>
+						<span class={style.logo}><img src="/assets/img/logo-footer.png"/></span>
 						<small>&copy; 2018 Moneyonline. Информация, предоставленная на сайте, носит ознакомительный характер. Реальные предложения организаций могут отличаться.</small>
             <ul class={style.admin}>
               <li><button>{isLoggedIn ? "Выйти" : "Войти"}</button></li>

@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './style.scss'
+
 class RangeInput extends Component {
   constructor(props) {
     super(props)
@@ -85,13 +87,13 @@ class RangeInput extends Component {
 
   render({label}, {position, value}) {
     return(
-      <div class="range-input">
+      <div class={style.range}>
           <div>
             <input type="text" value={value === -1 ? 'Все' : value} onChange={this.handleChange}/>
           <div ref={this.saveRange}
                onMouseDown={this.handleStart} onMouseUp={this.handleEnd} onMouseMove={this.handleMove} onMouseLeave={this.handleEnd} >
-              <span class="line"></span>
-            <span class="point" style={{left: 100*position + '%'}}></span>
+              <span class={style.line}></span>
+            <span class={style.point} style={{left: 100*position + '%'}}></span>
             </div>
           </div>
           {label && <p>{label}</p>}

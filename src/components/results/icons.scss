@@ -1,0 +1,161 @@
+@import '../../style/variables.scss';
+
+.icon {
+	display: inline-block; position: relative;
+
+	&:hover {
+		&:before, &:after {
+			display: block;
+		}
+	}
+
+	&:before {
+		content: '';
+		color: $white; font-size: 12px; font-family: $m-r; white-space: nowrap;
+		display: none; position: absolute; left: 0; top: -10px; transform: translateY(-100%); padding: 0 4px; z-index: 2;
+		background: #f96868; box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+	}
+
+	&:after {
+		content: '';
+		display: none; position: absolute; left: 13px; top: -11px;
+		border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #f96868; z-index: 3;
+	}
+
+	&.alfaclick {
+		width: 27px; height: 20px;
+    background: url('/assets/img/sprites.png') -90px -50px;
+
+		&:before {
+			content: 'Альфа-Клик'
+		}
+	}
+	&.bankaccount {
+    width: 20px; height: 20px;
+    background: url('/assets/img/sprites.png') -73px -122px;
+
+		&:before {
+			content: 'Банковский счет'
+		}
+	}
+	&.bankcard {
+    width: 63px; height: 20px;
+    background: url('/assets/img/sprites.png') -2px -98px;
+
+		&:before {
+			content: 'Банковская карта'
+		}
+	}
+	&.beeline {
+    width: 23px; height: 20px;
+    background: url('/assets/img/sprites.png') -46px -122px;
+
+		&:before {
+			content: 'Салоны связи "Билайн"'
+		}
+	}
+	&.contactsystem {
+    width: 31px; height: 20px;
+    background: url('/assets/img/sprites.png') -90px -26px;
+
+		&:before {
+			content: 'Система Contact'
+		}
+	}
+	&.elexnet {
+    width: 56px; height: 20px;
+    background: url('/assets/img/sprites.png') -125px -26px;
+
+		&:before {
+			content: 'Элекснет'
+		}
+	}
+	&.euroset {
+    width: 84px; height: 20px;
+    background: url('/assets/img/sprites.png') -2px -26px;
+
+		&:before {
+			content: 'Евросеть'
+		}
+	}
+	&.goldencrown {
+    width: 40px; height: 20px;
+    background: url('/assets/img/sprites.png') -69px -98px;
+
+		&:before {
+			content: 'Золотая Корона'
+		}
+	}
+	&.kukuruza {
+    width: 59px; height: 20px;
+    background: url('/assets/img/sprites.png') -125px -2px;
+
+		&:before {
+			content: 'Карта "Кукуруза"'
+		}
+	}
+	&.mts {
+    width: 40px; height: 20px;
+    background: url('/assets/img/sprites.png') -2px -122px;
+
+		&:before {
+			content: 'Салоны связи "МТС"'
+		}
+	}
+	&.promsvazbank {
+    width: 119px; height: 20px;
+    background: url('/assets/img/sprites.png') -2px -2px;
+
+		&:before {
+			content: 'Промсвязьбанк'
+		}
+	}
+	&.qiwi {
+    width: 55px; height: 20px;
+    background: url('/assets/img/sprites.png') -125px -50px;
+
+		&:before {
+			content: 'QIWI'
+		}
+	}
+	&.russianpost {
+    width: 41px; height: 20px;
+    background: url('/assets/img/sprites.png') -125px -98px;
+
+		&:before {
+			content: 'Почта России'
+		}
+	}
+	&.svaznoy {
+    width: 84px; height: 20px;
+    background: url('/assets/img/sprites.png') -2px -50px;
+
+		&:before {
+			content: 'Связной'
+		}
+	}
+	&.unistream {
+    width: 37px; height: 20px;
+    background: url('/assets/img/sprites.png') -83px -74px;
+
+		&:before {
+			content: 'Система Юнистрим'
+		}
+	}
+	&.webmoney {
+    width: 77px; height: 20px;
+    background: url('/assets/img/sprites.png') -2px -74px;
+
+		&:before {
+			content: 'WebMoney'
+		}
+	}
+	&.yandexmoney {
+    width: 51px; height: 20px;
+    background: url('/assets/img/sprites.png') -125px -74px;
+
+		&:before {
+			content: 'Яндекс.Деньги'
+		}
+	}
+}

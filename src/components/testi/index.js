@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './style'
+
 class Testi extends Component {
 
   handleDelete = (event) => {
@@ -14,21 +16,21 @@ class Testi extends Component {
 
   render({text, user, rating, isLoggedIn}) {
     return(
-      <div className="testi">
-        {isLoggedIn && <a href="#" className="delete-testi" onClick={this.handleDelete}><i className="fas fa-times"></i></a>}
+      <div class={style.testi}>
+        {isLoggedIn && <a href="#" class={style.delete} onClick={this.handleDelete}><i class="fas fa-times"></i></a>}
         <div>
-          <i className="fas fa-quote-left"></i>
+          <i class="fas fa-quote-left"></i>
           <p>{text}</p>
-          <i className="fas fa-quote-right"></i>
+          <i class="fas fa-quote-right"></i>
         </div>
         <footer>
           <p>{user}</p>
-          <ul className={`rate-${rating}`}>
-            <li><i className="fas fa-star"></i></li>
-            <li><i className="fas fa-star"></i></li>
-            <li><i className="fas fa-star"></i></li>
-            <li><i className="fas fa-star"></i></li>
-            <li><i className="fas fa-star"></i></li>
+          <ul class={`rate-${rating}`}>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
+            <li><i class="fas fa-star"></i></li>
           </ul>
         </footer>
       </div>

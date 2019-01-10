@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './style.scss'
+
 class Auth extends Component {
   state = {
     login: '',
@@ -22,7 +24,7 @@ class Auth extends Component {
 
   render({error}, {login, pass}) {
     return (
-      <div class="login">
+      <div class={style.login}>
         <h2>Авторизация</h2>
         <form action="#" onSubmit={this.handleSubmit}>
           <label>Логин: <input type="text" name="login" onChange={this.handleChange} value={login} /></label>
