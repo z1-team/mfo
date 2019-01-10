@@ -12,7 +12,8 @@ function sortingReducer(state = initialState, action) {
       return {
         isSorted: true,
         sortBy: action.sortBy,
-        isAscending: action.order
+        isAscending: state.sortBy === action.sortBy ?
+          !state.isAscending : false
       }
     case SORTING_RESET:
       return initialState

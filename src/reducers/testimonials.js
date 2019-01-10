@@ -34,7 +34,7 @@ function fetchNewReducer(state, {status, testimonials}) {
         ...state,
         isFetching: false,
         unpublished: testimonials.map(ids),
-        data: {...state.data, load(testimonials)}
+        data: {...state.data, ...load(testimonials)}
       }
     case 0:
       return {...state, isFetching: false}
@@ -52,7 +52,7 @@ function fetchReducer(state, {status, testimonials, partnerId}) {
         ...state,
         isFetching: false,
         selected: testimonials.map(ids),
-        data: {...state.data, load(testimonials)}
+        data: {...state.data, ...load(testimonials)}
       }
     default:
       return state
@@ -66,7 +66,7 @@ function deleteReducer(state, {status, id}) {
       return {
         ...state,
         unpublished: state.unpublished.filter(isNotThis),
-        selected: state.selected.filter(isNotThis)
+        selected: state.selected.filter(isNotThis),
         data: without(state.data, id)
       }
     default:

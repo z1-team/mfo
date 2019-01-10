@@ -1,3 +1,5 @@
+import queryString from 'querystring'
+
 const bannerId = {
   mw_all: 'bg0',
   m_all: 'bg1',
@@ -34,6 +36,29 @@ export const clientBanner = ({session}) => (
 export const getCity = ({session}) => (
   session.ipInfo ? session.ipInfo.city : 'Ваш город'
 )
+
+export const getLinksTail = ({session}) => {
+  const {query, userId, clientId} = session
+  const tail = {}
+
+  if (userId) {
+    tail.user_id = userId
+  }
+
+  if (query.yclid) {
+    tail.yclick_id = query.yclid
+  }
+
+  if (query.utm_campaign) {
+    tail.utm_campaign = query.utm_campaign
+  }
+
+  if (clientId) {
+    tail.client_id = clientId
+  }
+
+  return queryString.stringify(tail)
+}
 
 export const getABTests = ({session}) => session.abTests
 
