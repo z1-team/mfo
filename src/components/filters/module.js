@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './style.scss'
+
 class SearchModule extends Component {
 	handleClick = () => {
 		const {name, onChange} = this.props
@@ -11,7 +13,7 @@ class SearchModule extends Component {
 
 	render({title, children}) {
 		return (
-			<div class="search-module">
+			<div class={style.searchModule}>
 				<h4>{title} <button onClick={this.handleClick}><i class="fas fa-window-close"></i></button></h4>
 				{children}
 			</div>

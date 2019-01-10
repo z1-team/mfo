@@ -5,11 +5,11 @@ import ResultContainer from '../../containers/ResultContainer'
 import style from './style.scss'
 
 const Main = ({partners}) => (
-	<div class="wr-main">
+	<div class={style.wrMain}>
 		<div class="container">
-			<div class="main">
+			<div class={style.main}>
 				<FilterContainer partners={partners} />
-				<div class="results" id="results">
+				<div class={style.results} id="results">
 					<h2>Рейтинг {/*this.getTitle()*/} <em>Рунета 2018 года</em></h2>
 					<SortContainer />
 					<ResultContainer partners={partners} />

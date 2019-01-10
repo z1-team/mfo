@@ -13,7 +13,7 @@
 @include font-face('opensans-bold', opensans-bold);
 
 // Font Awesome
-$fa-font-path: "../assets/fonts/font-awesome" !default;
+$fa-font-path: "/assets/fonts/font-awesome" !default;
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';

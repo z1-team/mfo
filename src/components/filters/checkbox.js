@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './style.scss'
+
 const labelClass = (isChecked, isActual) => (
 	isChecked ? 'active' : isActual ? '' : 'disabled'
 )
@@ -16,7 +18,7 @@ class CheckboxFilter extends Component {
 
 	render({items, value, actual}) {
 		return (
-			<div class="checkbox-module">
+			<div class={style.checkboxModule}>
 				{items.map((title, index) => (
 					<label
 						key={index}

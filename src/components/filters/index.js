@@ -7,6 +7,8 @@ import RadioFilter from './radio'
 import SearchModule from './module'
 import RangeInput from '../range-input'
 
+import style from './style.scss'
+
 const filterName = {
   mfo: mfoFilters,
   cards: cardsFilters
@@ -73,7 +75,7 @@ class Filters extends Component {
     const filters = filterName[url] || filterName.mfo
 
     return (
-      <div class="sidebar">
+      <div class={style.sidebar}>
         <p>Всего микрозаймов: <strong>{total}</strong><br/>Найдено в: <strong>{location}</strong></p>
       {filters.map(filter => (
         <SearchModule title={filter.title} name={filter.name} onChange={onChange}>

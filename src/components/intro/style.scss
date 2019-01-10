@@ -1,0 +1,125 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+.wrIntro {
+  padding: 96px 0 60px; position: relative; min-height: 560px; display: flex; align-items: center;
+  background: url('/assets/img/intro-bg.jpg') center top no-repeat; background-size: cover;
+}
+.cards {
+  background: url('/assets/img/intro-bg-cards.jpg') center bottom no-repeat; background-size: cover;
+
+  @include respond-to(sm) {
+    background-attachment: initial !important;
+  }
+}
+
+.intro {
+	header {
+		display: flex; align-items: center; justify-content: center; margin-bottom: 40px;
+
+		@include respond-to(sm) {
+			flex-direction: column;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	section {
+		display: flex; flex-direction: column; align-items: center;
+	}
+
+	figure {
+		text-align: center;
+
+		.mfo & {
+			animation: scaleIntroLogo .8s ease-out 1;
+		}
+
+		@include respond-to(sm) {
+			margin-bottom: 20px;
+		}
+
+		img {
+
+		}
+	}
+
+	ul {
+		display: flex; align-items: center; padding-top: 10px;
+
+		@include respond-to(sm) {
+			padding-top: 0;
+		}
+
+		li {
+			margin-right: 20px;
+
+			@include respond-to(xs) {
+				margin-right: 10px;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				color: $white; font-size: 14px; font-family: $m-r;
+
+				@include respond-to(xs) {
+					font-size: 12px;
+				}
+
+				&.active {
+					font-family: $m-b;
+				}
+			}
+		}
+	}
+
+	h1, h2 {
+		color: $white; font-family: $m-th; text-align: center; text-transform: uppercase; text-shadow: -5px 3px 6px rgba(0, 0, 0, 0.67);
+		padding: 0 10px;
+		background: rgba(0,0,0,0.75); border-radius: 10px;
+	}
+
+	h1 {
+		font-size: 60px; line-height: 80px;
+
+		@include respond-to(md) {
+			font-size: 54px; line-height: 74px;
+		}
+		@include respond-to(sm) {
+			font-size: 44px; line-height: 52px;
+		}
+		@include respond-to(xs) {
+			font-size: 34px; line-height: 44px;
+		}
+
+		span {
+			@include respond-to(lg) {
+				display: block;
+			}
+		}
+
+		strong {
+			font-family: $m-r;
+		}
+	}
+
+	h2 {
+		font-size: 46px; line-height: 80px;
+		margin-top: 11px; position: relative;
+
+		@include respond-to(md) {
+			font-size: 40px; line-height: 74px;
+		}
+		@include respond-to(sm) {
+			font-size: 32px; line-height: 52px;
+		}
+		@include respond-to(xs) {
+			font-size: 28px; line-height: 36px;
+		}
+	}
+}
