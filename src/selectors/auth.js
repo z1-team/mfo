@@ -1,2 +1,3 @@
-export const authToken = state => state.auth.token
-export const isLoggedIn = state => !!state.auth.token
+export const authToken = ({auth}) => auth.token
+export const isLoggedIn = ({auth}) => !!auth.token
+export const isErrorOccurred = ({auth}) => !!auth.error

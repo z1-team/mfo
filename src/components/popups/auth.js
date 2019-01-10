@@ -6,12 +6,10 @@ class Auth extends Component {
     pass: ''
   }
 
-  handleLogin = (event) => {
+  handleSubmit = (event) => {
 		event.preventDefault()
-
     const {onSubmit} = this.props
 		const {login, pass} = this.state
-
 		onSubmit(login, pass)
 	}
 
