@@ -31,4 +31,10 @@ export const clientBanner = ({session}) => (
     bannerId[session.query.utm_img] || false : false
 )
 
+export const getCity = ({session}) => (
+  session.ipInfo ? session.ipInfo.city : 'Ваш город'
+)
+
+export const getABTests = ({session}) => session.abTests
+
 export const getClientId = ({session}) => session.clientId || null

@@ -1,15 +1,16 @@
 import { h, Component } from 'preact'
 import Filters from '../components/filters'
 
-import { getActual } from '../selectors/partners'
+import { getActual, getTotalCount } from '../selectors/partners'
 import { getFilters } from '../selectors/filters'
+import { getCity } from '../selectors/session'
 import { connect } from 'preact-redux'
 
 const mapStateToProps = (state, {partners}) => ({
   url: partners,
   filters: getFilters(state),
-  location: {city: "Луна"},
-  total: 10,
+  location: getCity(state),
+  total: getTotalCount(state, {partners}),
   actual: getActual(state, {partners})
 })
 

@@ -26,6 +26,10 @@ export const getActual = createSelector(
   [getFiltration], ({actual}) => actual
 )
 
+export const getTotalCount = createSelector(
+  [getFiltration], ({filtered}) => filtered.length
+)
+
 export const getFilteredPartners = createSelector(
   [getFiltration, getPartnersData], ({filtered}, partners) => filtered.map(id => partners[id])
 )

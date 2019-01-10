@@ -70,12 +70,11 @@ class Filters extends Component {
   }
 
   render({url, total, location, onChange}) {
-    const place =	typeof location !== 'undefined' ? location.city || location.place : 'вашем городе'
     const filters = filterName[url] || filterName.mfo
 
     return (
       <div class="sidebar">
-        <p>Всего микрозаймов: <strong>{total}</strong><br/>Найдено в: <strong>{place}</strong></p>
+        <p>Всего микрозаймов: <strong>{total}</strong><br/>Найдено в: <strong>{location}</strong></p>
       {filters.map(filter => (
         <SearchModule title={filter.title} name={filter.name} onChange={onChange}>
           {this.filtersType(filter)}
