@@ -1,5 +1,4 @@
 import queryString from 'querystring'
-import swRegister from './sw-register'
 import {detect} from 'detect-browser'
 import uuid from 'uuid-js'
 import api from '../api'

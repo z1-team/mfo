@@ -1,6 +1,6 @@
 import {sessionInfo} from '../selectors/session'
 import {authToken} from '../selectors/auth'
-import api from './api'
+import api from '../api'
 
 function getDateTime() {
   const date = new Date()

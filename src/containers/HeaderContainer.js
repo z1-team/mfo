@@ -1,6 +1,10 @@
 import { h, Component } from 'preact'
+import { connect } from 'preact-redux'
 import Header from '../components/header'
+import { getCity } from '../selectors/session'
 
-const HeaderContainer = () => <Header city="Minsk" />
+const mapStateToProps = (state) => ({
+  city: getCity(state)
+})
 
-export default HeaderContainer
+export default connect(mapStateToProps)(Header)
