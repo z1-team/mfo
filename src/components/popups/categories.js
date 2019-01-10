@@ -1,21 +1,40 @@
 import { h, Component } from 'preact'
 
-class Categories extends Component {
-	handleClick = ({target}) => {
-		const { onChange } = this.props
-		const dataID = target.getAttribute('data-id')
-
-		onChange(dataID)
+class Category extends Component {
+	handleClick = (event) => {
+		event.preventDefault()
+		const {category, onClick} = this.props
+		onClick(category.dataID)
 	}
 
-	render({categories}) {
+	render({isActive, category}) {
+		return (
+			<li class={isActive ? 'active' : ''}>
+				<button onClick={this.handleClick}>
+					{category.text}
+				</button>
+			</li>
+		)
+	}
+}
+
+class Categories extends Component {
+	handleClick = (id) => {
+		const {value, onChange} = this.props
+		onChange(value, id)
+	}
+
+	render({value, categories}) {
 		return (
 			<div class="categories">
 				<ul>
-					{categories.map((category) => (
-						<li key={category.index}>
-							<button onClick={this.handleClick} data-id={category.dataID}>{category.text}</button>
-						</li>
+					{categories.map((category, index) => (
+						<Category
+							key={category.index}
+							category={category}
+							isActive={value[index]}
+							onClick={this.handleClick}
+						/>
 					))}
 				</ul>
 			</div>

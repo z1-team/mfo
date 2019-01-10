@@ -18,9 +18,12 @@ import NotFound from '../routes/not-found'
 
 import UsefullInfo from './usefull-info'
 
+import { openPopup } from '../actions/popup'
+
 const displayIntro = ({matches, path, url}) => (
 	url === '/' || url === '/cards' ? <IntroContainer url={url} /> : null
 )
+
 const categoriesTitle = (url) => {
 	switch(url) {
 		case '/':
@@ -31,9 +34,13 @@ const categoriesTitle = (url) => {
 			return ''
 	}
 }
+
 const categoriesToggle = (onToggle) => ({matches, path, url}) => (
-		url === '/' || url === '/cards' ? <button class="categories-button" onClick={onToggle}>{categoriesTitle(url)}</button> : null
+	url === '/' || url === '/cards' ? <button class="categories-button" onClick={onToggle}>
+		{categoriesTitle(url)}
+	</button> : null
 )
+
 const displayPopups = ({matches, path, url}) => (
 	<PopupsContainer url={url} />
 )
@@ -43,8 +50,10 @@ class App extends Component {
 		this.currentUrl = e.url
 	}
 
-	handleCategories = () => {
-
+	handleCategories = (event) => {
+		event.preventDefault()
+		store.dispatch(openPopup('categories'))
+		console.log(store.getState())
 	}
 
 	render() {

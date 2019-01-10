@@ -7,7 +7,7 @@ import { getTestimonials, getSelectedPartner } from '../selectors/testimonials'
 
 const mapStateToProps = (state, {id}) => ({
   partner: getSelectedPartner(state, id),
-  testimonials: getTestimonials()
+  testimonials: getTestimonials(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -42,4 +42,7 @@ class TestimonialsContainer extends Component {
   }
 }
 
-export default TestimonialsContainer
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TestimonialsContainer)
