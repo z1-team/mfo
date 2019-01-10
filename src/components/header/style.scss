@@ -1,1 +1,152 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
 
+.wrHeader {
+  padding: 15px 0; position: fixed; width: 100%; left: 0; top: 0; z-index: 30;
+  background: #f96868; box-shadow: 0 0 5px 0px rgba(0,0,0,0.5);
+}
+
+.header {
+	display: flex; align-items: center; justify-content: space-between;
+
+	.contacts {
+		display: flex; align-items: center;
+
+		a, p {
+			color: #fff; font-size: 12px; line-height: 14px; font-family: $m-m;
+		}
+
+		a {
+			&:hover {
+				text-decoration: underline;
+			}
+
+			i {
+				margin-right: 5px;
+			}
+		}
+
+		p {
+			// padding-left: 14px; margin-left: 14px;
+			// border-left: solid 1px #fff;
+
+			i {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	& > ul {
+		display: flex; align-items: center;
+
+		li {
+			padding-right: 14px; margin-right: 15px;
+			border-right: solid 1px #fff;
+
+			@include respond-to(sm) {
+				padding-right: 9px; margin-right: 10px;
+			}
+			@include respond-to(xs) {
+			padding-right: 4px;	margin-right: 5px;
+			}
+
+			&:last-child {
+				margin-right: 0; padding-right: 0;
+				border-right: none;
+			}
+
+			a, button {
+				color: #fff; font-size: 12px; line-height: 14px; font-family: $m-r; text-transform: uppercase;
+				background: none;
+				cursor: pointer;
+
+				@include respond-to(xs) {
+					font-size: 10px;
+				}
+
+				&.active {
+					font-family: $m-sb;
+				}
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.categories-button {
+		color: #fff; font-size: 16px; font-family: $m-sb; line-height: 26px; text-align: center; text-transform: uppercase;
+		position: fixed; bottom: 0; left: 0; width: 100%; height: 50px; display: none;
+		background: #f96868; border: solid 2px #f96868; box-shadow: 0 0 5px 0px rgba(0,0,0,0.5);
+
+		&:hover {
+			color: #f96868;
+			background: #fff;
+		}
+
+		@include respond-to(sm) {
+			display: block;
+		}
+	}
+
+	.categories {
+		position: absolute; left: 0; bottom: -10px; width: 100%; max-height: calc(100vh - 50px); transform: translateY(100%); display: flex; align-items: flex-start; padding: 40px 40px 25px;
+		background: #fff; border-radius: 8px;
+		opacity: 0; pointer-events: none;
+		transition: opacity 0.4s ease-out; overflow-y: auto;
+
+		@include respond-to(xs) {
+			padding: 30px 25px;
+		}
+
+		.headerCategories & {
+			opacity: 1; pointer-events: auto;
+		}
+
+		& > div {
+			width: 100%;
+		}
+
+		h2 {
+			color: #161616; font-size: 16px; font-family: $m-sb; line-height: 22px;
+			margin-bottom: 25px;
+		}
+
+		button {
+			color: #161616; font-size: 14px; font-family: $os-r; line-height: 18px; text-align: left;
+			padding-left: 15px; position: relative;
+			background: transparent;
+			cursor: pointer;
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+			&:before {
+				content: '';
+				display: block; width: 5px; height: 5px; position: absolute; left: 0; top: 7px;
+				background: #161616; border-radius: 50%;
+			}
+		}
+
+		ul {
+			display: flex; align-items: flex-start; flex-wrap: wrap; width: 100%;
+
+			li {
+				margin-bottom: 15px; width: 33.33333%; padding-right: 15px;
+
+				@include respond-to(sm) {
+					width: 50%;
+				}
+				@include respond-to(xs) {
+					width: 100%;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
