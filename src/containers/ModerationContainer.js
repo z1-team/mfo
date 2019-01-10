@@ -1,11 +1,11 @@
 import { h, Component } from 'preact'
 import { connect } from 'preact-redux'
 import TestimonialsModerate from '../components/testimonials-moderate'
-import { getTestimonials } from '../selectors/testimonials'
+import { getUnpublishedTestimonials } from '../selectors/testimonials'
 import { deleteTestimonial, publicTestimonial } from '../actions/testimonials'
 
 const mapStateToProps = (state) => ({
-  testimonials: getTestimonials(state)
+  testimonials: getUnpublishedTestimonials(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({
