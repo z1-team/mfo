@@ -7,11 +7,11 @@ class Intro extends Component {
 
 		switch(url) {
 			case "/":
-				return "wr-intro mfo"
+				return style.wrIntro
 			case "/cards":
-				return "wr-intro cards"
+				return [style.wrIntro, style.cards].join(' ')
 			default:
-				return "wr-intro"
+				return style.wrIntro
 		}
 	}
 
@@ -49,7 +49,7 @@ class Intro extends Component {
           <div class={style.intro}>
 						<header>
 							<figure>
-								<img src="/img/logo.png" />
+								<img src="/assets/img/logo.png" />
 							</figure>
 						</header>
 						{this.getTitle()}
