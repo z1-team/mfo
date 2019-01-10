@@ -1,11 +1,17 @@
-import { h } from 'preact'
+import { h, Component } from 'preact'
 
-import style from './style.scss'
+class Popup extends Component {
+  handleClick(event) {
+    event.stopPropagation()
+  }
 
-const Popup = ({isOpened, children, name}) => (
-  <div class={`popup ${name}` + isOpened ? ' active' : ''}>
-    {children}
-  </div>
-)
+  render({isOpened, children, name}) {
+    return (
+      <div class={`popup ${name}` + (isOpened ? ' active' : '')} onClick={this.handleClick}>
+        {children}
+      </div>
+    )
+  }
+}
 
 export default Popup

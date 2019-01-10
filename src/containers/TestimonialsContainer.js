@@ -1,20 +1,48 @@
 import { h, Component } from 'preact'
+import { connect } from 'preact-redux'
 import Testimonials from '../components/testimonials'
+import { sendTestimonial, deleteTestimonial,
+  fetchTestimonials } from '../actions/testimonials'
+import { getTestimonials, getSelectedPartner } from '../selectors/testimonials'
+
+const mapStateToProps = (state, {id}) => ({
+  partner: getSelectedPartner(state, id),
+  testimonials: getTestimonials(state)
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  onEnter(id) {
+    dispatch(fetchTestimonials(id))
+  },
+
+  onDelete(id) {
+    dispatch(deleteTestimonial(id))
+  },
+
+  onSubmit(testimonial) {
+    dispatch(sendTestimonial(testimonial))
+  }
+})
 
 class TestimonialsContainer extends Component {
-  handleDelete = (id) => {
-    console.log(id)
+  compontentDidMount() {
+    const {id, onEnter} = this.props
+    onEnter(id)
   }
 
-  handleSubmit = (item) => {
-    console.log(item)
-  }
-
-  render() {
+  render({partner, testimonials, onDelete, onSubmit}) {
     return (
-      <Testimonials partner={[]} testimonials={[]} onDelete={this.handleDelete} onSubmit={this.handleSubmit} />
+      <Testimonials
+        partner={partner}
+        testimonials={testimonials}
+        onDelete={onDelete}
+        onSubmit={onSubmit}
+      />
     )
   }
 }
 
-export default TestimonialsContainer
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TestimonialsContainer)

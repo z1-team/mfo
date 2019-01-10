@@ -1,4 +1,6 @@
 import { h, Component } from 'preact'
+import { connect } from 'preact-redux'
+
 import Popups from '../components/popups'
 import Popup from '../components/popups/popup'
 import Testimonials from '../components/popups/testimonials'
@@ -9,12 +11,12 @@ import CategoriesContainer from './CategoriesContainer'
 import EditContainer from './EditContainer'
 import EmailContainer from './EmailContainer'
 
-import { connect } from 'preact-redux'
+import { closePopup } from '../actions/popup'
 
-const some = o => Object.getOwnPropertyNames(o).some(p => o[p])
+const items = i => Object.getOwnPropertyNames(i)
 
 const isOpened = (popups, name = null) => (
-  name === null ? some(popups) : popups[name]
+  name === null ? items(popups).some(p => popups[p]) : popups[name]
 )
 
 const PopupsContainer = ({popups, url, onClose}) => (
@@ -46,9 +48,13 @@ const mapStateToProps = (state, {url}) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onClose() {
-    console.log("popups closed")
+  onClose(event) {
+    event.preventDefault()
+    dispatch(closePopup())
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(PopupsContainer)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PopupsContainer)
