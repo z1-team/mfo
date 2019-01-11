@@ -57,7 +57,6 @@ class App extends Component {
 	handleCategories = (event) => {
 		event.preventDefault()
 		store.dispatch(openPopup('categories'))
-		console.log(store.getState())
 	}
 
 	render() {

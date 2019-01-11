@@ -13,7 +13,7 @@ export default {
         ...event,
         payload: JSON.stringify(event.payload)
       })
-    }).then((responce) => {
+    }).then((response) => {
       if (response.status >= 400) {
         throw new Error('Bad response from server')
       }
