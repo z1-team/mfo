@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './styles/popup.scss'
+
 class Popup extends Component {
   handleClick(event) {
     event.stopPropagation()
@@ -7,7 +9,7 @@ class Popup extends Component {
 
   render({isOpened, children, name}) {
     return (
-      <div class={`popup ${name}` + (isOpened ? ' active' : '')} onClick={this.handleClick}>
+      <div class={isOpened ? `${style[name]} ${style.active}` : style[name]} onClick={this.handleClick}>
         {children}
       </div>
     )

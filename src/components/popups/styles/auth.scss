@@ -1,0 +1,55 @@
+@import '../../../style/mixins.scss';
+@import '../../../style/variables.scss';
+
+.login {
+  h2 {
+    color: #161616; font-size: 24px; font-family: $m-sb; line-height: 28px; text-align: center;
+    margin-bottom: 15px;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  label {
+    color: #161616; font-size: 16px; font-family: $m-r; line-height: 20px;
+    width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+
+    @include respond-to(xs) {
+      font-size: 14px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input {
+      color: #161616; font-size: 16px; font-family: $m-r; line-height: 20px;
+      padding: 5px 10px; width: 75%;
+      border: solid 1px #161616; border-radius: 4px;
+    }
+  }
+
+  p {
+    color: #f96868; font-size: 16px; font-family: $m-sb; line-height: 20px; text-align: center;
+    margin-bottom: 10px;
+  }
+
+  button {
+    color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 18px;
+    display: inline-block; padding: 8px 14px;
+    background: transparent; border: solid 2px #f96868; border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $white;
+      background: #f96868;
+    }
+  }
+}
+
+.active {
+  composes: login;
+  left: 50%; transform: translate(-50%, -50%);
+  transition: left 0s 0s ease-out, transform 0s 0s ease-out;
+}

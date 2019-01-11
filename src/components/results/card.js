@@ -85,7 +85,7 @@ class Card extends Component {
             <h3>{item.main.title}</h3>
             <div class={style.rating}>
               <StarRating rating={item.sortBy.rating} />
-              <p><Link to={`/testimonials/${item.id}`}>{item.sortBy.testimonials_count} {this.getEnding()}</Link> {item.sortBy.rating && `(${rating} из 5)`}</p>
+              <p><Link href={`/testimonials/${item.id}`}>{item.sortBy.testimonials_count} {this.getEnding()}</Link> {item.sortBy.rating && `(${rating} из 5)`}</p>
             </div>
             {item.type === 'mfo' && item.main &&
               <ul class={style.pros}>

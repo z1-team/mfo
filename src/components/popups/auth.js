@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
 
-import style from './style.scss'
+import style from './styles/auth.scss'
 
 class Auth extends Component {
   state = {

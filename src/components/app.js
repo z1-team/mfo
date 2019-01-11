@@ -18,6 +18,8 @@ import NotFound from '../routes/not-found'
 
 import UsefullInfo from './usefull-info'
 
+import api from '../api'
+
 import { openPopup } from '../actions/popup'
 
 const displayIntro = ({matches, path, url}) => (

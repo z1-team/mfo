@@ -20,7 +20,7 @@ const isOpened = (popups, name = null) => (
 )
 
 const PopupsContainer = ({popups, url, onClose}) => (
-  <Popups isOpened={isOpened(popups)}>
+  <Popups isOpened={isOpened(popups)} onClose={onClose}>
     <Popup name="login" isOpened={isOpened(popups, 'login')}>
       <AuthContainer />
     </Popup>

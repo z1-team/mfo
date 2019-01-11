@@ -10,7 +10,7 @@ export default {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
       },
       body: queryString.stringify({login, password})
-    }).then((responce) => {
+    }).then((response) => {
       if (response.status >= 400) {
         throw new Error('Bad response from server')
       }

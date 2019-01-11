@@ -1,9 +1,9 @@
 import { h } from 'preact'
 
-import style from './style.scss'
+import style from './styles/popups.scss'
 
 const Popups = ({isOpened, children, onClose}) => (
-  <div class={isOpened ? "popups active" : "popups"} onClick={onClose}>
+  <div class={isOpened ? `${style.active}` : `${style.normal}`} onClick={onClose}>
     {children}
   </div>
 )

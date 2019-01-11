@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './styles/categories.scss'
+
 class Category extends Component {
 	handleClick = (event) => {
 		event.preventDefault()
@@ -26,7 +28,7 @@ class Categories extends Component {
 
 	render({value, categories}) {
 		return (
-			<div class="categories">
+			<div class={style.categories}>
 				<ul>
 					{categories.map((category, index) => (
 						<Category
