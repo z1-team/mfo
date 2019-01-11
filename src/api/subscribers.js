@@ -12,7 +12,7 @@ export default {
       body: queryString.stringify({
         email, client_id: clientId
       })
-    }).then((responce) => {
+    }).then((response) => {
       if (response.status >= 400) {
         throw new Error('Bad response from server')
       }

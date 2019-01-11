@@ -26,7 +26,7 @@ export default {
         body: queryString.stringify({
           payload: JSON.stringify(partner)
         })
-      }).then((responce) => {
+      }).then((response) => {
         if (response.status >= 400) {
           throw new Error('Bad response from server')
         }
@@ -46,7 +46,7 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
           'X-Auth-Token': token
         }
-      }).then((responce) => {
+      }).then((response) => {
         if (response.status >= 400) {
           throw new Error('Bad response from server')
         }
