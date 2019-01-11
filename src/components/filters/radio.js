@@ -20,9 +20,9 @@ class RadioFilter extends Component {
 
 	render({items, value, name, actual}) {
 		return (
-			<div className={style.checkbox}>
+			<div class={style.checkbox}>
 				{items.map((title, index) => (
-					<label key={index} className={labelClass(value[index], actual !== null ? actual[index] > 0 : true)}>
+					<label key={index} class={labelClass(value[index], actual !== null ? actual[index] > 0 : true)}>
 						<input data-index={index} onChange={this.handleChange} type="checkbox" name={name}/>{title}
 						<span>{actual ? actual[index] : ''}</span>
 					</label>
