@@ -20,6 +20,8 @@ import UsefullInfo from './usefull-info'
 
 import api from '../api'
 
+import style from '../style/index.scss'
+
 import { openPopup } from '../actions/popup'
 
 const displayIntro = ({matches, path, url}) => (
@@ -61,7 +63,7 @@ class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<div id="app">
+				<div id="app" class="app">
 					<HeaderContainer />
 					<Match path="/">{displayIntro}</Match>
 					<Router onChange={this.handleRoute}>

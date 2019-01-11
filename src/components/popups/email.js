@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
 
-import style from './style.scss'
+import style from './styles/email.scss'
 
 class EmailPopups extends Component {
 	state = {
@@ -23,9 +23,9 @@ class EmailPopups extends Component {
 
 	render(props, {email}) {
 		return (
-			<div>
+			<div class={style.email}>
 				<figure>
-					<img src="/img/email-catcher.png"/>
+					<img src="/assets/img/email-catcher.png"/>
 				</figure>
 				<form action="#" onSubmit={this.handleSubmit}>
 					<p>Вышлем спецпредложения от премиум-партнеров</p>
