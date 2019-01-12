@@ -5,10 +5,12 @@ import Main from './main'
 import Specials from './specials'
 import Details from './details'
 import Categories from './categories'
-import Filters from './filter'
+import Filters from './filters'
 import Sort from './sort'
 
 import Tabs from './tabs'
+import Tab from './tab'
+import { tabs, mainNames } from './const'
 
 class EditPopup extends Component {
 
@@ -114,7 +116,7 @@ class EditPopup extends Component {
           <h3>Редактирование карточки <strong>партнера</strong></h3>
           <button onClick={this.closePopup}></button>
         </header>
-        <Tabs selected={tab} onChage={changeTab} tabs={tabs}>
+        <Tabs selected={tab} onChage={this.changeTab} tabs={tabs}>
           <Tab isOpen={this.isOpened("main")}>
             <Logo logo={partner.main.logo} onChange={this.handleChange} />
             <Main names={mainNames} main={partner.main} onChange={this.handleChange} />

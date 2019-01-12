@@ -15,9 +15,11 @@ const Filters = ({values, filters, onChange}) => (
         values={values[filter]} onChange={onChange} />
     ))}
     {withoutCat(filters).map((filter, index) => (
-      <Filter name={filter} key={index} title={filterNames[filter].title}
+      <Filter name={filter} key={filter} title={filterNames[filter].title}
         names={filterNames[filter].names} values={filters[filter]}
         onChange={onChange} />
     ))}
   </div>
 )
+
+export default Filters

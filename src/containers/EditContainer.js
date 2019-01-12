@@ -2,6 +2,12 @@ import { h, Component } from 'preact'
 import { connect } from 'preact-redux'
 
 import EditPopup from '../components/popups/edit'
+import { getSelectedPartner } from '../selectors/partners'
+
+const mapStateToProps = (state, {url}) => ({
+  partner: getSelectedPartner(state),
+  url
+})
 
 const mapDispatchToProps = () => ({
   onClose() {
@@ -18,4 +24,7 @@ const mapDispatchToProps = () => ({
   }
 })
 
-export default connect(mapDispatchToProps)(EditPopup)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditPopup)

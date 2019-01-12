@@ -28,12 +28,15 @@ class EditPopupCategories extends Component {
     })
   }
 
-  render({names, type}, {values}) {
+  render({type}, {values}) {
     return (
       <ul>
-        {categoryNames[type].map((value, index) => (
+        {categoriesNames[type].map((title, index) => (
           <li key={index}>
-            <label class={value ? 'active' : ''}><input type="checkbox" data-index={index} onChange={this.handleChange} />{names[index]}</label>
+            <label class={values[index] ? 'active' : ''}>
+              <input type="checkbox" data-index={index} onChange={this.handleChange} />
+              {title}
+            </label>
           </li>
         ))}
       </ul>

@@ -5,3 +5,5 @@ const Tab = ({name, isOpen, children}) => (
     {children}
   </div>
 )
+
+export default Tab

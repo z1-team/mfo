@@ -5,8 +5,9 @@ import { isLoggedIn } from './auth'
 import { getFilters } from './filters'
 import { getSortInfo } from './sorting'
 
-const getPartnersIdsByType = (state, {partners: type}) => state.partners[type] || []
-const getPartnersData = (state) => state.partners.data
+export const getPartnersIdsByType = (state, {partners: type}) => state.partners[type] || []
+export const getPartnersData = (state) => state.partners.data
+export const getSelectedPartner = ({partners: p}) => p.data[p.selected] || null
 
 export const getFiltration = createSelector(
   [
