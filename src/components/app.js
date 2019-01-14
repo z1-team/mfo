@@ -15,6 +15,7 @@ import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
 import Confidentiality from '../routes/inner/confidentiality'
 import NotFound from '../routes/not-found'
+import SmartTest from '../routes/smart-test'
 
 import UsefullInfo from './usefull-info'
 
@@ -72,6 +73,7 @@ class App extends Component {
 						<TestimonialsContainer path="/testimonials/:id" />
 						<AboutProject path="/about" />
 						<Confidentiality path="/confidentiality" />
+						<SmartTest path="/smart-test" />
 						<NotFound default />
 					</Router>
 					<UsefullInfo />

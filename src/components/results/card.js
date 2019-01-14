@@ -72,7 +72,7 @@ class Card extends Component {
     const label = item.main.special_label ? item.main.special_label : ''
 
     return (
-      <div class={`${style.card} ${label}`}>
+      <div class={`${style.card} ${style[label]}`}>
         {label === 'big_summ' ? <span class={style.label}>На большую сумму</span> : ''}
         {label === 'long_term' ? <span class={style.label}>На долгий период</span> : ''}
         {label === 'quick_solution' ? <span class={style.label}>Быстрое решение</span> : ''}
@@ -82,23 +82,23 @@ class Card extends Component {
             <img src={item.main.logo} />
           </figure>
           <div class={style.info}>
-            <h3>{item.main.title}</h3>
+            <h3>{label === 'recommend' ? <i class="fab fa-gripfire"></i> : ''}{item.main.title}</h3>
             <div class={style.rating}>
               <StarRating rating={item.sortBy.rating} />
               <p><Link href={`/testimonials/${item.id}`}>{item.sortBy.testimonials_count} {this.getEnding()}</Link> {item.sortBy.rating && `(${rating} из 5)`}</p>
             </div>
             {item.type === 'mfo' && item.main &&
               <ul class={style.pros}>
-                {item.main.money && <li><i class="far fa-money-bill-alt"></i><strong>{item.main.money}</strong> руб.</li>}
-                {item.main.term && <li><i class="far fa-calendar-alt"></i><strong>{item.main.term}</strong></li>}
-                {item.main.minRate && <li><i class="fas fa-percent"></i>от <strong>{item.main.minRate}</strong> в день</li>}
+                {item.main.money && <li><i class="far fa-money-bill-alt"></i><strong>{item.main.money}</strong> руб.<div class={style.tooltip}>Сумма займа</div></li>}
+                {item.main.term && <li><i class="far fa-calendar-alt"></i><strong>{item.main.term}</strong><div class={style.tooltip}>Срок займа</div></li>}
+                {item.main.minRate && <li><i class="fas fa-percent"></i>от <strong>{item.main.minRate}</strong> в день<div class={style.tooltip}>Процентная ставка</div></li>}
               </ul>
             }
             {item.type === 'cards' && item.main &&
               <ul class={style.pros}>
-                {item.main.limit && <li><i class="far fa-credit-card"></i><strong>{item.main.limit}</strong> руб.</li>}
-                {item.main.percent && <li><i class="fas fa-percent"></i>от <strong>{item.main.percent}</strong></li>}
-                {item.main.cashback && <li><i class="far fa-money-bill-alt"></i><strong>{item.main.cashback}</strong></li>}
+                {item.main.limit && <li><i class="far fa-credit-card"></i><strong>{item.main.limit}</strong> руб.<div class={style.tooltip}>Лимит по карте</div></li>}
+                {item.main.percent && <li><i class="fas fa-percent"></i>от <strong>{item.main.percent}</strong><div class={style.tooltip}>Процентная ставка</div></li>}
+                {item.main.cashback && <li><i class="far fa-money-bill-alt"></i><strong>{item.main.cashback}</strong><div class={style.tooltip}>Кешбэк</div></li>}
               </ul>
             }
             {this.getWays() &&

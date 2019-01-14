@@ -6,5 +6,6 @@ node_modules
 /server/logs
 /server/uploads
 /server/.env
+/materials/
 
 package-lock.json

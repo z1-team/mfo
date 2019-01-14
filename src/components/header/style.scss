@@ -66,6 +66,10 @@
 
 				&.active {
 					font-family: $m-sb;
+
+          &:hover {
+            text-decoration: none;
+          }
 				}
 
 				&:hover {

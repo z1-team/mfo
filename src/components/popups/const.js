@@ -1,6 +1,11 @@
 export const categories = {
 	"mfo": [
 		{
+			"text": "Все займы",
+			"dataID": null,
+			"index": 0
+		},
+		{
 			"text": "С плохой кред. историей",
 			"dataID": "badCreditHistory",
 			"index": 1
@@ -107,6 +112,11 @@ export const categories = {
 		}
 	],
 	"cards": [
+		{
+			"text": "Все кредитные карты",
+			"dataID": null,
+			"index": 0
+		},
 		{
 			"text": "Альфа-Банк",
 			"dataID": "alfaBank",

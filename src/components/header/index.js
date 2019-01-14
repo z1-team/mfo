@@ -10,8 +10,8 @@ const Header = ({city}) => (
 					<p><i class="fas fa-map-marker-alt"></i>{city}</p>
 				</div>
 				<ul>
-					<li><Link name="mfo" activeClassName="active" href="/">Микрозаймы</Link></li>
-					<li><Link name="cards" activeClassName="active" href="/cards">Кредитные карты</Link></li>
+					<li><Link name="mfo" activeClassName={style.active} href="/">Микрозаймы</Link></li>
+					<li><Link name="cards" activeClassName={style.active} href="/cards">Кредитные карты</Link></li>
 				</ul>
 			</div>
 		</div>
