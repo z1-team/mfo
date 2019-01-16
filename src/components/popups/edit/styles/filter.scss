@@ -1,0 +1,59 @@
+@import '../../../../style/mixins.scss';
+@import '../../../../style/variables.scss';
+
+.filter {
+  width: 33.33333%; margin-bottom: 15px;
+
+  @include respond-to(sm) {
+    width: 50%;
+  }
+  @include respond-to(xs) {
+    width: 100%;
+  }
+}
+
+.checkbox {
+  composes: filter;
+  
+  label {
+    color: #484848; font-size: 14px; font-family: $os-r; line-height: 14px;
+    padding-left: 25px; position: relative; display: inline-block;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input {
+      display: none;
+    }
+
+    &.active {
+      &:before {
+        background: #f7f7f7 url('/assets/img/checked.png') center center no-repeat;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block; width: 13px; height: 13px; position: absolute; left: 0; top: 0;
+      background: #f7f7f7; border: solid 1px #b1b1b1;
+    }
+  }
+}
+
+.range {
+  composes: filter;
+  label {
+    padding-left: 0; display: flex; align-items: center; padding-right: 10px;
+
+    &:before {
+      content: none;
+    }
+
+    input {
+      color: #161616; font-size: 16px; font-family: $m-r;
+      display: block; width: 100%; margin-left: 5px; padding: 2px 5px;
+    }
+  }
+}

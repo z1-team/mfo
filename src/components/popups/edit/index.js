@@ -12,6 +12,8 @@ import Tabs from './tabs'
 import Tab from './tab'
 import { tabs, mainNames } from './const'
 
+import style from './styles/style.scss'
+
 class EditPopup extends Component {
 
   state = {
@@ -111,27 +113,27 @@ class EditPopup extends Component {
     if(!partner) return null
 
     return (
-      <form action="#">
+      <form class={style.edit} action="#">
         <header>
           <h3>Редактирование карточки <strong>партнера</strong></h3>
           <button onClick={this.closePopup}></button>
         </header>
-        <Tabs selected={tab} onChage={this.changeTab} tabs={tabs}>
-          <Tab isOpen={this.isOpened("main")}>
+        <Tabs selected={tab} onChange={this.changeTab} tabs={tabs}>
+          <Tab isOpen={this.isOpened("main")} name="main">
             <Logo logo={partner.main.logo} onChange={this.handleChange} />
             <Main names={mainNames} main={partner.main} onChange={this.handleChange} />
             <Specials value={partner.main.special_label} onChange={this.handleChange} />
           </Tab>
-          <Tab isOpen={this.isOpened("details")}>
+          <Tab isOpen={this.isOpened("details")} name="details">
             <Details details={partner.details} onChange={this.handleChange} />
           </Tab>
-          <Tab isOpen={this.isOpened("categories")}>
+          <Tab isOpen={this.isOpened("categories")} name="categories">
             <Categories categories={this.getCategories()} type={partner.type} onChange={this.handleChange} />
           </Tab>
-          <Tab isOpen={this.isOpened("filters")}>
+          <Tab isOpen={this.isOpened("filters")} name="filters">
             <Filters values={partner.filter_values} filters={partner.filters} onChange={this.handleChange}/>
           </Tab>
-          <Tab isOpen={this.isOpened("sort")}>
+          <Tab isOpen={this.isOpened("sort")} name="sort">
             <Sort type={partner.type} sortInfo={partner.sortBy} onChange={this.handleChange} />
           </Tab>
         </Tabs>

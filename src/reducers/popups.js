@@ -2,6 +2,7 @@ import { POPUP_OPEN, POPUP_CLOSE } from '../actions/popup'
 import { FILTER_CHANGE } from '../actions/filters'
 import { AUTH_LOGIN } from '../actions/auth'
 import { PARTNER_CREATE } from '../actions/partners'
+import { PARTNER_SELECT } from '../actions/partners'
 import { EMAIL_SUBSCRIBE } from '../actions/subscribe'
 
 const initialState = {
@@ -24,6 +25,7 @@ function popupsReducer(state = initialState, action) {
     case AUTH_LOGIN:
       return action.status === 2 ? {...state, login: false} : state
     case PARTNER_CREATE:
+    case PARTNER_SELECT:
       return {...state, edit: true}
     case EMAIL_SUBSCRIBE:
       return action.status === 2 ? {...initialState, subscribed: true} : state

@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './styles/logo.scss'
+
 class LogoUploader extends Component {
   constructor(props) {
     super(props)
@@ -22,10 +24,10 @@ class LogoUploader extends Component {
     reader.readAsDataURL(this.fileUpload.files[0])
   }
 
-  render({image}) {
+  render({logo}) {
     return (
-      <figure>
-        <img src={image} />
+      <figure class={style.logo}>
+        <img src={logo} />
         <figcaption>
           <label>
             <i class="if fa-upload"></i>

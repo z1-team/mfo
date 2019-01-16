@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './styles/filter.scss'
+
 class EditPopupRange extends Component {
   constructor(props) {
     super(props)
@@ -33,7 +35,7 @@ class EditPopupRange extends Component {
     const {valueFrom, valueTo} = this.state
 
     return (
-      <div class="popup-filter_range">
+      <div class={style.range}>
         <h3>{title}</h3>
         <ul>
           <li>

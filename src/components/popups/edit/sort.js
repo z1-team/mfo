@@ -2,6 +2,8 @@ import { h, Component } from 'preact'
 
 import { sortInputs, defaultSort } from './const'
 
+import style from './styles/sort.scss'
+
 class EditPopupSort extends Component {
   constructor(props) {
     super(props)
@@ -34,7 +36,7 @@ class EditPopupSort extends Component {
 
   render(props, sortInfo) {
     return(
-      <div>
+      <div class={style.sort}>
         <ul>
           {Object.getOwnPropertyNames(sortInfo).filter(filter => filter !== "rating" && filter !== "testimonials_count").map((id) => (
             <li key={id}>

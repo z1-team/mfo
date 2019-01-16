@@ -1,5 +1,8 @@
 import { h, Component } from 'preact'
 
+import style from './styles/main.scss'
+import module from './styles/module.scss'
+
 class EditPopupMain extends Component {
   constructor(props) {
     super(props)
@@ -36,12 +39,12 @@ class EditPopupMain extends Component {
 
   render({names}, main) {
     return (
-      <div>
-        {Object.getOwnPropertyNames(main).filter(el => el !== 'logo' && el !== 'special_label' && el !== 'isPublished').map((label, index) =>(
+      <div class={style.main}>
+        {Object.getOwnPropertyNames(main).filter(el => el !== 'logo' && el !== 'special_label' && el !== 'isPublished' && el !== 'null').map((label, index) =>(
           <label key={index}>{names[label]}: <input type="text" data-name={label} value={main[label]} onChange={this.handleChange}/></label>
         ))}
-        <div class="checkbox-module">
-          <label class={main.isPublished ? "active" : ""}>
+        <div class={module.module}>
+          <label class={main.isPublished ? module.active : ""}>
             <input name="isPublished" onChange={this.handleCheckbox} type="checkbox"/>
             Опубликовать
           </label>

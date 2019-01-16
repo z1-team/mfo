@@ -2,6 +2,8 @@ import { h, Component } from 'preact'
 
 import { detailsNames } from './const'
 
+import style from './styles/details.scss'
+
 class EditPopupDetails extends Component {
   constructor(props) {
     super(props)
@@ -22,7 +24,7 @@ class EditPopupDetails extends Component {
 
   render(props, details) {
     return (
-      <ul>
+      <ul class={style.details}>
         {Object.getOwnPropertyNames(details).map((detail, index) => (
           <li key={index}>
             <label>{detailsNames[detail]}: <input type="text" data-name={detail} value={details[detail]} onChange={this.handleChange} /></label>

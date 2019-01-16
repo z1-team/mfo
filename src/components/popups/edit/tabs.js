@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './styles/tabs.scss'
+
 class Tabs extends Component {
   handleChange = (event) => {
     event.preventDefault()
@@ -13,10 +15,10 @@ class Tabs extends Component {
   render({selected, tabs, children}) {
     return (
       <section>
-        <ul class="tabs">
+        <ul class={style.tabs}>
           {tabs.map((tab) => (
             <li>
-              <button key={tab.id} onClick={this.handleChange} data-tab={tab.id} class={tab.id === selected ? 'active' : ''}>
+              <button key={tab.id} onClick={this.handleChange} data-tab={tab.id} class={tab.id === selected ? style.active : ''}>
                 {tab.title}
               </button>
             </li>

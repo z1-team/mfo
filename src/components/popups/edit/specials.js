@@ -1,5 +1,8 @@
 import { h, Component } from 'preact'
 
+import style from './styles/specials.scss'
+import module from './styles/module.scss'
+
 class EditPopupSpecials extends Component {
   constructor(props) {
     super(props)
@@ -19,24 +22,24 @@ class EditPopupSpecials extends Component {
     this.setState({value: newValue})
 	}
 
-  render({value}) {
+  render(props, {value}) {
     return (
-      <div class="specials">
+      <div class={style.specials}>
         <h3>Спецпредложения</h3>
-        <div class="checkbox-module">
-          <label class={value === "big_summ" ? "active" : ""}>
+        <div class={module.module}>
+          <label class={value === "big_summ" ? module.active : ""}>
             <input name="big_summ" onChange={this.handleChange} type="checkbox"/>
             На Большую Сумму
           </label>
-          <label class={value === "long_term" ? "active" : ""}>
+          <label class={value === "long_term" ? module.active : ""}>
             <input name="long_term" onChange={this.handleChange} type="checkbox"/>
             На Долгий Период
           </label>
-          <label class={value === "quick_solution" ? "active" : ""}>
+          <label class={value === "quick_solution" ? module.active : ""}>
             <input name="quick_solution" onChange={this.handleChange} type="checkbox"/>
             Быстрое Решение
           </label>
-          <label class={value === "recommend" ? "active" : ""}>
+          <label class={value === "recommend" ? module.active : ""}>
             <input name="recommend" onChange={this.handleChange} type="checkbox"/>
             Рекомендуют
           </label>
