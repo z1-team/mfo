@@ -65,7 +65,6 @@ class App extends Component {
 			<Provider store={store}>
 				<div id="app" class="app">
 					<HeaderContainer />
-					<Match path="/">{displayIntro}</Match>
 					<Router onChange={this.handleRoute}>
 						<Main path="/" partners="mfo" />
 						<Main path="/cards" partners="cards" />

@@ -17,20 +17,20 @@ class Testi extends Component {
   render({text, user, rating, isLoggedIn}) {
     return(
       <div class={style.testi}>
-        {isLoggedIn && <a href="#" class={style.delete} onClick={this.handleDelete}><i class="fas fa-times"></i></a>}
+        {isLoggedIn && <a href="#" class={style.delete} onClick={this.handleDelete}><i class="if fa-times"></i></a>}
         <div>
-          <i class="fas fa-quote-left"></i>
+          <i class="if fa-quote-left"></i>
           <p>{text}</p>
-          <i class="fas fa-quote-right"></i>
+          <i class="if fa-quote-right"></i>
         </div>
         <footer>
           <p>{user}</p>
           <ul class={`rate-${rating}`}>
-            <li><i class="fas fa-star"></i></li>
-            <li><i class="fas fa-star"></i></li>
-            <li><i class="fas fa-star"></i></li>
-            <li><i class="fas fa-star"></i></li>
-            <li><i class="fas fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
           </ul>
         </footer>
       </div>

@@ -7,7 +7,7 @@ const Header = ({city}) => (
 		<div class="container">
 			<div class={style.header}>
 				<div class={style.contacts}>
-					<p><i class="fas fa-map-marker-alt"></i>{city}</p>
+					<p><i class="if fa-marker"></i>{city}</p>
 				</div>
 				<ul>
 					<li><Link name="mfo" activeClassName={style.active} href="/">Микрозаймы</Link></li>

@@ -9,18 +9,18 @@ class StarRating extends Component {
     return (
       <div class={style.stars}>
         <ul class={style.highlighted} style={{width: star + '%'}}>
-          <li><i class="fas fa-star"></i></li>
-          <li><i class="fas fa-star"></i></li>
-          <li><i class="fas fa-star"></i></li>
-          <li><i class="fas fa-star"></i></li>
-          <li><i class="fas fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
         </ul>
         <ul>
-          <li><i class="fas fa-star"></i></li>
-          <li><i class="fas fa-star"></i></li>
-          <li><i class="fas fa-star"></i></li>
-          <li><i class="fas fa-star"></i></li>
-          <li><i class="fas fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
+          <li><i class="if fa-star"></i></li>
         </ul>
       </div>
     )

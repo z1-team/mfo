@@ -28,7 +28,7 @@ class LogoUploader extends Component {
         <img src={image} />
         <figcaption>
           <label>
-            <i class="fas fa-upload"></i>
+            <i class="if fa-upload"></i>
             <input ref={ref => this.fileUpload = ref} type="file" accept="image/x-png,image/jpeg" onChange={this.handleChange}/>
           </label>
         </figcaption>

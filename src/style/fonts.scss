@@ -2,19 +2,18 @@
 
 @include font-face('montserrat-light', montserrat-light);
 @include font-face('montserrat-regular', montserrat-regular);
-@include font-face('montserrat-medium', montserrat-medium);
 @include font-face('montserrat-semibold', montserrat-semibold);
-@include font-face('montserrat-bold', montserrat-bold);
 
 // Open Sans
-@include font-face('opensans-light', opensans-light);
 @include font-face('opensans-regular', opensans-regular);
-@include font-face('opensans-semibold', opensans-semibold);
 @include font-face('opensans-bold', opensans-bold);
 
+// z1 icons
+@include font-face('icon-font', icon-font);
+
 // Font Awesome
-$fa-font-path: "/assets/fonts/font-awesome" !default;
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+// $fa-font-path: "/assets/fonts/font-awesome" !default;
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';

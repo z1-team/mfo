@@ -38,11 +38,11 @@ class LeaveRating extends Component {
     const value = this.selectValue()
     return (
       <ul class={`${style.leaveRate} rate-${value}`} onMouseLeave={this.handleLeave}>
-        <li data-value="1" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="fas fa-star"></i></li>
-        <li data-value="2" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="fas fa-star"></i></li>
-        <li data-value="3" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="fas fa-star"></i></li>
-        <li data-value="4" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="fas fa-star"></i></li>
-        <li data-value="5" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="fas fa-star"></i></li>
+        <li data-value="1" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="if fa-star"></i></li>
+        <li data-value="2" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="if fa-star"></i></li>
+        <li data-value="3" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="if fa-star"></i></li>
+        <li data-value="4" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="if fa-star"></i></li>
+        <li data-value="5" onClick={this.handleClick} onMouseEnter={this.handleMove}><i class="if fa-star"></i></li>
       </ul>
     )
   }
