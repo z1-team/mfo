@@ -1,0 +1,91 @@
+@import '../../../../style/mixins.scss';
+@import '../../../../style/variables.scss';
+
+.edit {
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 9px; margin-bottom: 10px;
+    border-bottom: solid 1px #acacac;
+
+    h3 {
+      color: #161616; font-size: 18px; font-family: $m-sb; line-height: 25px;
+
+      @include respond-to(xs) {
+        font-size: 12px; line-height: 18px;
+      }
+
+      strong {
+        color: #f96868;
+      }
+    }
+
+    button {
+      display: block; width: 20px; height: 20px; position: relative; padding: 0;
+      border: none; background: transparent;
+      cursor: pointer;
+
+      &:hover {
+        &:before, &:after {
+          background: #f96868;
+        }
+      }
+
+      &:before, &:after {
+        content: '';
+        display: block; width: 20px; height: 4px; position: absolute; left: 50%; top: 50%;
+        background: #999999; border-radius: 100px;
+      }
+
+      &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+  section {
+    margin-bottom: 20px;
+
+    @include respond-to(xs) {
+      margin-bottom: 10px;
+    }
+  }
+
+  footer {
+    display: flex; align-items: center; justify-content: space-between;
+
+    ul {
+      display: flex; align-items: center;
+
+      li {
+        margin-right: 10px;
+
+        @include respond-to(xs) {
+          margin-right: 5px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    button {
+      color: #f96868; font-size: 16px; font-family: $m-sb; line-height: 20px;
+      display: inline-block; padding: 10px 16px;
+      background: transparent; border: solid 2px #f96868; border-radius: 5px;
+      cursor: pointer;
+
+      @include respond-to(xs) {
+        font-size: 14px; line-height: 18px;
+        padding: 8px;
+      }
+
+      &:hover, &.active {
+        color: $white;
+        background: #f96868;
+      }
+    }
+  }
+}

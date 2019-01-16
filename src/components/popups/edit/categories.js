@@ -2,6 +2,8 @@ import { h, Component } from 'preact'
 
 import { categoriesNames } from './const'
 
+import style from './styles/categories.scss'
+
 class EditPopupCategories extends Component {
   constructor(props) {
     super(props)
@@ -30,10 +32,10 @@ class EditPopupCategories extends Component {
 
   render({type}, {values}) {
     return (
-      <ul>
+      <ul class={style.categories}>
         {categoriesNames[type].map((title, index) => (
           <li key={index}>
-            <label class={values[index] ? 'active' : ''}>
+            <label class={values[index] ? style.active : ''}>
               <input type="checkbox" data-index={index} onChange={this.handleChange} />
               {title}
             </label>

@@ -1,0 +1,37 @@
+@import '../../../../style/mixins.scss';
+@import '../../../../style/variables.scss';
+
+.tab {
+  padding: 10px 0; display: none; max-height: calc(90vh - 202px);
+  overflow-y: auto;
+
+  @include respond-to(xs) {
+    max-height: calc(96vh - 180px);
+  }
+}
+
+.main {
+  composes: tab;
+  align-items: flex-start; flex-wrap: wrap;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.details, .categories, .sort {
+  composes: tab;
+
+  &.active {
+    display: block;
+  }
+}
+
+.filters {
+  composes: tab;
+  align-items: flex-start; justify-content: flex-start; flex-wrap: wrap;
+
+  &.active {
+    display: flex;
+  }
+}

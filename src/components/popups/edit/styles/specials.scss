@@ -1,0 +1,27 @@
+@import '../../../../style/mixins.scss';
+@import '../../../../style/variables.scss';
+
+.specials {
+  width: 100%; padding-top: 20px;
+
+  h3 {
+    color: #161616; font-size: 16px; font-family: $m-sb; line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  [class*="module"] {
+    display: flex; align-items: flex-start;
+
+    @include respond-to(sm) {
+      flex-direction: column;
+    }
+    
+    label {
+      width: 25%; padding-right: 10px;
+
+      @include respond-to(sm) {
+        width: 100%; padding-right: 0; margin-bottom: 5px;
+      }
+    }
+  }
+}

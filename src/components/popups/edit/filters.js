@@ -5,11 +5,13 @@ import Filter from './filter'
 
 import { filterValuesNames, filterNames } from './const'
 
+import style from './styles/filters.scss'
+
 const own = o => Object.getOwnPropertyNames(o)
 const withoutCat = o => Object.getOwnPropertyNames(o).filter(f => f !== "category_mfo" && f !== "category_cards")
 
 const Filters = ({values, filters, onChange}) => (
-  <div>
+  <div class={style.filters}>
     {own(values).map((filter, index) => (
       <Range name={filter} key={index} title={filterValuesNames[filter]}
         values={values[filter]} onChange={onChange} />

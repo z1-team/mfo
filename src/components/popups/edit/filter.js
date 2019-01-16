@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import style from './styles/filter.scss'
+
 class EditPopupFilter extends Component {
   constructor(props) {
     super(props)
@@ -26,12 +28,12 @@ class EditPopupFilter extends Component {
 
   render({title, names}, {values}) {
     return (
-      <div class="popup-filter">
+      <div class={style.checkbox}>
         <h3>{title}</h3>
         <ul>
           {names.map((name, index) => (
             <li key={index}>
-    					<label class={values[index] ? 'active' : ''}><input data-index={index} onChange={this.handleChange} type="checkbox"/>{name}</label>
+    					<label class={values[index] ? style.active : ''}><input data-index={index} onChange={this.handleChange} type="checkbox"/>{name}</label>
             </li>
           ))}
         </ul>

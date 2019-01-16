@@ -1,0 +1,21 @@
+@import '../../../../style/mixins.scss';
+@import '../../../../style/variables.scss';
+
+.filters {
+  display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; width: 100%;
+
+  h3 {
+    color: #161616; font-size: 16px; font-family: $m-sb; line-height: 20px;
+    margin-bottom: 5px;
+  }
+
+  ul {
+    li {
+      margin-bottom: 5px; padding-right: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
