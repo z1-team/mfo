@@ -3,7 +3,7 @@ import fullURL from './config'
 
 export default {
   all() {
-    const url = fullURL('api/v1/partners')
+    const url = fullURL('v1/partners')
     return fetch(url).then((response) => {
       if (response.status >= 400) {
         throw new Error('Bad response from server')
@@ -13,7 +13,7 @@ export default {
   },
 
   update(id, partner, token) {
-    const url = fullURL('api/v1/partners')
+    const url = fullURL('v1/partners')
     if (token === null) {
       throw new Error('Неавторизованный запрос!')
     } else {
@@ -36,7 +36,7 @@ export default {
   },
 
   delete(id, token) {
-    const url = fullURL(`api/v1/partners/${id}`)
+    const url = fullURL(`v1/partners/${id}`)
     if (token === null) {
       throw new Error('Неавторизованный запрос!')
     } else {

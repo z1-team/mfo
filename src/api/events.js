@@ -3,7 +3,7 @@ import fullURL from './config'
 
 export default {
   send(event) {
-    const url = fullURL('api/v1/event')
+    const url = fullURL('v1/event')
     return fetch(url, {
       method: 'POST',
       headers: {

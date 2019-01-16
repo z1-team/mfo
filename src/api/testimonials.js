@@ -3,7 +3,7 @@ import fullURL from './config'
 
 export default {
   find(target) {
-    const url = fullURL(`api/v1/testimonials/${target}`)
+    const url = fullURL(`v1/testimonials/${target}`)
     return fetch(url).then((response) => {
       if (response.status >= 400) {
         throw new Error('Bad response from server')
@@ -21,7 +21,7 @@ export default {
   },
 
   send(testimonial) {
-    const url = fullURL('api/v1/testimonials')
+    const url = fullURL('v1/testimonials')
     return fetch(url, {
       method: 'POST',
       headers: {
@@ -39,7 +39,7 @@ export default {
   },
 
   public(testimonial, token) {
-    const url = fullURL('api/v1/testimonials')
+    const url = fullURL('v1/testimonials')
     if (!token) {
       throw new Error('Access denied!')
     }
@@ -61,7 +61,7 @@ export default {
   },
 
   delete(testimonialId, token) {
-    const url = fullURL(`api/v1/testimonials/${testimonialId}`)
+    const url = fullURL(`v1/testimonials/${testimonialId}`)
     if (!token) {
       throw new Error('Access denied!')
     }

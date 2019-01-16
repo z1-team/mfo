@@ -2,7 +2,7 @@ import fullURL from './config'
 
 export default {
   info() {
-    const url = fullURL('api/v1/geolocation')
+    const url = fullURL('v1/geolocation')
     return fetch(url, {
       method: 'GET',
       headers: {

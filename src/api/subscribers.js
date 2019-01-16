@@ -3,7 +3,7 @@ import fullURL from './config'
 
 export default {
   add(clientId, email) {
-    const url = fullURL('api/v1/subscribe')
+    const url = fullURL('v1/subscribe')
     return fetch(url, {
       method: 'POST',
       headers: {

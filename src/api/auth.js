@@ -3,7 +3,7 @@ import fullURL from './config'
 
 export default {
   login(login, password) {
-    const url = fullURL('api/v1/auth')
+    const url = fullURL('v1/auth')
     return fetch(url, {
       method: 'POST',
       headers: {
