@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import React from "react"
 
 import { mfoFilters, cardsFilters } from './filters'
 
@@ -71,9 +72,12 @@ class Filters extends Component {
     }
   }
 
-  isFilterActive = (filter) => {
-    if(filter) {
-      return filter.some(f => f)
+  isFilterActive = (filter, type) => {
+    switch(type) {
+      case 'range':
+        return filter !== null
+      default:
+        return filter.some(f => f)
     }
   }
 
@@ -83,11 +87,11 @@ class Filters extends Component {
     return (
       <div class={style.sidebar}>
         <p>Всего микрозаймов: <strong>{total}</strong><br/>Найдено в: <strong>{location}</strong></p>
-      {filtersNames.map(filter => (
-        <SearchModule title={filter.title} name={filter.name} onChange={onChange} isActive={this.isFilterActive(filters[filter.name])}>
-          {this.filtersType(filter)}
-  			</SearchModule>
-      ))}
+        {filtersNames.map(filter => (
+          <SearchModule title={filter.title} name={filter.name} onChange={this.handleChange} isActive={this.isFilterActive(filters[filter.name], filter.type)}>
+            {this.filtersType(filter)}
+          </SearchModule>
+        ))}
       </div>
     )
   }

@@ -1,4 +1,6 @@
 import { h, Component } from 'preact'
+import Masonry from 'react-masonry-component'
+
 import Testi from '../testi'
 import LeaveTesti from '../leave-testi'
 import StarRating from '../star-rating'
@@ -48,12 +50,15 @@ class Testimonials extends Component {
                 <img src={partner && partner.main && partner.main.logo}/>
               </figure>
             </header>
-            {testimonials.length ?
-                testimonials.map((item) => (
-                  <Testi key={item.id} testiID={item.id} text={item.text} user={item.name} rating={item.rating} onDelete={onDelete} />
-                ))
-              : <h3>Отзывов пока нет.</h3>
-            }
+
+              {testimonials.length ?
+                  <Masonry className="masonry">
+                    {testimonials.map((item) => (
+                      <Testi key={item.id} testiID={item.id} text={item.text} user={item.name} rating={item.rating} onDelete={onDelete} />
+                    ))}
+                  </Masonry>
+                : <h3>Отзывов пока нет.</h3>
+              }
             <LeaveTesti id={partner ? partner.id : null} onSubmit={onSubmit}/>
           </div>
         </div>
