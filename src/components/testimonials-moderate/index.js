@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import TestiModerate from '../testi-moderate'
 
 import style from './style.scss'
 

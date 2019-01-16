@@ -54,7 +54,7 @@ class Testimonials extends Component {
                 ))
               : <h3>Отзывов пока нет.</h3>
             }
-            <LeaveTesti onSubmit={onSubmit}/>
+            <LeaveTesti id={partner ? partner.id : null} onSubmit={onSubmit}/>
           </div>
         </div>
       </div>

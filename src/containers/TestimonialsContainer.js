@@ -12,6 +12,7 @@ const mapStateToProps = (state, {id}) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onEnter(id) {
+    console.log('Fetching testimonials')
     dispatch(fetchTestimonials(id))
   },
 
@@ -25,7 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 class TestimonialsContainer extends Component {
-  compontentDidMount() {
+  componentDidMount() {
     const {id, onEnter} = this.props
     onEnter(id)
   }

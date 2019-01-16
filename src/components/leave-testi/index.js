@@ -44,6 +44,15 @@ class Testi extends Component {
     this.setState({rating: value})
   }
 
+  handleSubmit = (event) => {
+    const {name, email, text, rating} = this.state
+    const {id, onSubmit} = this.props
+    event.preventDefault()
+    if (typeof onSubmit === 'function') {
+      onSubmit({partner: id, name, email, text, rating})
+    }
+  }
+
   render({onSubmit}, {name, email, text, rating, isEditing}) {
     return(
       <div class={style.leaveTesti}>
@@ -72,7 +81,7 @@ class Testi extends Component {
             </div>
           </section>
           <footer>
-            <button>Отправить отзыв</button>
+            <button onClick={this.handleSubmit}>Отправить отзыв</button>
           </footer>
         </form>
       </div>

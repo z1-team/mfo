@@ -2,7 +2,8 @@ import { h, Component } from 'preact'
 import { connect } from 'preact-redux'
 import TestimonialsModerate from '../components/testimonials-moderate'
 import { getUnpublishedTestimonials } from '../selectors/testimonials'
-import { deleteTestimonial, publicTestimonial } from '../actions/testimonials'
+import { fetchNewTestimonials, deleteTestimonial,
+  publicTestimonial } from '../actions/testimonials'
 
 const mapStateToProps = (state) => ({
   testimonials: getUnpublishedTestimonials(state)
@@ -23,7 +24,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 class ModerationContainer extends Component {
-  compontentDidMount() {
+  componentDidMount() {
     this.props.onEnter()
   }
 
