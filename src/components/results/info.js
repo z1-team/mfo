@@ -23,7 +23,7 @@ class CardInfo extends Component {
 				<CardDetails details={details} />
 				<ul>
 					<li>{main.firstLoan && main.firstLoan}</li>
-					<li><button onClick={this.handleClick}>Подробнее <img src="/assets/img/more.png"/></button></li>
+					<li><button onClick={this.handleClick}><span>Подробнее</span> <i class="if fa-arrow-down"></i></button></li>
 				</ul>
 			</footer>
 		)

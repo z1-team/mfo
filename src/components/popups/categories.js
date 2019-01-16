@@ -11,7 +11,7 @@ class Category extends Component {
 
 	render({isActive, category}) {
 		return (
-			<li class={isActive ? 'active' : ''}>
+			<li class={isActive ? style.active : ''}>
 				<button onClick={this.handleClick}>
 					{category.text}
 				</button>
@@ -34,7 +34,7 @@ class Categories extends Component {
 						<Category
 							key={category.index}
 							category={category}
-							isActive={value[index]}
+							isActive={value[index-1]}
 							onClick={this.handleClick}
 						/>
 					))}

@@ -46,18 +46,18 @@ class TestiModerate extends Component {
     return (
       <div class={style.testi}>
         <div>
-          <i class="fas fa-quote-left"></i>
+          <i class="if fa-quote-left"></i>
           {isEdit ? <textarea value={text} tabIndex="1" autoFocus onBlur={this.handleBlur} onChange={this.handleChange}></textarea> : <p onClick={this.handleEdit}>{text}</p>}
-          <i class="fas fa-quote-right"></i>
+          <i class="if fa-quote-right"></i>
         </div>
         <footer>
           <p>{user}</p>
           <ul class={`rate-${rating}`}>
-            <li><i class="fas fa-star"></i></li>
-            <li><i class="fas fa-star"></i></li>
-            <li><i class="fas fa-star"></i></li>
-            <li><i class="fas fa-star"></i></li>
-            <li><i class="fas fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
+            <li><i class="if fa-star"></i></li>
           </ul>
         </footer>
         <div class={style.actions}>

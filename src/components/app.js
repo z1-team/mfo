@@ -15,10 +15,13 @@ import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
 import Confidentiality from '../routes/inner/confidentiality'
 import NotFound from '../routes/not-found'
+import SmartTest from '../routes/smart-test'
 
 import UsefullInfo from './usefull-info'
 
 import api from '../api'
+
+import style from '../style/index.scss'
 
 import { openPopup } from '../actions/popup'
 
@@ -60,9 +63,8 @@ class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<div id="app">
+				<div id="app" class="app">
 					<HeaderContainer />
-					<Match path="/">{displayIntro}</Match>
 					<Router onChange={this.handleRoute}>
 						<Main path="/" partners="mfo" />
 						<Main path="/cards" partners="cards" />
@@ -70,6 +72,7 @@ class App extends Component {
 						<TestimonialsContainer path="/testimonials/:id" />
 						<AboutProject path="/about" />
 						<Confidentiality path="/confidentiality" />
+						<SmartTest path="/smart-test" />
 						<NotFound default />
 					</Router>
 					<UsefullInfo />

@@ -1,10 +1,10 @@
 import { h } from 'preact'
 
-import style from './style.scss'
+import style from './styles/subscribed.scss'
 
 const Subscribed = ({onClose}) => (
-  <div class="subscribed">
-    <a href="#" class="close-popup" onClick={onClose}></a>
+  <div class={style.subscribed}>
+    <a href="#" class={style.close} onClick={onClose}></a>
     <p>Спасибо за подписку!</p>
   </div>
 )

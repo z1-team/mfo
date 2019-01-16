@@ -1,0 +1,59 @@
+.if {
+  font-family: 'icon-font' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.fa-credit-card:before {
+  content: "\e90e";
+}
+.fa-upload:before {
+  content: "\e90d";
+}
+.fa-arrow-down:before {
+  content: "\e900";
+}
+.fa-arrow-up:before {
+  content: "\e901";
+}
+.fa-calendar:before {
+  content: "\e902";
+}
+.fa-edit:before {
+  content: "\e903";
+}
+.fa-gripfire:before {
+  content: "\e904";
+}
+.fa-marker:before {
+  content: "\e905";
+}
+.fa-money:before {
+  content: "\e906";
+}
+.fa-percent:before {
+  content: "\e907";
+}
+.fa-quote-left:before {
+  content: "\e908";
+}
+.fa-quote-right:before {
+  content: "\e909";
+}
+.fa-star:before {
+  content: "\e90a";
+}
+.fa-times:before {
+  content: "\e90b";
+}
+.fa-close:before {
+  content: "\e90c";
+}

@@ -33,12 +33,12 @@ class Testimonials extends Component {
     const starRate = partner && partner.sortBy ? partner.sortBy.rating : 0
 
     return (
-      <div className={style.wrTestimonials}>
-        <div className="container">
-          <div className={style.testimonials}>
+      <div class={style.wrTestimonials}>
+        <div class="container">
+          <div class={style.testimonials}>
             <header>
               <h2>Отзывы кредита “{partner && partner.main && partner.main.title}”
-                <div className={style.rating}>
+                <div class={style.rating}>
                   <StarRating rating={starRate} />
                   <p>{testimonials.length} {this.getEnding()}</p>
                   {partner && partner.sortBy && partner.sortBy.rating && <span>({rating} из 5)</span>}

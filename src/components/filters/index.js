@@ -71,14 +71,20 @@ class Filters extends Component {
     }
   }
 
-  render({url, total, location, onChange}) {
-    const filters = filterName[url] || filterName.mfo
+  isFilterActive = (filter) => {
+    if(filter) {
+      return filter.some(f => f)
+    }
+  }
+
+  render({url, total, location, onChange, filters}) {
+    const filtersNames = filterName[url] || filterName.mfo
 
     return (
       <div class={style.sidebar}>
         <p>Всего микрозаймов: <strong>{total}</strong><br/>Найдено в: <strong>{location}</strong></p>
-      {filters.map(filter => (
-        <SearchModule title={filter.title} name={filter.name} onChange={onChange}>
+      {filtersNames.map(filter => (
+        <SearchModule title={filter.title} name={filter.name} onChange={onChange} isActive={this.isFilterActive(filters[filter.name])}>
           {this.filtersType(filter)}
   			</SearchModule>
       ))}

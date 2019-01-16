@@ -72,14 +72,14 @@
 				}
 
 				&.active {
-					font-family: $m-b;
+					font-family: $m-sb;
 				}
 			}
 		}
 	}
 
 	h1, h2 {
-		color: $white; font-family: $m-th; text-align: center; text-transform: uppercase; text-shadow: -5px 3px 6px rgba(0, 0, 0, 0.67);
+		color: $white; font-family: $m-l; text-align: center; text-transform: uppercase; text-shadow: -5px 3px 6px rgba(0, 0, 0, 0.67);
 		padding: 0 10px;
 		background: rgba(0,0,0,0.75); border-radius: 10px;
 	}

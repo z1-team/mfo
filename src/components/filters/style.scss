@@ -16,8 +16,14 @@
   }
 
   & > p {
-    font-size: 12px; font-family: $os-l;
-    margin-bottom: 10px;
+    font-size: 12px; font-family: $m-l;
+    padding-bottom: 19px; margin-bottom: 19px;
+    border-bottom: solid 1px #f7f7f7;
+
+  	&:last-child {
+  		margin-bottom: 0; padding-bottom: 0;
+  		border-bottom: none;
+  	}
 
     strong {
       font-size: 16px; font-family: $os-b;
@@ -61,7 +67,7 @@
 			background: transparent;
 			cursor: pointer;
 
-			&:hover {
+			&:hover, &.active {
 				color: #f96868;
 			}
 		}

@@ -40,6 +40,12 @@
       &:last-child {
         margin-bottom: 0;
       }
+
+      &.active {
+        button {
+          color: #f96868; font-family: $m-sb;
+        }
+      }
     }
   }
 }

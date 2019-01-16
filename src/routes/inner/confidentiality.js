@@ -3,9 +3,9 @@ import { h } from 'preact'
 import style from './style.scss'
 
 const Confidentiality = () => (
-	<div className={style.wrInnerText}>
-		<div className="container">
-			<div className={style.innerText}>
+	<div class={style.wrInnerText}>
+		<div class="container">
+			<div class={style.innerText}>
 				<h2>Политика защиты персональной информации пользователей сайта Занять-денег.онлайн</h2>
 				<p>Настоящая Политика конфиденциальности персональных данных (далее – Политика конфиденциальности) действует в отношении всей информации,
 				которую Администрация сайта может получить о пользователе во время использования сайта занять-денег.онлайн.</p>

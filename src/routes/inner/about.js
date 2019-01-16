@@ -3,9 +3,9 @@ import { h } from 'preact'
 import style from './style.scss'
 
 const AboutProject = () => (
-	<div className={style.wrInnerText}>
-		<div className="container">
-			<div className={style.innerText}>
+	<div class={style.wrInnerText}>
+		<div class="container">
+			<div class={style.innerText}>
 				<h2>О проекте</h2>
 				<p>Наш сервис предоставляет актуальную информацию в области кредитования.</p>
 				<p>Вы можете ознакомиться с предложениями популярных Кредитных карт, потребительских кредитов и микрозаймов.</p>

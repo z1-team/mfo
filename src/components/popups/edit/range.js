@@ -33,7 +33,7 @@ class EditPopupRange extends Component {
     const {valueFrom, valueTo} = this.state
 
     return (
-      <div className="popup-filter_range">
+      <div class="popup-filter_range">
         <h3>{title}</h3>
         <ul>
           <li>
