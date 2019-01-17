@@ -32,7 +32,7 @@ export function updatePartner(id, partner) {
     dispatch({type: PARTNER_UPDATE, status: 1, id, partner})
     try {
       const status = await api.partners.update(id, partner, token)
-      dispatch({type: PARTNER_UPDATE, status})
+      dispatch({type: PARTNER_UPDATE, status: 2})
     } catch (error) {
       dispatch({type: PARTNER_UPDATE, status: 0, error})
     }
@@ -45,7 +45,7 @@ export function deletePartner(id) {
     dispatch({type: PARTNER_DELETE, status: 1, id})
     try {
       const status = await api.partners.delete(id, token)
-      dispatch({type: PARTNER_DELETE, status})
+      dispatch({type: PARTNER_DELETE, status: 2})
     } catch (error) {
       dispatch({type: PARTNER_DELETE, status: 0, error})
     }
