@@ -9,10 +9,10 @@ class Results extends Component {
     this.props.onEnter()
   }
 
-  render({tail, isLoggedIn, partners, onOrder, onEdit, onMore}) {
+  render({tail, isLoggedIn, partners, onOrder, onEdit, onMore, onAdd}) {
     return (
       <div class="list">
-        {isLoggedIn && <button class={style.addNew} onClick={this.handleAdd}>Добавить партнера</button>}
+        {isLoggedIn && <button class={style.addNew} onClick={onAdd}>Добавить партнера</button>}
         {partners.map((partner) => (
           <Card key={partner.id} item={partner}
             tail={tail} onOrder={onOrder}

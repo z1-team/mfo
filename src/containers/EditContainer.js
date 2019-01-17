@@ -3,28 +3,38 @@ import { connect } from 'preact-redux'
 
 import EditPopup from '../components/popups/edit'
 import { getSelectedPartner } from '../selectors/partners'
+import { closePopup } from '../actions/popup'
+import { updatePartner, deletePartner } from '../actions/partners'
 
 const mapStateToProps = (state, {url}) => ({
   partner: getSelectedPartner(state),
   url
 })
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch) => ({
   onClose() {
-    console.log('closed')
+    dispatch(closePopup())
   },
   onSave(id, partner) {
-    console.log(id, partner)
+    dispatch(updatePartner(id, partner))
   },
   onDelete(id) {
-    console.log(id)
+    dispatch(deletePartner(id))
   },
   onCancel() {
-    console.log('canceled')
+    dispatch(closePopup())
   }
 })
+
+const EditPopupContainer = ({partner, ...props}) => (
+  <EditPopup
+    key={partner ? partner.id : 'No'}
+    partner={partner}
+    {...props}
+  />
+)
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditPopup)
+)(EditPopupContainer)
