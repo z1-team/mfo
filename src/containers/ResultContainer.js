@@ -1,16 +1,18 @@
 import { h, Component } from 'preact'
 import Results from '../components/results'
-import { getSortedPartners } from '../selectors/partners'
+import { getSomePartners, hasMore } from '../selectors/partners'
 import { getLinksTail } from '../selectors/session'
 import { isLoggedIn } from '../selectors/auth'
 import { connect } from 'preact-redux'
 import { createPartner, fetchPartners,
-  selectPartner } from '../actions/partners'
+  selectPartner, nextPartners } from '../actions/partners'
 
 const mapStateToProps = (state, {partners}) => ({
   tail: getLinksTail(state),
   isLoggedIn: isLoggedIn(state),
-  partners: getSortedPartners(state, {partners})
+  isFetching: state.partners.isFetching,
+  partners: getSomePartners(state, {partners}),
+  hasMore: hasMore(state, {partners})
 })
 
 const mapDispatchToProps = (dispatch, {partners: type}) => ({
@@ -32,6 +34,10 @@ const mapDispatchToProps = (dispatch, {partners: type}) => ({
 
   onAdd() {
     dispatch(createPartner(type))
+  },
+
+  onScroll() {
+    dispatch(nextPartners(8))
   }
 })
 
