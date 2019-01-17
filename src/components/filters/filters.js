@@ -149,9 +149,9 @@ export const cardsFilters = [
   //   ]
   // },
   {
-    name: "Cashback",
+    name: "cashback",
     type: "radio",
-    title: "cashback",
+    title: "Cashback",
     items: [
       "Да",
       "Нет"

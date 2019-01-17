@@ -17,7 +17,6 @@ const mapStateToProps = (state, {partners}) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onChange(name, value) {
-    console.log(name, value)
     dispatch(changeFilter(name, value))
     // window.scrollTo({
     //     top: document.getElementById('results').getBoundingClientRect().top + window.pageYOffset - 100,

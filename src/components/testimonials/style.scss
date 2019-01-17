@@ -50,7 +50,7 @@
 	}
 
 	.rating {
-		 margin-left: 15px; display: flex; align-items: center;
+		 margin-left: 15px; display: flex; align-items: center; flex-shrink: 0;
 
 		@include respond-to(sm) {
 			margin-left: 0; margin-top: 5px;

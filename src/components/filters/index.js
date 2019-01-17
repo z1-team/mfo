@@ -73,12 +73,15 @@ class Filters extends Component {
   }
 
   isFilterActive = (filter, type) => {
-    switch(type) {
-      case 'range':
+    if(filter) {
+      switch(type) {
+        case 'range':
         return filter !== null
-      default:
+        default:
         return filter.some(f => f)
+      }
     }
+    return false
   }
 
   render({url, total, location, onChange, filters}) {

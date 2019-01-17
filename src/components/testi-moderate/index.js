@@ -43,11 +43,10 @@ class TestiModerate extends Component {
   }
 
   render({rating, user, title, item}, {isEdit, text}) {
-    console.log(item)
     return (
       <div class={style.testi}>
         <header>
-          <h3>Отзыв партнера &laquo;{title}&raquo;</h3>
+          <h3>Отзыв партнера &laquo;<span>{title}</span>&raquo;</h3>
         </header>
         <div>
           <i class="if fa-quote-left"></i>

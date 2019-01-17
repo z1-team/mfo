@@ -51,8 +51,14 @@ const displayPopups = ({matches, path, url}) => (
 )
 
 class App extends Component {
+	state = {
+		app: 'app'
+	}
+
 	handleRoute = e => {
 		this.currentUrl = e.url
+
+		this.appPadding()
 	}
 
 	handleCategories = (event) => {
@@ -60,10 +66,18 @@ class App extends Component {
 		store.dispatch(openPopup('categories'))
 	}
 
-	render() {
+	appPadding = () => {
+		if(this.currentUrl === '/' || this.currentUrl === '/cards') {
+			this.setState({app: 'app partners'})
+		} else {
+			this.setState({app: 'app'})
+		}
+	}
+
+	render(props, {app}) {
 		return (
 			<Provider store={store}>
-				<div id="app" class="app">
+				<div id="app" class={app}>
 					<HeaderContainer />
 					<Router onChange={this.handleRoute}>
 						<Main path="/" partners="mfo" />

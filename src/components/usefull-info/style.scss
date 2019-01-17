@@ -26,14 +26,32 @@
 		ul {
 			width: 100%; display: flex; align-items: center; justify-content: center;
 
+      @include respond-to(xs) {
+        flex-direction: column;
+      }
+
 			li {
-				// margin-bottom: 4px;
-				padding-right: 13px; margin-right: 14px;
+				padding-right: 13px; margin-right: 14px; position: relative;
 				border-right: solid 1px #484848;
+
+        @include respond-to(xs) {
+          padding-right: 0; margin-right: 0; margin-bottom: 5px; padding-bottom: 7px;
+          border-right: none;
+
+          &:after {
+            content: '';
+            display: block; width: 86px; height: 1px; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+            background: #484848;
+          }
+        }
 
 				&:last-child {
 					margin-bottom: 0; padding-right: 0; margin-right: 0;
 					border-right: none;
+
+          &:after {
+            content: none;
+          }
 				}
 
 				a {

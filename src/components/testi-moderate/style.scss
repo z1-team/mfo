@@ -24,6 +24,10 @@
 
 	h3 {
 		color: #464646; font-size: 18px; font-family: $m-sb; line-height: 25px;
+
+		span {
+			color: #f96868;
+		}
 	}
 
 	.delete {
@@ -64,11 +68,25 @@
 		display: flex; align-items: center; justify-content: space-between; padding: 5px 19px 12px;
 		opacity: 0;
 
+		@include respond-to(sm) {
+			flex-direction: column; align-items: center;
+		}
+
 		button {
 			color: $white; font-size: 16px; font-family: $m-sb; line-height: 22px;
 			margin: 0; display: block; padding: 7px 12px;
 			background: #f96868; border: solid 2px #f96868; border-radius: 5px;
 			cursor: pointer;
+
+			@include respond-to(sm) {
+				font-size: 14px; line-height: 18px; text-align: center;
+				padding: 6px 8px; width: 100%; margin-bottom: 5px;
+				border-width: 1px;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 
 			&:hover {
 				color: #f96868;

@@ -4,6 +4,10 @@
 .main {
   width: calc(100% - 220px);
 
+  @include respond-to(sm) {
+    width: 100%;
+  }
+
   label {
     color: #161616; font-size: 14px; font-family: $m-r; line-height: 18px;
     width: 100%; margin-bottom: 5px; display: flex; align-items: center; justify-content: space-between;
