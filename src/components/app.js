@@ -10,6 +10,7 @@ import ModerationContainer from '../containers/ModerationContainer'
 import TestimonialsContainer from '../containers/TestimonialsContainer'
 import FooterContainer from '../containers/FooterContainer'
 import PopupsContainer from '../containers/PopupsContainer'
+import GuardContainer from '../containers/GuardContainer'
 
 import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
@@ -29,6 +30,8 @@ import { initSession } from '../actions/session'
 const displayIntro = ({matches, path, url}) => (
 	url === '/' || url === '/cards' ? <IntroContainer url={url} /> : null
 )
+
+const guard = ({url}) => <GuardContainer url={url} />
 
 const categoriesTitle = (url) => {
 	switch(url) {
@@ -96,6 +99,7 @@ class App extends Component {
 					</Router>
 					<UsefullInfo />
 					<FooterContainer />
+					<Match>{guard}</Match>
 					<Match>{displayPopups}</Match>
 					<Match>{categoriesToggle(this.handleCategories)}</Match>
 				</div>
