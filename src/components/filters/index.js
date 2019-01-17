@@ -1,5 +1,4 @@
 import { h, Component } from 'preact'
-import React from "react"
 
 import { mfoFilters, cardsFilters } from './filters'
 
@@ -7,6 +6,7 @@ import CheckboxFilter from './checkbox'
 import RadioFilter from './radio'
 import SearchModule from './module'
 import RangeInput from '../range-input'
+import StickyBox from 'react-sticky-box/src'
 
 import style from './style.scss'
 
@@ -85,14 +85,16 @@ class Filters extends Component {
     const filtersNames = filterName[url] || filterName.mfo
 
     return (
-      <div class={style.sidebar}>
-        <p>Всего микрозаймов: <strong>{total}</strong><br/>Найдено в: <strong>{location}</strong></p>
-        {filtersNames.map(filter => (
-          <SearchModule title={filter.title} name={filter.name} onChange={this.handleChange} isActive={this.isFilterActive(filters[filter.name], filter.type)}>
-            {this.filtersType(filter)}
-          </SearchModule>
-        ))}
-      </div>
+      <StickyBox offsetTop={66} offsetBottom={20}>
+        <div class={style.sidebar}>
+          <p>Всего микрозаймов: <strong>{total}</strong><br/>Найдено в: <strong>{location}</strong></p>
+          {filtersNames.map(filter => (
+            <SearchModule title={filter.title} name={filter.name} onChange={this.handleChange} isActive={this.isFilterActive(filters[filter.name], filter.type)}>
+              {this.filtersType(filter)}
+            </SearchModule>
+          ))}
+        </div>
+      </StickyBox>
     )
   }
 }
