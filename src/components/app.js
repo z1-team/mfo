@@ -24,6 +24,7 @@ import api from '../api'
 import style from '../style/index.scss'
 
 import { openPopup } from '../actions/popup'
+import { initSession } from '../actions/session'
 
 const displayIntro = ({matches, path, url}) => (
 	url === '/' || url === '/cards' ? <IntroContainer url={url} /> : null
@@ -53,6 +54,10 @@ const displayPopups = ({matches, path, url}) => (
 class App extends Component {
 	state = {
 		app: 'app'
+	}
+
+	componentDidMount() {
+		store.dispatch(initSession())
 	}
 
 	handleRoute = e => {

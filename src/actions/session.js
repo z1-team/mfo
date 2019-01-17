@@ -67,6 +67,7 @@ export function initSession() {
   return async (dispatch, getState) => {
     const session = makeSession()
     dispatch({type: SESSION_INIT, session})
+    initGeoLocation(dispatch)
     try {
       const clientId = await getClientId()
       dispatch(fetchABTest(clientId))
@@ -78,6 +79,5 @@ export function initSession() {
     } catch (error) {
       dispatch({type: SESSION_ERROR, error})
     }
-    initGeoLocation(dispatch)
   }
 }
