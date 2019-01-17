@@ -18,6 +18,14 @@
 		}
 	}
 
+	header {
+		margin-bottom: 5px; padding: 10px 19px;
+	}
+
+	h3 {
+		color: #464646; font-size: 18px; font-family: $m-sb; line-height: 25px;
+	}
+
 	.delete {
 		color: #f96868; font-size: 16px;
 		display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; position: absolute; right: 5px; top: 5px; z-index: 5;

@@ -108,7 +108,10 @@ class FiltrationCore {
   }
 
   interestingFilters() {
-    return Object.getOwnPropertyNames(this.partners[this.ids[0]].filters)
+    if(this.ids.length > 0 && this.partners[this.ids[0]]) {
+      return Object.getOwnPropertyNames(this.partners[this.ids[0]].filters)
+    }
+    return []
   }
 
   filterValue(filterName) {

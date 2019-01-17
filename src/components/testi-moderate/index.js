@@ -42,9 +42,13 @@ class TestiModerate extends Component {
     }
   }
 
-  render({rating, user}, {isEdit, text}) {
+  render({rating, user, title, item}, {isEdit, text}) {
+    console.log(item)
     return (
       <div class={style.testi}>
+        <header>
+          <h3>Отзыв партнера &laquo;{title}&raquo;</h3>
+        </header>
         <div>
           <i class="if fa-quote-left"></i>
           {isEdit ? <textarea value={text} tabIndex="1" autoFocus onBlur={this.handleBlur} onChange={this.handleChange}></textarea> : <p onClick={this.handleEdit}>{text}</p>}

@@ -10,8 +10,8 @@ const initialState = {
   selected: null,
   cards: [],
   credits: [],
-  mfo: ["2"],
-  data: {"2": partner}
+  mfo: [],
+  data: {}
 }
 
 const partnersOfType = (type, partners) => (

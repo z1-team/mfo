@@ -12,6 +12,7 @@ const TestimonialsModerate = ({testimonials, onDelete, onPublic}) => (
           <TestiModerate
             key={item.id}
             item={item}
+            title={item.title}
             text={item.text}
             user={item.name}
             rating={item.rating}
