@@ -4,6 +4,10 @@ import fullURL from './config'
 export default {
   send(event) {
     const url = fullURL('v1/event')
+    console.log(queryString.stringify({
+      ...event,
+      payload: JSON.stringify(event.payload)
+    }))
     return fetch(url, {
       method: 'POST',
       headers: {

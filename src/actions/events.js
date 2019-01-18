@@ -1,5 +1,5 @@
-import {sessionInfo} from '../selectors/session'
-import {authToken} from '../selectors/auth'
+import { sessionInfo } from '../selectors/session'
+import { authToken } from '../selectors/auth'
 import api from '../api'
 
 function getDateTime() {
@@ -19,10 +19,33 @@ function getDateTime() {
 }
 
 function fullEvent(event, state) {
+  console.log('!!!', state)
   const datetime = getDateTime()
   return {
     ...event,
     ...sessionInfo(state),
+    date: datetime.utcDate,
+    datetime: datetime.utcDateTime,
+    localtime: datetime.local
+  }
+}
+
+function fullEvent(event, state) {
+  const datetime = getDateTime()
+  const session = state.session
+  return {
+    ...event,
+    ...sessionInfo(state),
+    payload: {
+      ...event.payload,
+      utm_term: session.query.utm_term || 'NULL',
+      utm_medium: session.query.utm_medium || 'NULL',
+      utm_content: session.query.utm_content || 'NULL',
+      utm_gbid: session.query.utm_gbid || 'NULL',
+      utm_phrase: session.query.utm_phrase || 'NULL',
+      utm_gender: session.query.utm_gender || 'NULL',
+      utm_age: session.query.utm_age || 'NULL'
+    },
     date: datetime.utcDate,
     datetime: datetime.utcDateTime,
     localtime: datetime.local

@@ -26,6 +26,7 @@ import style from '../style/index.scss'
 
 import { openPopup } from '../actions/popup'
 import { initSession } from '../actions/session'
+import { sendEvent } from '../actions/events'
 
 const displayIntro = ({matches, path, url}) => (
 	url === '/' || url === '/cards' ? <IntroContainer url={url} /> : null
@@ -64,8 +65,16 @@ class App extends Component {
 	}
 
 	handleRoute = e => {
-		this.currentUrl = e.url
+		if (this.currentUrl) {
+			store.dispatch(sendEvent({
+				type: 'change_direction',
+				payload: {
+					direction: e.url
+				}
+			}))
+		}
 
+		this.currentUrl = e.url
 		this.appPadding()
 	}
 

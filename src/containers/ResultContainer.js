@@ -21,7 +21,13 @@ const mapDispatchToProps = (dispatch, {partners: type}) => ({
   },
 
   onOrder(partner) {
-    console.log('Go to partner: ', partner)
+    dispatch(sendEvent({
+      type: 'click_offer',
+      payload: {
+				partnerId: partner.id,
+        partnerName: partner.main.title
+      }
+    }))
   },
 
   onEdit(id) {
@@ -29,7 +35,13 @@ const mapDispatchToProps = (dispatch, {partners: type}) => ({
   },
 
   onMore(id, title) {
-    console.log('Discover partner: ', id, title)
+    dispatch(sendEvent({
+      type: 'offer_details',
+      payload: {
+				partnerId: id,
+        partnerName: title
+      }
+    }))
   },
 
   onAdd() {

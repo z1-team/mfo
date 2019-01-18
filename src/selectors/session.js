@@ -22,9 +22,9 @@ export const sessionInfo = ({session}) => ({
   utm_campaign: itOrNull(session.query.utm_campaign),
   utm_source: itOrNull(session.query.utm_source),
   user_id: itOrNull(session.userId),
-  user_region: itOrNull(session.ipInfo.region),
-  user_city: itOrNull(session.ipInfo.city),
-  user_country: itOrNull(session.ipInfo.country),
+  user_region: itOrNull(session.ipInfo && session.ipInfo.region),
+  user_city: itOrNull(session.ipInfo && session.ipInfo.city),
+  user_country: itOrNull(session.ipInfo && session.ipInfo.country),
   browser: session.browser
 })
 
