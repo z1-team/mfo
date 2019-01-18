@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
 
-import { mfoFilters, cardsFilters } from './filters'
+import { mfoFilters, cardsFilters, categoriesNames } from './filters'
 
 import CheckboxFilter from './checkbox'
 import RadioFilter from './radio'
@@ -86,6 +86,7 @@ class Filters extends Component {
 
   render({url, total, location, onChange, filters}) {
     const filtersNames = filterName[url] || filterName.mfo
+    const categories = categoriesNames[url] || categoriesNames.mfo
 
     return (
       <StickyBox offsetTop={66} offsetBottom={20}>
@@ -97,6 +98,11 @@ class Filters extends Component {
             </SearchModule>
           ))}
         </div>
+        {/* <div class={style.categories}>
+          <SearchModule title={categories.title} name={categories.name} onChange={this.handleChange} isActive={this.isFilterActive(filters[categories.name], categories.type)}>
+            {this.filtersType(categories)}
+          </SearchModule>
+        </div> */}
       </StickyBox>
     )
   }

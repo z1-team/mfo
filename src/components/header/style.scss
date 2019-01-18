@@ -66,6 +66,7 @@
 
 				&.active {
 					font-family: $m-sb;
+          pointer-events: none;
 
           &:hover {
             text-decoration: none;

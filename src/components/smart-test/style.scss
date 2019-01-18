@@ -3,15 +3,19 @@
 
 
 .wrSmartTest {
-  padding: 100px 0 75px; min-height: calc(100vh - 163px); display: flex; align-items: center;
+  padding: 100px 0 75px; min-height: calc(100vh - 163px);
   background: #fff;
 }
 
 .smartTest {
-    display: block;
+    display: block; margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 }
 
-.question {
+.message {
   display: flex; margin-bottom: 15px;
 
   &:last-child {
@@ -51,13 +55,27 @@
     }
   }
 
-  button {
+  button, span {
     color: #161616; font-size: 14px; font-family: $m-sb; line-height: 22px;
-    padding: 8px 18px;
+    padding: 8px 18px; display: inline-block;
     background: #ffffff; border: solid 1px #c2c2c2; border-radius: 4px;
     cursor: pointer;
 
-    &:hover, &.active {
+    &:hover {
+      color: #ffffff;
+      background: #f96868; border-color: #f96868;
+    }
+  }
+
+  span {
+    cursor: default;
+
+    &:hover {
+      color: #161616;
+      background: #ffffff; border-color: #c2c2c2;
+    }
+
+    &.active {
       color: #ffffff;
       background: #f96868; border-color: #f96868;
     }

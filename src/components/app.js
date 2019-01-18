@@ -16,8 +16,8 @@ import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
 import Confidentiality from '../routes/inner/confidentiality'
 import NotFound from '../routes/not-found'
-import SmartTest from '../routes/smart-test'
 
+import SmartTest from './smart-test'
 import UsefullInfo from './usefull-info'
 
 import api from '../api'
@@ -67,6 +67,7 @@ class App extends Component {
 		this.currentUrl = e.url
 
 		this.appPadding()
+		window.scrollTo(0, 0)
 	}
 
 	handleCategories = (event) => {
@@ -85,7 +86,7 @@ class App extends Component {
 	render(props, {app}) {
 		return (
 			<Provider store={store}>
-				<div id="app" class={app}>
+				<div id="app" class="app">
 					<HeaderContainer />
 					<Router onChange={this.handleRoute}>
 						<Main path="/" partners="mfo" />
@@ -101,7 +102,7 @@ class App extends Component {
 					<FooterContainer />
 					<Match>{guard}</Match>
 					<Match>{displayPopups}</Match>
-					<Match>{categoriesToggle(this.handleCategories)}</Match>
+					{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
 				</div>
 			</Provider>
 		)

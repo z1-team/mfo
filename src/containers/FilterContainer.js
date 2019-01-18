@@ -1,4 +1,4 @@
-import { h, Component } from 'preact'
+import { h } from 'preact'
 import Filters from '../components/filters'
 
 import { getActual, getTotalCount } from '../selectors/partners'
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
   onChange(name, value) {
     dispatch(changeFilter(name, value))
     // window.scrollTo({
-    //     top: document.getElementById('results').getBoundingClientRect().top + window.pageYOffset - 100,
+    //     top: 0,
     //     behavior: "smooth"
     // })
   }
