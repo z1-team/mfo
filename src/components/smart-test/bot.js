@@ -8,7 +8,7 @@ import style from './style.scss'
 import { QA, advice } from './const'
 
 const getStep = (step, answer) => (
-  step === 0 && answer === 0 ? QA.length : Math.min(step+1, QA.length)
+  step === 0 && answer === 1 ? QA.length : Math.min(step+1, QA.length)
 )
 
 class JustBot extends Component {

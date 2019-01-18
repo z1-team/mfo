@@ -4,13 +4,25 @@
 .wrHeader {
   padding: 15px 0; position: fixed; width: 100%; left: 0; top: 0; z-index: 30;
   background: #f96868; box-shadow: 0 0 5px 0px rgba(0,0,0,0.5);
+
+  @include respond-to(xs) {
+    padding: 10px 0;
+  }
 }
 
 .header {
 	display: flex; align-items: center; justify-content: space-between;
 
+  @include respond-to(xs) {
+    flex-direction: column;
+  }
+
 	.contacts {
 		display: flex; align-items: center;
+
+    @include respond-to(xs) {
+      margin-bottom: 10px;
+    }
 
 		a, p {
 			color: #fff; font-size: 12px; line-height: 14px; font-family: $m-r;

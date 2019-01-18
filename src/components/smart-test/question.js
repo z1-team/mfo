@@ -16,7 +16,7 @@ const Message = ({message}) => (
       <img src="/assets/img/alice.png"/>
     </figure>
     <div>
-      <h4>Алиса ({getDate()})</h4>
+      <h4>Алиса <span>({getDate()})</span></h4>
       <p>{message}</p>
     </div>
   </div>
