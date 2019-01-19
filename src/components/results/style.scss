@@ -46,7 +46,7 @@
   &.quick_solution,
   &.recommend {
     @include respond-to(xs) {
-      padding-top: 15px;
+      padding-top: 26px;
     }
 
     figure {

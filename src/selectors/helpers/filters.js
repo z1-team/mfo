@@ -124,7 +124,7 @@ class FiltrationCore {
     ))
     return findIntersection({
       ...this.collections,
-      [filterName]: this.applyFilter(filterName, filterValue)
+      [filterName]: this.applyFilter(filterName, test)
     }).length
   }
 

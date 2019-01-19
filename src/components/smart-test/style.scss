@@ -1,0 +1,119 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+
+.wrSmartTest {
+  padding: 100px 0 75px; min-height: calc(100vh - 163px);
+  background: #fff;
+}
+
+.smartTest {
+    display: block; margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+}
+
+.message {
+  display: flex; margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  figure {
+    margin-right: 50px; padding-top: 15px; flex-shrink: 0;
+
+    @include respond-to(sm) {
+      width: 75px; margin-right: 25px; padding-top: 10px;
+    }
+    @include respond-to(xs) {
+      width: 60px; padding-top: 0; margin-right: 15px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  h4, p {
+    color: #464646; font-size: 14px; line-height: 22px;
+  }
+
+  h4 {
+    font-family: $m-sb;
+    margin-bottom: 26px;
+
+    span {
+      @include respond-to(xs) {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  p {
+    font-family: $os-r;
+  }
+}
+
+.answer {
+  margin-bottom: 30px; padding-left: 140px;
+
+  @include respond-to(sm) {
+    padding-left: 100px;
+  }
+  @include respond-to(xs) {
+    padding-left: 0;
+  }
+
+  ul {
+    display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; margin-bottom: -25px;
+
+    @include respond-to(sm) {
+      margin-bottom: -10px;
+    }
+  }
+
+  li {
+    margin-left: 25px; margin-bottom: 25px;
+
+    @include respond-to(sm) {
+      margin-left: 10px; margin-bottom: 10px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  button, span {
+    color: #161616; font-size: 14px; font-family: $m-sb; line-height: 22px; text-align: center;
+    padding: 8px 18px; display: inline-block;
+    background: #ffffff; border: solid 1px #c2c2c2; border-radius: 4px;
+    cursor: pointer;
+
+    @include respond-to(xs) {
+      padding: 6px 12px;
+    }
+
+    &:hover {
+      color: #ffffff;
+      background: #f96868; border-color: #f96868;
+    }
+  }
+
+  span {
+    cursor: default;
+
+    &:hover {
+      color: #161616;
+      background: #ffffff; border-color: #c2c2c2;
+    }
+
+    &.active {
+      color: #ffffff;
+      background: #f96868; border-color: #f96868;
+    }
+  }
+}
