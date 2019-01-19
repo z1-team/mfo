@@ -2,6 +2,14 @@ import { sessionInfo } from '../selectors/session'
 import { authToken } from '../selectors/auth'
 import api from '../api'
 
+const camelCase = s => s.replace(/_([a-z])/g, g => g[1].toUpperCase())
+const queryParam = (p, {query}) => query[p] ? query[p] : null
+const ipInfo = (info, {ipInfo}) => ipInfo ? ipInfo[info] || null : null
+const browserInfo = (info, {browser}) => (
+  typeof browser === 'string' ? null
+  : browser[info] || null
+)
+
 function getDateTime() {
   const date = new Date()
   const year = date.getFullYear()
@@ -18,37 +26,93 @@ function getDateTime() {
   }
 }
 
-function fullEvent(event, state) {
-  console.log('!!!', state)
-  const datetime = getDateTime()
-  return {
-    ...event,
-    ...sessionInfo(state),
-    date: datetime.utcDate,
-    datetime: datetime.utcDateTime,
-    localtime: datetime.local
-  }
+function utmExtraValues({query}) {
+  return Object.getOwnPropertyNames(query)
+    .filter(param => param.startsWith('utm_') && param !== 'utm_campaign')
+    .reduce((r, p) => (r[camelCase(p)] = query[p], r), {})
 }
 
-function fullEvent(event, state) {
-  const datetime = getDateTime()
-  const session = state.session
-  return {
-    ...event,
-    ...sessionInfo(state),
-    payload: {
-      ...event.payload,
-      utm_term: session.query.utm_term || 'NULL',
-      utm_medium: session.query.utm_medium || 'NULL',
-      utm_content: session.query.utm_content || 'NULL',
-      utm_gbid: session.query.utm_gbid || 'NULL',
-      utm_phrase: session.query.utm_phrase || 'NULL',
-      utm_gender: session.query.utm_gender || 'NULL',
-      utm_age: session.query.utm_age || 'NULL'
+function extraValues(session) {
+  const extra = [
+    {
+      name: 'userCountry',
+      value: ipInfo('country', session)
     },
-    date: datetime.utcDate,
-    datetime: datetime.utcDateTime,
-    localtime: datetime.local
+    {
+      name: 'userId',
+      value: session.userId
+    },
+    {
+      name: 'browserName',
+      value: browserInfo('name', session)
+    },
+    {
+      name: 'browserVersion',
+      value: browserInfo('version', session)
+    },
+    {
+      name: 'browserOS',
+      value: browserInfo('os', session)
+    }
+  ]
+  return extra.reduce((r, v) => {
+    if (v.value) {
+      r[v.name] = v.value
+    }
+    return r
+  }, {})
+}
+
+export const changeFilterEvent = (f, v) => ({
+  name: 'change_filter',
+  data: {
+    filterName: f,
+    filterValue: v
+  }
+})
+
+export const clickOfferEvent = (id, name) => ({
+  name: 'click_offer',
+  data: {
+    partnerId: id,
+    partnerName: name
+  }
+})
+
+export const offerDetailsEvent = (id, name) => ({
+  name: 'offer_details',
+  data: {
+    partnerId: id,
+    partnerName: name
+  }
+})
+
+export const enterLandingEvent = () => ({
+  name: 'enter_langing'
+})
+
+export const changeDirectionEvent = (direction) => ({
+  name: 'change_direction',
+  data: {direction}
+})
+
+export function makeFullEvent(event, {session}) {
+  const datetime = getDateTime()
+  return {
+    eventName: event.name,
+    yClickId: queryParam('yclick_id', session),
+    clientId: session.clientId || null,
+    utmCampaign: queryParam('utm_campaign', session),
+    utmExtraValues: utmExtraValues(session),
+    eventExtraValues: event.data,
+    eventDate: datetime.utcDate,
+    eventDateTime: datetime.utcDateTime,
+    userIP: ipInfo('ip', session),
+    userCity: ipInfo('city', session),
+    userRegion: ipInfo('region', session),
+    userLocalTime: datetime.local,
+    extraValues: extraValues(session),
+    eventVersion: 1
   }
 }
 
@@ -56,9 +120,10 @@ export function sendEvent(event) {
   return async (dispatch, getState) => {
     const state = getState()
     const token = authToken(state)
+    const fullEvent = makeFullEvent(event, state)
     if (token === null) {
       try {
-        const status = await api.events.send(fullEvent(event, state))
+        const status = await api.events.send(fullEvent)
         console.log(status)
       } catch (error) {
         console.error(error)

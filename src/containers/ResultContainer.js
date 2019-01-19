@@ -6,6 +6,8 @@ import { isLoggedIn } from '../selectors/auth'
 import { connect } from 'preact-redux'
 import { createPartner, fetchPartners,
   selectPartner, nextPartners } from '../actions/partners'
+import { sendEvent, clickOfferEvent,
+  offerDetailsEvent } from '../actions/events'
 
 const mapStateToProps = (state, {partners}) => ({
   tail: getLinksTail(state),
@@ -21,13 +23,8 @@ const mapDispatchToProps = (dispatch, {partners: type}) => ({
   },
 
   onOrder(partner) {
-    dispatch(sendEvent({
-      type: 'click_offer',
-      payload: {
-				partnerId: partner.id,
-        partnerName: partner.main.title
-      }
-    }))
+    const event = clickOfferEvent(partner.id, partner.main.title)
+    dispatch(sendEvent(event))
   },
 
   onEdit(id) {
@@ -35,13 +32,8 @@ const mapDispatchToProps = (dispatch, {partners: type}) => ({
   },
 
   onMore(id, title) {
-    dispatch(sendEvent({
-      type: 'offer_details',
-      payload: {
-				partnerId: id,
-        partnerName: title
-      }
-    }))
+    const event = offerDetailsEvent(partner.id, partner.main.title)
+    dispatch(sendEvent(event))
   },
 
   onAdd() {

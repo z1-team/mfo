@@ -14,20 +14,6 @@ const bannerId = {
   w_45: 'bg10'
 }
 
-const itOrNull = value => value || 'NULL'
-
-export const sessionInfo = ({session}) => ({
-  yclick_id: itOrNull(session.query.yclid),
-  client_id: itOrNull(session.clientId),
-  utm_campaign: itOrNull(session.query.utm_campaign),
-  utm_source: itOrNull(session.query.utm_source),
-  user_id: itOrNull(session.userId),
-  user_region: itOrNull(session.ipInfo && session.ipInfo.region),
-  user_city: itOrNull(session.ipInfo && session.ipInfo.city),
-  user_country: itOrNull(session.ipInfo && session.ipInfo.country),
-  browser: session.browser
-})
-
 export const clientBanner = ({session}) => (
   session.query.utm_img ?
     bannerId[session.query.utm_img] || false : false

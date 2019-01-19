@@ -1,9 +1,9 @@
 import queryString from 'querystring'
-import {detect} from 'detect-browser'
+import { detect } from 'detect-browser'
 import uuid from 'uuid-js'
 import api from '../api'
-import {sendEvent} from './events'
-import {fetchABTest} from './abtests'
+import { sendEvent, enterLandingEvent } from './events'
+import { fetchABTest } from './abtests'
 
 export const SESSION_INIT = 'SESSION_INIT'
 export const SESSION_ERROR = 'SESSION_ERROR'
@@ -26,7 +26,7 @@ function getUserId() {
 
 function makeSession() {
   const query = typeof window !== 'undefined'
-    ? queryString.parse(window.location.search)
+    ? queryString.parse(window.location.search.substr(1))
     : {}
   return {
     query,
@@ -72,10 +72,7 @@ export function initSession() {
       const clientId = await getClientId()
       dispatch(fetchABTest(clientId))
       dispatch({type: SESSION_UPDATE, field: 'clientId', value: clientId})
-      dispatch(sendEvent({
-        type: 'enter_landing',
-        payload: session.query
-      }))
+      dispatch(sendEvent(enterLandingEvent()))
     } catch (error) {
       dispatch({type: SESSION_ERROR, error})
     }

@@ -3,20 +3,12 @@ import fullURL from './config'
 
 export default {
   send(event) {
-    const url = fullURL('v1/event')
-    console.log(queryString.stringify({
-      ...event,
-      payload: JSON.stringify(event.payload)
-    }))
-    return fetch(url, {
+    return fetch(fullURL('v1/event'), {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        'Content-Type': 'application/json; charset=UTF-8'
       },
-      body: queryString.stringify({
-        ...event,
-        payload: JSON.stringify(event.payload)
-      })
+      body: JSON.stringify(event)
     }).then((response) => {
       if (response.status >= 400) {
         throw new Error('Bad response from server')
