@@ -72,7 +72,10 @@ class App extends Component {
 
 		this.currentUrl = e.url
 		this.appPadding()
-		window.scrollTo(0, 0)
+
+		if (typeof window !== 'undefined') {
+			window.scrollTo(0, 0)
+		}
 	}
 
 	handleCategories = (event) => {
