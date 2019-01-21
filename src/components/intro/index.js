@@ -22,7 +22,7 @@ class Intro extends Component {
 			case "/":
 				return (
 					<section>
-						<h1>Ищите <strong>где занять денег?</strong></h1>
+						<h1>Ищете <strong>где занять денег?</strong></h1>
 						<h2>Мы отобрали лучшие предложения.</h2>
 					</section>
 				)

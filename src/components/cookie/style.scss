@@ -1,0 +1,112 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+
+.cookie {
+  position: fixed; left: 50%; bottom: 0; transform: translate(-50%, 105%); width: 100%; max-width: 768px; z-index: 30;
+  transition: transform 0.3s ease-out;
+
+  &.active {
+    transform: translate(-50%, 0);
+    transition: transform 0.3s 1s ease-out;
+  }
+}
+
+.popup {
+  position: relative; width: 100%; left: 0; bottom: 0; padding: 20px;
+  background: #ffffff; border: solid 1px #f96868;
+}
+
+.brief {
+  composes: popup;
+  display: flex; align-items: center; justify-content: space-between;
+
+  .all & {
+    position: absolute; transform: translateY(105%);
+  }
+
+  p, a {
+    color: #161616; font-size: 14px; font-family: $m-r; line-height: 20px;
+  }
+
+  a {
+    color: #f96868;
+  }
+
+  button {
+    color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 18px;
+    display: inline-block; padding: 8px 15px;
+    background: #fff; border: solid 2px #f96868; border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background: #f96868;
+    }
+  }
+}
+
+.full {
+  composes: popup;
+  position: absolute; transform: translateY(105%);
+
+  .all & {
+    position: relative; transform: translateY(0);
+  }
+
+  section {
+    margin-bottom: 15px;
+  }
+
+  footer {
+    display: flex; align-items: center;
+
+    & > * {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  h3 {
+    color: #161616; font-size: 18px; font-family: $m-sb; line-height: 22px;
+    margin-bottom: 10px;
+  }
+
+  p, a, li {
+    color: #161616; font-size: 14px; font-family: $m-r; line-height: 20px;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li {
+    padding-left: 15px; position: relative;
+
+    &:before {
+      content: '';
+      position: absolute; left: 0; top: 9px; display: block; width: 4px; height: 4px;
+      background: #161616; border-radius: 50%;
+    }
+  }
+
+  a {
+    color: #f96868;
+  }
+
+  button {
+    color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 18px;
+    display: inline-block; padding: 8px 15px;
+    background: #fff; border: solid 2px #f96868; border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background: #f96868;
+    }
+  }
+}

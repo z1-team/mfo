@@ -12,7 +12,7 @@ const UsefullInfo = () => (
 							<Link activeClassName="active" href="/about">Подробнее о проекте</Link>
 						</li>
 						<li>
-							<Link activeClassName="active" href="/confidentiality">Конфиденциальность</Link>
+							<Link activeClassName="active" href="/confidentiality">Политика конфиденциальности</Link>
 						</li>
 					</ul>
 				</div>

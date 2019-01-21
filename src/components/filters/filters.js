@@ -94,24 +94,24 @@ export const cardsFilters = [
       "Мир"
     ]
   },
-  {
-    name: "limit_value",
-    type: "range",
-    title: "Кредитный лимит",
-    start: 100,
-    end: 1000000,
-    step: 100,
-    label: "(Руб.)"
-  },
-  {
-    name: "rate_value",
-    type: "range",
-    title: "Процентная ставка",
-    start: 1,
-    end: 100,
-    step: 1,
-    label: "(Проценты)"
-  },
+  // {
+  //   name: "limit_value",
+  //   type: "range",
+  //   title: "Кредитный лимит",
+  //   start: 100,
+  //   end: 1000000,
+  //   step: 100,
+  //   label: "(Руб.)"
+  // },
+  // {
+  //   name: "rate_value",
+  //   type: "range",
+  //   title: "Процентная ставка",
+  //   start: 1,
+  //   end: 100,
+  //   step: 1,
+  //   label: "(Проценты)"
+  // },
   // {
   //   name: "category_cards",
   //   type: "checkbox",

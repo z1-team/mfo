@@ -11,6 +11,7 @@ import TestimonialsContainer from '../containers/TestimonialsContainer'
 import FooterContainer from '../containers/FooterContainer'
 import PopupsContainer from '../containers/PopupsContainer'
 import GuardContainer from '../containers/GuardContainer'
+import CookiesContainer from '../containers/CookiesContainer'
 
 import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
@@ -55,6 +56,10 @@ const displayPopups = ({matches, path, url}) => (
 	<PopupsContainer url={url} />
 )
 
+const getCookieItem = () => {
+	window.localStorage ? localStorage.getItem('agreeWithCookie') : false
+}
+
 class App extends Component {
 	state = {
 		app: 'app'
@@ -89,6 +94,7 @@ class App extends Component {
 	}
 
 	render(props, {app}) {
+		const cookie = getCookieItem()
 		return (
 			<Provider store={store}>
 				<div id="app" class="app">
@@ -108,6 +114,7 @@ class App extends Component {
 					<Match>{guard}</Match>
 					<Match>{displayPopups}</Match>
 					{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
+					{!cookie && <CookiesContainer />}
 				</div>
 			</Provider>
 		)

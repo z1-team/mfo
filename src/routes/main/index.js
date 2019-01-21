@@ -7,11 +7,11 @@ import style from './style.scss'
 const getTitle = (partner) => {
 	switch(partner) {
 		case 'mfo':
-			return 'микрозаймов'
+			return 'займов'
 		case 'cards':
 			return 'кредитных карт'
 		default:
-			return 'микрозаймов'
+			return 'займов'
 	}
 }
 
