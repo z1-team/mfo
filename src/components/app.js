@@ -28,6 +28,7 @@ import style from '../style/index.scss'
 import { openPopup } from '../actions/popup'
 import { initSession } from '../actions/session'
 import { fetchPartners } from '../actions/partners'
+import { resetFilters } from '../actions/filters'
 import { sendEvent, changeDirectionEvent } from '../actions/events'
 
 const displayIntro = ({matches, path, url}) => (
@@ -71,6 +72,7 @@ class App extends Component {
 		if (this.currentUrl) {
 			const event = changeDirectionEvent(e.url)
 			store.dispatch(sendEvent(event))
+			store.dispatch(resetFilters())
 		}
 
 		this.currentUrl = e.url

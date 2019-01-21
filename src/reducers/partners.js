@@ -1,6 +1,7 @@
 import { PARTNERS_FETCH, PARTNER_UPDATE, PARTNER_SELECT,
-  PARTNER_CREATE, PARTNER_DELETE, PARTNERS_NEXT } from '../actions/partners'
-import { FILTER_CHANGE, FILTER_RESET } from '../actions/filters'
+  PARTNER_CREATE, PARTNER_DELETE, PARTNERS_NEXT,
+  PARTNERS_RESET } from '../actions/partners'
+import { FILTER_CHANGE, FILTER_RESET, FILTERS_RESET } from '../actions/filters'
 import templates from '../partnersTemplates'
 import partner from './partners-mock.json'
 
@@ -72,6 +73,7 @@ function partnersReducer(state = initialState, action) {
       return action.status === 1 ? deleteReducer(state, action.id) : state
     case FILTER_CHANGE:
     case FILTER_RESET:
+    case FILTERS_RESET:
       return { ...state, cardsCount: 8}
     case PARTNERS_NEXT:
       return { ...state, cardsCount: state.cardsCount + action.count}
