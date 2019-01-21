@@ -104,7 +104,7 @@ export function makeFullEvent(event, {session}) {
     clientId: session.clientId || null,
     utmCampaign: queryParam('utm_campaign', session),
     utmExtraValues: utmExtraValues(session),
-    eventExtraValues: event.data,
+    eventExtraValues: event.data || {},
     eventDate: datetime.utcDate,
     eventDateTime: datetime.utcDateTime,
     userIP: ipInfo('ip', session),

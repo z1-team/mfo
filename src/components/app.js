@@ -3,6 +3,7 @@ import { Router } from 'preact-router'
 import Match from 'preact-router/match'
 import { Provider } from 'preact-redux'
 import store from '../store'
+import '../counter'
 
 import HeaderContainer from '../containers/HeaderContainer'
 import IntroContainer from '../containers/IntroContainer'
@@ -27,6 +28,8 @@ import style from '../style/index.scss'
 
 import { openPopup } from '../actions/popup'
 import { initSession } from '../actions/session'
+import { fetchPartners } from '../actions/partners'
+import { resetFilters } from '../actions/filters'
 import { sendEvent, changeDirectionEvent } from '../actions/events'
 
 const displayIntro = ({matches, path, url}) => (
@@ -67,17 +70,22 @@ class App extends Component {
 
 	componentDidMount() {
 		store.dispatch(initSession())
+		store.dispatch(fetchPartners())
 	}
 
 	handleRoute = e => {
 		if (this.currentUrl) {
 			const event = changeDirectionEvent(e.url)
 			store.dispatch(sendEvent(event))
+			store.dispatch(resetFilters())
 		}
 
 		this.currentUrl = e.url
 		this.appPadding()
-		window.scrollTo(0, 0)
+
+		if (typeof window !== 'undefined') {
+			window.scrollTo(0, 0)
+		}
 	}
 
 	handleCategories = (event) => {

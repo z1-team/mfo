@@ -7,7 +7,9 @@ export const PARTNER_SELECT = 'PARTNER_SELECT'
 export const PARTNER_CREATE = 'PARTNER_CREATE'
 export const PARTNER_DELETE = 'PARTNER_DELETE'
 export const PARTNERS_NEXT = 'PARTNERS_NEXT'
+export const PARTNERS_RESET = 'PARTNERS_RESET'
 
+export const resetPartners = () => ({type: PARTNERS_RESET})
 export const nextPartners = (count) => ({type: PARTNERS_NEXT, count})
 export const selectPartner = (id) => ({type: PARTNER_SELECT, id})
 export const createPartner = (partnerType) => ({

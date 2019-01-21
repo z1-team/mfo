@@ -37,6 +37,33 @@ function makeSession() {
   }
 }
 
+function getBotTest() {
+  const groups = ['g0', 'g1']
+  const values = ['appVariant0', 'appVariant1']
+  const isAssigned = !!localStorage.getItem('botAppAssigned')
+  const generated = Math.random() > 0.5 ? 1 : 0
+  const saved = parseInt(localStorage.getItem('botApp'))
+  const index = saved ? saved : generated
+  if (!saved) {
+    localStorage.setItem('botApp', index)
+  }
+  return {
+    isAssigned,
+    value: {
+      testName: 'botApp',
+      groupName: groups[index],
+      testValue: values[index]
+    }
+  }
+}
+
+async function assignTest(clientId, testValue) {
+  const status = await api.tests.save({
+    ...testValue, clientId
+  })
+  localStorage.setItem('botAppAssigned', 'true')
+}
+
 function getClientId() {
   let numberOfTries = 0
   return new Promise((resolve, reject) => {
@@ -51,6 +78,7 @@ function getClientId() {
         reject(new Error('Истекло время ожидания Яндекс.Метрики'))
       }
     }
+    waitForId()
   })
 }
 
@@ -66,11 +94,16 @@ async function initGeoLocation(dispatch) {
 export function initSession() {
   return async (dispatch, getState) => {
     const session = makeSession()
+    const test = getBotTest()
     dispatch({type: SESSION_INIT, session})
     initGeoLocation(dispatch)
     try {
       const clientId = await getClientId()
-      dispatch(fetchABTest(clientId))
+      console.log(clientId)
+      if (!test.isAssigned) {
+        console.log('Assign test for this client')
+        assignTest(clientId, test.value)
+      }
       dispatch({type: SESSION_UPDATE, field: 'clientId', value: clientId})
       dispatch(sendEvent(enterLandingEvent()))
     } catch (error) {

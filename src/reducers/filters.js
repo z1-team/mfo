@@ -1,4 +1,4 @@
-import {FILTER_CHANGE, FILTER_RESET} from '../actions/filters'
+import {FILTER_CHANGE, FILTER_RESET, FILTERS_RESET} from '../actions/filters'
 
 const initialState = {
   category_mfo: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
@@ -50,6 +50,8 @@ function filtersReducer(state = initialState, action) {
       return {...state, [action.filter]: action.value}
     case FILTER_RESET:
       return resetFilters(state)
+    case FILTERS_RESET:
+      return initialState
     default:
       return state
   }

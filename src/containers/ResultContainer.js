@@ -19,7 +19,7 @@ const mapStateToProps = (state, {partners}) => ({
 
 const mapDispatchToProps = (dispatch, {partners: type}) => ({
   onEnter() {
-    dispatch(fetchPartners())
+    // dispatch(fetchPartners())
   },
 
   onOrder(partner) {
@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch, {partners: type}) => ({
   },
 
   onMore(id, title) {
-    const event = offerDetailsEvent(partner.id, partner.main.title)
+    const event = offerDetailsEvent(id, title)
     dispatch(sendEvent(event))
   },
 
