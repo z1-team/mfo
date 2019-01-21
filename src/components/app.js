@@ -27,6 +27,7 @@ import style from '../style/index.scss'
 
 import { openPopup } from '../actions/popup'
 import { initSession } from '../actions/session'
+import { fetchPartners } from '../actions/partners'
 import { sendEvent, changeDirectionEvent } from '../actions/events'
 
 const displayIntro = ({matches, path, url}) => (
@@ -63,6 +64,7 @@ class App extends Component {
 
 	componentDidMount() {
 		store.dispatch(initSession())
+		store.dispatch(fetchPartners())
 	}
 
 	handleRoute = e => {

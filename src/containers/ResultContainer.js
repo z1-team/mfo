@@ -19,7 +19,7 @@ const mapStateToProps = (state, {partners}) => ({
 
 const mapDispatchToProps = (dispatch, {partners: type}) => ({
   onEnter() {
-    dispatch(fetchPartners())
+    // dispatch(fetchPartners())
   },
 
   onOrder(partner) {
