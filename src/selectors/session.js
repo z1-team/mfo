@@ -49,3 +49,11 @@ export const getLinksTail = ({session}) => {
 export const getABTests = ({session}) => session.abTests
 
 export const getClientId = ({session}) => session.clientId || null
+
+export const showBot = ({session}) => {
+  if(session.botTest.groupName) {
+    return session.botTest.groupName === 'g1'
+  }
+
+  return false
+}

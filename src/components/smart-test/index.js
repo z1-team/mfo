@@ -16,7 +16,7 @@ class SmartTest extends Component {
 
   render(props, {done}) {
     return (
-      <div class={style.wrSmartTest}>
+      <div class={`${style.wrSmartTest} smart-bot`}>
         <div class="container">
           <BotContainer onEnd={this.handleEnd} />
           {done && <ResultContainer partners="mfo" />}

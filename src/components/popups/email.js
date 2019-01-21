@@ -1,5 +1,7 @@
 import { h, Component } from 'preact'
 
+import { Link } from 'preact-router/match'
+
 import style from './styles/email.scss'
 
 class EmailPopups extends Component {
@@ -31,6 +33,10 @@ class EmailPopups extends Component {
 					<p>Вышлем спецпредложения от премиум-партнеров</p>
 					<input name="email" type="email" placeholder="Ваш email" onChange={this.handleChange} value={email} required />
 					<button>Жду на почту</button>
+					<div class={style.agreement}>
+						<input id="email-agreement" type="checkbox" checked="checked" required />
+						<label htmlFor="email-agreement">Я согласен с <Link href="/confidentiality">политикой конфиденциальности</Link></label>
+					</div>
 				</form>
 			</div>
 		)

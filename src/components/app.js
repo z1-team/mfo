@@ -13,14 +13,12 @@ import FooterContainer from '../containers/FooterContainer'
 import PopupsContainer from '../containers/PopupsContainer'
 import GuardContainer from '../containers/GuardContainer'
 import CookiesContainer from '../containers/CookiesContainer'
+import BotTestContainer from '../containers/BotTestContainer'
 
 import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
 import Confidentiality from '../routes/inner/confidentiality'
 import NotFound from '../routes/not-found'
-
-import SmartTest from './smart-test'
-import UsefullInfo from './usefull-info'
 
 import api from '../api'
 
@@ -108,16 +106,14 @@ class App extends Component {
 				<div id="app" class="app">
 					<HeaderContainer />
 					<Router onChange={this.handleRoute}>
-						<Main path="/" partners="mfo" />
-						<Main path="/cards" partners="cards" />
+						<BotTestContainer path="/" partners="mfo" />
+						<BotTestContainer path="/cards" partners="cards" />
 						<ModerationContainer path="/moderate" />
 						<TestimonialsContainer path="/testimonials/:id" />
 						<AboutProject path="/about" />
 						<Confidentiality path="/confidentiality" />
-						<SmartTest path="/smart-test" />
 						<NotFound default />
 					</Router>
-					<UsefullInfo />
 					<FooterContainer />
 					<Match>{guard}</Match>
 					<Match>{displayPopups}</Match>

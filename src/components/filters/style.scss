@@ -86,15 +86,34 @@
 
 		button {
 			color: #c2c2c2; font-size: 18px; font-family: $os-r; text-transform: uppercase;
-			margin-left: 5px;
+			margin-left: 5px; position: relative;
 			background: transparent;
 			cursor: pointer;
       pointer-events: none;
+
+      &:hover {
+        span {
+          display: block;
+        }
+      }
 
 			&.active {
 				color: #f96868;
         pointer-events: auto;
 			}
+
+      span {
+        color: #fff; font-size: 12px; font-family: $m-r; line-height: 18px; text-transform: none; white-space: nowrap;
+        padding: 1px 5px; position: absolute; left: 50%; top: -6px; transform: translate(-50%, -100%); display: none;
+        background: #f96868; border-radius: 4px;
+        pointer-events: none;
+
+        &:after {
+          content: '';
+          display: block; position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 100%);
+          border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: solid 4px #f96868;
+        }
+      }
 		}
 	}
 

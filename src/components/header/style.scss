@@ -48,6 +48,10 @@
 		}
 	}
 
+  h3 {
+    color: #fff; font-size: 12px; font-family: $m-sb; line-height: 25px; text-transform: uppercase;
+  }
+
 	& > ul {
 		display: flex; align-items: center;
 

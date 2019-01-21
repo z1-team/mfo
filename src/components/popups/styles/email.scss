@@ -52,7 +52,7 @@
     }
   }
 
-  input {
+  input[type="email"] {
     color: #161616; font-size: 14px; font-family: $os-r; line-height: 22px;
     padding: 14px; width: 57.96296%;
     border: solid 1px #e2e2e2; border-radius: 5px;
@@ -79,6 +79,39 @@
     @include respond-to(xs) {
       font-size: 14px;
       width: 100%; padding: 10px;
+    }
+  }
+
+  .agreement {
+    display: flex;
+
+    input {
+      margin-right: 5px; width: 18px; height: 18px;
+      opacity: 0;
+
+      &:checked + label:before {
+        background: #f7f7f7 url('/assets/img/checked.png') center center no-repeat;
+      }
+    }
+  }
+
+  label {
+    color: #161616; font-size: 14px; font-family: $m-r; line-height: 18px;
+    width: 100%; margin-top: 5px; position: relative;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      display: block; width: 14px; height: 14px; position: absolute; left: -20px; top: 2px;
+			background: #f7f7f7; border: solid 1px #b1b1b1;
+    }
+
+    a {
+      color: #f96868; text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

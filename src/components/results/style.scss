@@ -24,8 +24,15 @@
   }
 }
 
+:global(.smart-bot .list) {
+	min-height: 300px;
+	.card {
+		margin-left: 139px;
+	}
+}
+
 .card {
-  margin: 0 auto 22px; max-width: 880px; width: 100%; position: relative;
+  margin: 0 0 22px; max-width: 880px; width: 100%; position: relative;
   border: solid 1px #e2e2e2; background: #fff;
   overflow: hidden;
   animation: showCards 0.5s ease-out 1;

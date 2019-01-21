@@ -24,16 +24,28 @@ class JustBot extends Component {
     if(step === QA.length) {
       onEnd()
     }
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: this.getMessageOffset(),
+        behavior: "smooth"
+      })
+    }, 20)
+  }
+
+  getMessageOffset() {
+    const m = this.message
+    return m.getBoundingClientRect().top + window.scrollY - 70
   }
 
   handleAnswer = (answer) => {
-    const {onEnd} = this.props
-
     this.setState(prev => ({
       step: getStep(prev.step, answer),
       answers: prev.answers.concat(answer)
     }))
   }
+
+  saveRef = ref => this.message = ref
 
   render(props, {step, answers}) {
     const isLast = step === QA.length
@@ -45,6 +57,7 @@ class JustBot extends Component {
             <Answer answers={QA[index].answers} selected={answer} onAnswer={this.handleAnswer} />
           </div>
         ))}
+        <div ref={this.saveRef}></div>
         <Message message={isLast ? advice : QA[step].question} />
         {!isLast && <Answer answers={QA[step].answers} onAnswer={this.handleAnswer} />}
       </div>

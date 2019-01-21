@@ -7,7 +7,6 @@
 }
 
 .innerText {
-
 	h2 {
 		color: #232935; font-size: 24px; font-family: $m-sb; line-height: 30px;
 		margin-bottom: 25px;
@@ -15,15 +14,25 @@
 
 	h3 {
 		color: #232935; font-size: 18px; font-family: $m-sb; line-height: 25px; text-transform: uppercase;
-		display: inline; margin-bottom: 15px;
+		display: inline-block; margin-bottom: 15px;
+
+    span {
+      display: block; margin-bottom: 5px;
+
+      &:last-child {margin-bottom: 0;}
+    }
 	}
 
 	ol li, ul li, p {
-		color: #484848; font-size: 14px; font-family: $os-r; line-height: 22px;
+		color: #484848; font-size: 14px; font-family: $m-r; line-height: 22px;
 	}
 
 	& > p {
 		margin-bottom: 15px;
+
+    &:first-of-type {
+      margin-bottom: 30px;
+    }
 	}
 
 	ul {
@@ -35,6 +44,7 @@
 			&:before {
 				counter-increment: count1;
 				content: counters(count1,".")". ";
+        font-family: $m-sb;
 			}
 
 			& > h3 {
@@ -42,7 +52,7 @@
 			}
 
 			ul, ol {
-				margin-bottom: 0; padding-left: 15px;
+				margin-bottom: 0; padding-left: 22px;
 			}
 
 			ol {
@@ -76,7 +86,7 @@
 		}
 
 		& > li {
-			margin-bottom: 10px;
+			margin-bottom: 30px;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -97,6 +107,7 @@
 			&:before {
 				counter-increment: count2;
 				content: counters(count2,".")". ";
+        font-family: $m-sb;
 			}
 		}
 	}

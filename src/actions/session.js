@@ -24,7 +24,7 @@ function getUserId() {
   return saved
 }
 
-function makeSession() {
+function makeSession(test) {
   const query = typeof window !== 'undefined'
     ? queryString.parse(window.location.search.substr(1))
     : {}
@@ -33,7 +33,7 @@ function makeSession() {
     ipInfo: null,
     userId: getUserId(),
     browser: detect() || 'unknown',
-    abTests: getABTests()
+    botTest: test.value
   }
 }
 
@@ -42,9 +42,10 @@ function getBotTest() {
   const values = ['appVariant0', 'appVariant1']
   const isAssigned = !!localStorage.getItem('botAppAssigned')
   const generated = Math.random() > 0.5 ? 1 : 0
+  const isSaved = localStorage.getItem('botApp') !== null
   const saved = parseInt(localStorage.getItem('botApp'))
-  const index = saved ? saved : generated
-  if (!saved) {
+  const index = isSaved ? saved : generated
+  if (!isSaved) {
     localStorage.setItem('botApp', index)
   }
   return {
@@ -93,8 +94,8 @@ async function initGeoLocation(dispatch) {
 
 export function initSession() {
   return async (dispatch, getState) => {
-    const session = makeSession()
     const test = getBotTest()
+    const session = makeSession(test)
     dispatch({type: SESSION_INIT, session})
     initGeoLocation(dispatch)
     try {

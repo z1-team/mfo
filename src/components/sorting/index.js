@@ -2,16 +2,7 @@ import { h, Component } from 'preact'
 
 import style from './style.scss'
 
-import { sortButtons } from './const'
-
 class ResultsSort extends Component {
-  sortButtons() {
-    const { url } = this.props
-
-    return (
-      sortButtons[url] || sortButtons.mfo
-    )
-  }
 
   sortButtonClass(id) {
     const { sortInfo } = this.props
@@ -24,12 +15,12 @@ class ResultsSort extends Component {
     return ''
   }
 
-  render({sortInfo, onClick}) {
+  render({sortInfo, onClick, sortButtons}) {
     return(
       <div class={style.sort}>
         <p>Сортировать:</p>
         <ul>
-          {this.sortButtons().map(({id, title}) => (
+          {sortButtons.map(({id, title}) => (
             <li key={id}>
               <button class={this.sortButtonClass(id)} onClick={onClick} data-id={id}>{title}</button>
             </li>
