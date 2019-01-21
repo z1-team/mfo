@@ -3,6 +3,7 @@ import { Router } from 'preact-router'
 import Match from 'preact-router/match'
 import { Provider } from 'preact-redux'
 import store from '../store'
+import '../counter'
 
 import HeaderContainer from '../containers/HeaderContainer'
 import IntroContainer from '../containers/IntroContainer'
