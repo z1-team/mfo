@@ -48,8 +48,21 @@ class Testi extends Component {
     const {name, email, text, rating} = this.state
     const {id, onSubmit} = this.props
     event.preventDefault()
-    if (typeof onSubmit === 'function') {
-      onSubmit({partner: id, name, email, text, rating})
+    if(name && email && text && rating !== 0) {
+      if (typeof onSubmit === 'function') {
+        onSubmit({partner: id, name, email, text, rating})
+      }
+
+      this.setState(initialState)
+    } else {
+      this.setState(prev => ({
+        isEditing: {
+          name: !prev.name,
+          email: !prev.email,
+          text: !prev.text,
+          rating: !prev.rating
+        }
+      }))
     }
   }
 

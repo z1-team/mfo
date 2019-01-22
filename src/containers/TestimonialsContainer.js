@@ -3,6 +3,7 @@ import { connect } from 'preact-redux'
 import Testimonials from '../components/testimonials'
 import { sendTestimonial, deleteTestimonial,
   fetchTestimonials } from '../actions/testimonials'
+import { openPopup } from '../actions/popup'
 import { getTestimonials, getSelectedPartner } from '../selectors/testimonials'
 
 const mapStateToProps = (state, {id}) => ({
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
 
   onSubmit(testimonial) {
     dispatch(sendTestimonial(testimonial))
+    dispatch(openPopup('testimonial'))
   }
 })
 

@@ -28,6 +28,10 @@
 	min-height: 300px;
 	.card {
 		margin-left: 139px;
+
+		@include respond-to(md) {
+			margin-left: 0;
+		}
 	}
 }
 
@@ -44,6 +48,11 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+	&.unpublished {
+		border: solid 1px #f96868;
+		opacity: 0.7;
+	}
 
   .label {
     color: #fff; font-size: 10px; font-family: $m-sb; line-height: 20px; text-transform: uppercase; text-align: center;

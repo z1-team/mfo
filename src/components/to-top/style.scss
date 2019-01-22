@@ -1,0 +1,20 @@
+@import '../../style/mixins.scss';
+
+.toTop {
+	color: #f96868; font-size: 36px;
+	display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; position: fixed; right: 20px; bottom: 20px; z-index: 5;
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
+
+	@include respond-to(sm) {
+		display: none;
+	}
+
+	&.active {
+		opacity: 0.7;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}

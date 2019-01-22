@@ -48,8 +48,21 @@
 		}
 	}
 
-  h3 {
-    color: #fff; font-size: 12px; font-family: $m-sb; line-height: 25px; text-transform: uppercase;
+  & > a {
+    color: #fff; font-size: 12px; font-family: $m-r; line-height: 25px; text-transform: uppercase;
+
+    &.active {
+      font-family: $m-sb;
+      pointer-events: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
 	& > ul {

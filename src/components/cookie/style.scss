@@ -23,6 +23,7 @@
 
   .all & {
     position: absolute; transform: translateY(105%);
+    opacity: 0;
   }
 
   p, a {
@@ -49,9 +50,11 @@
 .full {
   composes: popup;
   position: absolute; transform: translateY(105%);
+  opacity: 0;
 
   .all & {
     position: relative; transform: translateY(0);
+    opacity: 1;
   }
 
   section {
