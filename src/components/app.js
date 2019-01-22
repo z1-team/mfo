@@ -62,7 +62,11 @@ const displayPopups = ({url}) => (
 )
 
 const getCookieItem = () => {
-	window.localStorage ? localStorage.getItem('agreeWithCookie') : false
+	if (typeof window !== 'undefined') {
+		return window.localStorage ? localStorage.getItem('agreeWithCookie') : false
+	} else {
+		return true
+	}
 }
 
 const scrollContainer = ({url}) => (
