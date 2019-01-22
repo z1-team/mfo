@@ -15,6 +15,7 @@ import GuardContainer from '../containers/GuardContainer'
 import CookiesContainer from '../containers/CookiesContainer'
 import BotTestContainer from '../containers/BotTestContainer'
 import PushContainer from '../containers/PushContainer'
+import ScrollContainer from '../containers/ScrollContainer'
 
 import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
@@ -50,13 +51,13 @@ const categoriesTitle = (url) => {
 	}
 }
 
-const categoriesToggle = (onToggle) => ({matches, path, url}) => (
+const categoriesToggle = (onToggle) => ({url}) => (
 	url === '/' || url === '/cards' ? <button class="categories-button" onClick={onToggle}>
 		{categoriesTitle(url)}
 	</button> : null
 )
 
-const displayPopups = ({matches, path, url}) => (
+const displayPopups = ({url}) => (
 	<PopupsContainer url={url} />
 )
 
@@ -64,10 +65,13 @@ const getCookieItem = () => {
 	window.localStorage ? localStorage.getItem('agreeWithCookie') : false
 }
 
+const scrollContainer = ({url}) => (
+	<ScrollContainer url={url} />
+)
+
 class App extends Component {
 	state = {
-		app: 'app',
-		emailShowed: true
+		app: 'app'
 	}
 
 	componentDidMount() {
@@ -83,7 +87,7 @@ class App extends Component {
 		}
 
 		this.currentUrl = e.url
-		this.appPadding()
+		// this.appPadding()
 
 		if (typeof window !== 'undefined') {
 			window.scrollTo(0, 0)
@@ -125,6 +129,7 @@ class App extends Component {
 					{!cookie && <CookiesContainer />}
 					<ToTop />
 					<PushContainer />
+					<Match>{scrollContainer}</Match>
 				</div>
 			</Provider>
 		)

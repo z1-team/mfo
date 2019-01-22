@@ -1,6 +1,55 @@
 import { h, Component } from 'preact'
+import { connect } from 'preact-redux'
+
+import { openPopup } from '../actions/popup'
 
 class ScrollContainer extends Component {
+  state = {
+    emailShowed: false,
+    isAlowed: false
+  }
 
+  componentDidMount(){
+    window.addEventListener('scroll', this.handleScroll)
+    setTimeout(() => {
+      this.setState({isAlowed: true})
+    }, 1000)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = (event) => {
+    const {emailShowed, isAlowed} = this.state
+    const {partners, onScroll, url} = this.props
+    const subscribed = localStorage.getItem('subscribed') === null ? true : false
+
+    if(!emailShowed && isAlowed && subscribed && url === '/') {
+      let scrollTop = document.documentElement.scrollTop
+      let windowHiehgt = window.innerHeight
+      let appHeight = document.getElementById('app').offsetHeight
+      let footer = document.getElementById('footer').offsetHeight
+      let itemTranslate = Math.min(0, scrollTop/3 - 60)
+
+      if((appHeight - windowHiehgt - footer - scrollTop) <= 0) {
+        onScroll()
+        this.setState({emailShowed: true})
+      }
+    }
+  }
+
+  render() {
+    return (
+      <div class="scroll-container"></div>
+    )
+  }
 }
-export default ScrollContainer
+
+const mapDispatchToProps = (dispatch) => ({
+  onScroll() {
+    dispatch(openPopup("email"))
+  }
+})
+
+export default connect(null, mapDispatchToProps)(ScrollContainer)

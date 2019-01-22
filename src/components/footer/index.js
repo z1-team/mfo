@@ -13,7 +13,7 @@ class Footer extends Component {
 	}
 	render({isLoggedIn, onLogin}) {
 		return (
-			<div class={style.wrFooter}>
+			<div class={style.wrFooter} id="footer">
 				<div class="container">
 					<div class={style.footer}>
 						<span class={style.logo}><img src="/assets/img/logo-footer.png"/></span>

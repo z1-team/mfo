@@ -8,6 +8,7 @@ import { closePopup } from '../actions/popup'
 const mapDispatchToProps = (dispatch) => ({
   onSubmit(email) {
     console.log(email)
+    localStorage.setItem('subscribed', true)
   },
   onClose() {
     dispatch(closePopup())
