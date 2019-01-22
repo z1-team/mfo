@@ -70,9 +70,10 @@ class Card extends Component {
     const rating = Math.round(item.sortBy.rating*10)/10
     const star = Math.round(item.sortBy.rating*20)
     const label = item.main.special_label ? item.main.special_label : ''
+    const unpublished = item.main.isPublished || item.main.isPublished === undefined ? '' : style.unpublished
 
     return (
-      <div class={`${style.card} ${style[label]}`}>
+      <div class={`${style.card} ${style[label]} ${unpublished}`}>
         {label === 'big_summ' ? <span class={style.label}>На большую сумму</span> : ''}
         {label === 'long_term' ? <span class={style.label}>На долгий период</span> : ''}
         {label === 'quick_solution' ? <span class={style.label}>Быстрое решение</span> : ''}

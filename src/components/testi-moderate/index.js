@@ -38,7 +38,7 @@ class TestiModerate extends Component {
     const {item, onPublic} = this.props
     event.preventDefault()
     if (typeof onPublic === 'function') {
-      onPublic({...item, text: this.state.text})
+      onPublic({...item, text: this.state.text, status: 'published'})
     }
   }
 

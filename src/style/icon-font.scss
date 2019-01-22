@@ -11,7 +11,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.fa-arrow-up-alt:before {
+  content: "\e90f";
+}
 .fa-credit-card:before {
   content: "\e90e";
 }

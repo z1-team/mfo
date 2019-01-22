@@ -3,7 +3,7 @@
 
 
 .wrSmartTest {
-  padding: 100px 0 75px; min-height: calc(100vh - 163px);
+  padding: 100px 0 75px; min-height: calc(100vh - 122px);
   background: #fff;
 }
 
@@ -39,6 +39,7 @@
 
   h4, p {
     color: #464646; font-size: 14px; line-height: 22px;
+    max-width: 880px;
   }
 
   h4 {
@@ -64,7 +65,7 @@
     padding-left: 100px;
   }
   @include respond-to(xs) {
-    padding-left: 0;
+    padding-left: 0; margin-bottom: 60px;
   }
 
   ul {
@@ -94,12 +95,18 @@
     cursor: pointer;
 
     @include respond-to(xs) {
-      padding: 6px 12px;
+      font-size: 12px;
+      padding: 6px 10px;
     }
 
     &:hover {
       color: #ffffff;
       background: #f96868; border-color: #f96868;
+
+      @include respond-to(md) {
+        color: #161616;
+        background: #ffffff; border-color: #c2c2c2;
+      }
     }
   }
 

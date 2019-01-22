@@ -23,9 +23,10 @@ class EmailPopups extends Component {
 		this.setState({email: value})
 	}
 
-	render(props, {email}) {
+	render({onClose}, {email}) {
 		return (
 			<div class={style.email}>
+				<a href="#" class={style.close} onClick={onClose}></a>
 				<figure>
 					<img src="/assets/img/email-catcher.png"/>
 				</figure>

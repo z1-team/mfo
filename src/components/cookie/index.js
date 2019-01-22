@@ -40,7 +40,7 @@ class Cookie extends Component {
             <p>Сайт использует файлы cookies.</p>
             <a href="#" onClick={this.handleMore}>Подробнее</a>
           </div>
-          <button onClick={this.handleAgree}>Спасибо</button>
+          <button onClick={this.handleAgree}>Ок, спасибо</button>
         </div>
         <div class={style.full}>
           <section>
@@ -57,7 +57,7 @@ class Cookie extends Component {
             </ul>
           </section>
           <footer>
-            <button onClick={this.handleAgree}>Спасибо</button>
+            <button onClick={this.handleAgree}>Ок, спасибо</button>
             <Link href="/confidentiality">Политика конфиденциальности</Link>
           </footer>
         </div>

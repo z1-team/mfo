@@ -2,7 +2,7 @@
 @import '../../style/variables.scss';
 
 .wrMain {
-  padding: 100px 0 56px;
+  padding: 100px 0 56px; min-height: calc(100vh - 122px);
   background: #fff;
 }
 
@@ -12,6 +12,10 @@
 	@include respond-to(sm) {
 		flex-direction: column;
 	}
+
+  & > div:not(.results) {
+    z-index: 10;
+  }
 }
 
 .results {

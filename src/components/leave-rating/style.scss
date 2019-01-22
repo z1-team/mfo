@@ -3,6 +3,7 @@
 
 .leaveRate {
   display: inline-flex; align-items: center; justify-content: flex-start;
+  cursor: pointer;
 
   li {
     color: #e2e2e2;
@@ -11,10 +12,6 @@
 
     &:last-child {
       margin-right: 0;
-    }
-
-    i {
-      pointer-events: none;
     }
   }
 
@@ -25,7 +22,7 @@
   @for $i1 from 1 through 5 {
     .rate-#{$i1} {
       @for $i2 from 1 through $i1 {
-        & li:nth-child(#{$i2}) i {
+        & li:nth-child(#{$i2}) {
           color: #f2a654 !important;
         }
       }

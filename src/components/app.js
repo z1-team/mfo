@@ -14,11 +14,14 @@ import PopupsContainer from '../containers/PopupsContainer'
 import GuardContainer from '../containers/GuardContainer'
 import CookiesContainer from '../containers/CookiesContainer'
 import BotTestContainer from '../containers/BotTestContainer'
+import PushContainer from '../containers/PushContainer'
 
 import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
 import Confidentiality from '../routes/inner/confidentiality'
 import NotFound from '../routes/not-found'
+
+import ToTop from './to-top'
 
 import api from '../api'
 
@@ -67,7 +70,8 @@ const getCookieItem = () => {
 
 class App extends Component {
 	state = {
-		app: 'app'
+		app: 'app',
+		emailShowed: true
 	}
 
 	componentDidMount() {
@@ -103,7 +107,7 @@ class App extends Component {
 		}
 	}
 
-	render(props, {app}) {
+	render(props, {app, isVisible}) {
 		const cookie = getCookieItem()
 		return (
 			<Provider store={store}>
@@ -123,6 +127,8 @@ class App extends Component {
 					<Match>{displayPopups}</Match>
 					{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
 					{!cookie && <CookiesContainer />}
+					<ToTop />
+					<PushContainer />
 				</div>
 			</Provider>
 		)
