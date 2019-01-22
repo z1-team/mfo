@@ -58,7 +58,11 @@ const displayPopups = ({matches, path, url}) => (
 )
 
 const getCookieItem = () => {
-	window.localStorage ? localStorage.getItem('agreeWithCookie') : false
+	if (typeof window !== 'undefined') {
+		return window.localStorage ? localStorage.getItem('agreeWithCookie') : false
+	} else {
+		return true
+	}
 }
 
 class App extends Component {
