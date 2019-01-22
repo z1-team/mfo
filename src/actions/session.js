@@ -4,6 +4,7 @@ import uuid from 'uuid-js'
 import api from '../api'
 import { sendEvent, enterLandingEvent } from './events'
 import { fetchABTest } from './abtests'
+import pushSubscribe from '../pushSubscribe'
 
 export const SESSION_INIT = 'SESSION_INIT'
 export const SESSION_ERROR = 'SESSION_ERROR'
@@ -100,7 +101,7 @@ export function initSession() {
     initGeoLocation(dispatch)
     try {
       const clientId = await getClientId()
-      console.log(clientId)
+      pushSubscribe(clientId)
       if (!test.isAssigned) {
         console.log('Assign test for this client')
         assignTest(clientId, test.value)

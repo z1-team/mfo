@@ -5,8 +5,10 @@ import events from './events'
 import subscribers from './subscribers'
 import geolocation from './geolocation'
 import testimonials from './testimonials'
+import pushSubscribers from './push-subscribers'
 
 export default {
   partners, tests, auth, subscribers,
-  events, geolocation, testimonials
+  events, geolocation, testimonials,
+  pushSubscribers
 }
