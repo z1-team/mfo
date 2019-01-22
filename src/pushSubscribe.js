@@ -14,12 +14,10 @@ function pushSubscribe(clientId) {
     return false
   }
 
-  console.log('Before ready')
-  navigator.serviceWorker.getRegistration('/').then(console.log)
   navigator.serviceWorker.ready.then((registration) => {
-    console.log('After ready')
     return registration.pushManager.getSubscription()
       .then((subscription) => {
+        console.log('Subs: ', subscription, registration)
         if (subscription) {
           return subscription
         }
