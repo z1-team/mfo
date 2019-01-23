@@ -24,7 +24,7 @@ class ToTop extends Component{
     })
 	}
 
-  handleTop = () => {
+  handleToTop = (event) => {
     event.preventDefault()
     window.scrollTo({
       top: 0,

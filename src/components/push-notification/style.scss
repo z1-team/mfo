@@ -2,7 +2,7 @@
 @import '../../style/variables.scss';
 
 .push {
-  position: fixed; left: 50%; top: 10px; width: 100%; max-width: 400px; height: 200px; padding: 20px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 30;
+  position: fixed; left: 50%; top: 10px; width: 100%; max-width: 400px; padding: 15px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 30;
   background: #fff; border: solid 1px #f96868; box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
   opacity: 0; pointer-events: none;
   transition: opacity 0.2s ease-out, transform 0s 0.2s ease-out;
@@ -13,8 +13,8 @@
   }
 
   p {
-    color: #161616; font-size: 16px;  font-family: $m-r; line-height: 22px; text-align: center;
-    margin-bottom: 20px;
+    color: #161616; font-size: 14px;  font-family: $m-r; line-height: 22px; text-align: center;
+    margin-bottom: 10px;
   }
 
   ul {
@@ -30,13 +30,13 @@
   }
 
   a {
-    color: #f96868; font-size: 16px; font-family: $m-sb; line-height: 22px;
+    color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 22px;
 
   }
 
   button {
-    color: $white; font-size: 16px; font-family: $m-sb; line-height: 20px;
-		display: block; padding: 10px 16px;
+    color: $white; font-size: 14px; font-family: $m-sb; line-height: 20px;
+		display: block; padding: 8px 12px;
 		background: #f96868; border: solid 1px #f96868; border-radius: 5px;
 		cursor: pointer;
 

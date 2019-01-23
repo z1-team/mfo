@@ -13,7 +13,7 @@
 }
 
 .popup {
-  position: relative; width: 100%; left: 0; bottom: 0; padding: 20px;
+  position: relative; width: 100%; left: 0; bottom: 0; padding: 15px;
   background: #ffffff; border: solid 1px #f96868;
 }
 
@@ -74,17 +74,21 @@
   }
 
   h3 {
-    color: #161616; font-size: 18px; font-family: $m-sb; line-height: 22px;
+    color: #161616; font-size: 16px; font-family: $m-sb; line-height: 20px;
     margin-bottom: 10px;
   }
 
   p, a, li {
-    color: #161616; font-size: 14px; font-family: $m-r; line-height: 20px;
+    color: #161616; font-size: 12px; font-family: $m-r; line-height: 20px;
     margin-bottom: 8px;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  a {
+    font-size: 14px;
   }
 
   li {
