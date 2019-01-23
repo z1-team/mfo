@@ -1,13 +1,12 @@
 import { h } from 'preact'
 import Email from '../components/popups/email'
-
 import { connect } from 'preact-redux'
-
 import { closePopup } from '../actions/popup'
+import { subscribeEmail } from '../actions/subscribe'
 
 const mapDispatchToProps = (dispatch) => ({
   onSubmit(email) {
-    console.log(email)
+    dispatch(subscribeEmail(email))
     localStorage.setItem('subscribed', true)
   },
   onClose() {

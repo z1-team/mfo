@@ -11,22 +11,19 @@ class EmailPopups extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault()
-
-		const { email } = this.state
-
+		const {onSubmit} = this.props
+		const {email} = this.state
 		onSubmit(email)
 	}
 
 	handleChange = (event) => {
 		const value = event.target.value
-
 		this.setState({email: value})
 	}
 
 	handleClose = (event) => {
 		event.preventDefault()
-
-		const { onClose } = this.props
+		const {onClose} = this.props
 		onClose()
 	}
 
