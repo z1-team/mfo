@@ -33,6 +33,7 @@ function makeSession(test) {
     query,
     ipInfo: null,
     userId: getUserId(),
+    showPush: false,
     browser: detect() || 'unknown',
     botTest: test.value
   }
@@ -93,6 +94,25 @@ async function initGeoLocation(dispatch) {
   }
 }
 
+function showPushRequest(dispatch) {
+  const isFirstTime = localStorage.getItem('showPush') === null
+  if (isFirstTime) {
+    localStorage.setItem('showPush', 'done')
+    dispatch({type: SESSION_UPDATE, field: 'showPush', value: true})
+  }
+}
+
+export function pushAccept() {
+  return (dispatch, getState) => {
+    const {clientId} = getState().session
+    dispatch({type: SESSION_UPDATE, field: 'showPush', value: false})
+    console.log('Subscribing...', clientId)
+    pushSubscribe(clientId)
+  }
+}
+
+export const pushDecline = () => ({type: SESSION_UPDATE, field: 'showPush', value: false})
+
 export function initSession() {
   return async (dispatch, getState) => {
     const test = getBotTest()
@@ -101,7 +121,7 @@ export function initSession() {
     initGeoLocation(dispatch)
     try {
       const clientId = await getClientId()
-      pushSubscribe(clientId)
+      showPushRequest(dispatch)
       if (!test.isAssigned) {
         console.log('Assign test for this client')
         assignTest(clientId, test.value)
