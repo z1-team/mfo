@@ -14,6 +14,8 @@ const bannerId = {
   w_45: 'bg10'
 }
 
+export const showPush = ({session}) => session.showPush
+
 export const clientBanner = ({session}) => (
   session.query.utm_img ?
     bannerId[session.query.utm_img] || false : false

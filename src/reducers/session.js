@@ -4,6 +4,7 @@ const initialState = {
   query: {},
   ipInfo: null,
   userId: null,
+  showPush: false,
   browser: 'unknown',
   botTest: {}
 }
