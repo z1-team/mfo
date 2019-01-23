@@ -97,21 +97,33 @@ async function initGeoLocation(dispatch) {
 function showPushRequest(dispatch) {
   const isFirstTime = localStorage.getItem('showPush') === null
   if (isFirstTime) {
-    localStorage.setItem('showPush', 'done')
-    dispatch({type: SESSION_UPDATE, field: 'showPush', value: true})
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then((registration) => {
+        console.log('Service worker is ready', registration)
+        dispatch({type: SESSION_UPDATE, field: 'showPush', value: true})
+      })
+    }
   }
 }
 
 export function pushAccept() {
   return (dispatch, getState) => {
     const {clientId} = getState().session
-    dispatch({type: SESSION_UPDATE, field: 'showPush', value: false})
-    console.log('Subscribing...', clientId)
-    pushSubscribe(clientId)
+    localStorage.setItem('showPush', 'done')
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then((registration) => {
+        dispatch({type: SESSION_UPDATE, field: 'showPush', value: false})
+        console.log('Subscribing...', clientId)
+        pushSubscribe(registration, clientId)
+      })
+    }
   }
 }
 
-export const pushDecline = () => ({type: SESSION_UPDATE, field: 'showPush', value: false})
+export const pushDecline = () => {
+  localStorage.setItem('showPush', 'done')
+  return {type: SESSION_UPDATE, field: 'showPush', value: false}
+}
 
 export function initSession() {
   return async (dispatch, getState) => {

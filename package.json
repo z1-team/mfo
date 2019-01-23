@@ -30,6 +30,7 @@
     "per-env": "^1.0.2",
     "preact-cli": "^2.1.0",
     "preact-cli-plugin-fast-async": "^1.0.1",
+    "preact-cli-sw-precache": "^1.0.3",
     "preact-render-spy": "^1.2.1",
     "sass-loader": "^7.1.0"
   },
