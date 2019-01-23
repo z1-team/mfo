@@ -6,8 +6,9 @@ import filters from './filters'
 import sorting from './sorting'
 import popups from './popups'
 import auth from './auth'
+import bot from './bot'
 
 export default combineReducers({
-  auth, filters, sorting, testimonials,
+  auth, bot, filters, sorting, testimonials,
   session, partners, popups
 })

@@ -12,9 +12,16 @@ const getStep = (step, answer) => (
 )
 
 class JustBot extends Component {
-  state = {
-    step: 0,
-    answers: []
+  constructor(props) {
+    super(props)
+    const {onEnd, answers} = props
+    this.state = {
+      step: answers.length,
+      answers: answers
+    }
+    if(answers.length === QA.length) {
+      onEnd()
+    }
   }
 
   componentDidUpdate = () => {
@@ -39,10 +46,12 @@ class JustBot extends Component {
   }
 
   handleAnswer = (answer) => {
+    const {onAnswer} = this.props
     this.setState(prev => ({
       step: getStep(prev.step, answer),
       answers: prev.answers.concat(answer)
     }))
+    onAnswer(answer)
   }
 
   saveRef = ref => this.message = ref

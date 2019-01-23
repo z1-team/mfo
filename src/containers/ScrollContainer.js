@@ -3,6 +3,12 @@ import { connect } from 'preact-redux'
 
 import { openPopup } from '../actions/popup'
 
+const mapDispatchToProps = (dispatch) => ({
+  onScroll() {
+    dispatch(openPopup("email"))
+  }
+})
+
 class ScrollContainer extends Component {
   state = {
     emailShowed: false,
@@ -13,7 +19,7 @@ class ScrollContainer extends Component {
     window.addEventListener('scroll', this.handleScroll)
     setTimeout(() => {
       this.setState({isAlowed: true})
-    }, 1000)
+    }, 20000)
   }
 
   componentWillUnmount() {
@@ -22,7 +28,7 @@ class ScrollContainer extends Component {
 
   handleScroll = (event) => {
     const {emailShowed, isAlowed} = this.state
-    const {partners, onScroll, url} = this.props
+    const {partners, onScroll, url, showBot} = this.props
     const subscribed = localStorage.getItem('subscribed') === null ? true : false
 
     if(!emailShowed && isAlowed && subscribed && url === '/') {
@@ -45,11 +51,5 @@ class ScrollContainer extends Component {
     )
   }
 }
-
-const mapDispatchToProps = (dispatch) => ({
-  onScroll() {
-    dispatch(openPopup("email"))
-  }
-})
 
 export default connect(null, mapDispatchToProps)(ScrollContainer)

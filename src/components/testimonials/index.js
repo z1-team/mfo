@@ -52,7 +52,7 @@ class Testimonials extends Component {
             </header>
 
               {testimonials.length ?
-                  <Masonry className="masonry">
+                  <Masonry class={style.masonry}>
                     {testimonials.map((item) => (
                       <Testi key={item.id} testiID={item.id} text={item.text} user={item.name} rating={item.rating} onDelete={onDelete} />
                     ))}
