@@ -1,11 +1,11 @@
 {
-  "name": "z1-app",
-  "short_name": "z1-app",
+  "name": "Займы на карту онлайн без проверок",
+  "short_name": "Money online",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "theme_color": "#f96868",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",
