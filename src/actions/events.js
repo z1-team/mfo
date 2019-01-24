@@ -3,14 +3,15 @@ import { authToken } from '../selectors/auth'
 import api from '../api'
 
 const camelCase = s => s.replace(/_([a-z])/g, g => g[1].toUpperCase())
-const queryParam = (p, {query}) => query[p] ? query[p] : null
 const ipInfo = (info, {ipInfo}) => ipInfo ? ipInfo[info] || null : null
 const browserInfo = (info, {browser}) => (
   typeof browser === 'string' ? null
   : browser[info] || null
 )
 
-function getDateTime() {
+export const queryParam = (p, {query}) => query[p] ? query[p] : null
+
+export function getDateTime() {
   const date = new Date()
   const year = date.getFullYear()
   const month = date.getMonth()
@@ -26,7 +27,7 @@ function getDateTime() {
   }
 }
 
-function utmExtraValues({query}) {
+export function utmExtraValues({query}) {
   return Object.getOwnPropertyNames(query)
     .filter(param => param.startsWith('utm_') && param !== 'utm_campaign')
     .reduce((r, p) => (r[camelCase(p)] = query[p], r), {})
@@ -94,11 +95,6 @@ export const enterLandingEvent = () => ({
 export const changeDirectionEvent = (direction) => ({
   name: 'change_direction',
   data: {direction}
-})
-
-export const botAnswerEvent = (question, answer) => ({
-  name: 'bot_answer',
-  data: {question, answer}
 })
 
 export function makeFullEvent(event, {session}) {

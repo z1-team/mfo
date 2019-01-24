@@ -15,9 +15,7 @@ const mapDispatchToProps = (dispatch, {onEnd}) => ({
     onEnd()
   },
   onAnswer(answerId, question, answer) {
-    const event = botAnswerEvent(question, answer)
-    dispatch(answerBot(answerId))
-    dispatch(sendEvent(event))
+    dispatch(answerBot(question, answer, answerId))
   }
 })
 
