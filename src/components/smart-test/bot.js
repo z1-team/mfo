@@ -46,12 +46,13 @@ class JustBot extends Component {
   }
 
   handleAnswer = (answer) => {
+    const {step} = this.state
     const {onAnswer} = this.props
     this.setState(prev => ({
       step: getStep(prev.step, answer),
       answers: prev.answers.concat(answer)
     }))
-    onAnswer(answer)
+    onAnswer(answer, QA[step].question, QA[step].answers[answer])
   }
 
   saveRef = ref => this.message = ref

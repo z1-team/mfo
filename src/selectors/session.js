@@ -27,18 +27,25 @@ export const getCity = ({session}) => (
 
 export const getLinksTail = ({session}) => {
   const {query, userId, clientId} = session
-  const tail = {}
+  const queryParams = [
+    ['yclid', 'yclick_id'],
+    ['utm_campaign', 'utm_campaign'],
+    ['utm_source', 'utm_source'],
+    ['utm_gbid', 'utm_gbid'],
+    ['utm_content', 'ad_id'],
+    ['utm_term', 'utm_term'],
+    ['utm_phrase', 'utm_phrase']
+  ]
+
+  const tail = queryParams.reduce((tail, param) => {
+    if (query[param[0]]) {
+      tail[param[1]] = query[param[0]]
+    }
+    return tail
+  }, {})
 
   if (userId) {
     tail.user_id = userId
-  }
-
-  if (query.yclid) {
-    tail.yclick_id = query.yclid
-  }
-
-  if (query.utm_campaign) {
-    tail.utm_campaign = query.utm_campaign
   }
 
   if (clientId) {

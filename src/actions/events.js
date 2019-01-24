@@ -96,6 +96,11 @@ export const changeDirectionEvent = (direction) => ({
   data: {direction}
 })
 
+export const botAnswerEvent = (question, answer) => ({
+  name: 'bot_answer',
+  data: {question, answer}
+})
+
 export function makeFullEvent(event, {session}) {
   const datetime = getDateTime()
   return {

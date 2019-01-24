@@ -2,6 +2,7 @@ import { h } from 'preact'
 import { connect } from 'preact-redux'
 
 import { answerBot } from '../actions/bot'
+import { botAnswerEvent, sendEvent } from '../actions/events'
 
 import JustBot from '../components/smart-test/bot'
 
@@ -13,9 +14,14 @@ const mapDispatchToProps = (dispatch, {onEnd}) => ({
   onEnd() {
     onEnd()
   },
-  onAnswer(answer) {
-    dispatch(answerBot(answer))
+  onAnswer(answerId, question, answer) {
+    const event = botAnswerEvent(question, answer)
+    dispatch(answerBot(answerId))
+    dispatch(sendEvent(event))
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(JustBot)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(JustBot)
