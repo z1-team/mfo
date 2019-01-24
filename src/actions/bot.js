@@ -18,12 +18,16 @@ const makeAnswerEvent = (question, answer, session) => {
 
 export function answerBot(question, answer, answerId) {
   return async (dispatch, getState) => {
-    const event = makeAnswerEvent(question, answer, getState().session)
-    dispatch({type: BOT_ANSWERS, answer: answerId})
-    try {
-      const status = api.answers.send(event)
-    } catch (error) {
-      console.log(error)
+    if (process.env.NODE_ENV === 'production') {
+      if (!window.location.href.match(/\/\/dev\./)) {
+        const event = makeAnswerEvent(question, answer, getState().session)
+        dispatch({type: BOT_ANSWERS, answer: answerId})
+        try {
+          const status = api.answers.send(event)
+        } catch (error) {
+          console.log(error)
+        }
+      }
     }
   }
 }

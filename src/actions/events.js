@@ -119,18 +119,22 @@ export function makeFullEvent(event, {session}) {
 
 export function sendEvent(event) {
   return async (dispatch, getState) => {
-    const state = getState()
-    const token = authToken(state)
-    const fullEvent = makeFullEvent(event, state)
-    if (token === null) {
-      try {
-        const status = await api.events.send(fullEvent)
-        console.log(status)
-      } catch (error) {
-        console.error(error)
+    if (process.env.NODE_ENV === 'production') {
+      if (!window.location.href.match(/\/\/dev\./)) {
+        const state = getState()
+        const token = authToken(state)
+        const fullEvent = makeFullEvent(event, state)
+        if (token === null) {
+          try {
+            const status = await api.events.send(fullEvent)
+            console.log(status)
+          } catch (error) {
+            console.error(error)
+          }
+        } else {
+          console.log('NOTE: Skipping sending events for admins')
+        }
       }
-    } else {
-      console.log('NOTE: Skipping sending events for admins')
     }
   }
 }
