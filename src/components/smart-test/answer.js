@@ -12,9 +12,9 @@ class Answer extends Component {
     onAnswer(parseInt(answer))
   }
 
-  render({answers, selected}) {
+  render({answers, selected, isReady = true}) {
     return (
-      <div class={style.answer}>
+      <div class={`${style.answer} ${!isReady ? style.waiting : ''}`}>
         <ul>
           {answers.map((answer, i) => (
             <li key={i}>

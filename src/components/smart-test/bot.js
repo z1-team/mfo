@@ -11,17 +11,28 @@ const getStep = (step, answer) => (
   step === 0 && answer === 1 ? QA.length : Math.min(step+1, QA.length)
 )
 
+const getRandom = () => (
+  Math.random()*1000+500
+)
+
 class JustBot extends Component {
   constructor(props) {
     super(props)
     const {onEnd, answers} = props
     this.state = {
       step: answers.length,
-      answers: answers
+      answers: answers,
+      isReady: false
     }
     if(answers.length === QA.length) {
       onEnd()
     }
+  }
+
+  componentDidMount = () => {
+    setTimeout(() => (
+      this.setState({isReady: true})
+    ), 2000)
   }
 
   componentDidUpdate = () => {
@@ -29,7 +40,7 @@ class JustBot extends Component {
     const {step} = this.state
 
     if(step === QA.length) {
-      onEnd()
+      setTimeout(onEnd, 2000)
     }
 
     setTimeout(() => {
@@ -37,7 +48,7 @@ class JustBot extends Component {
         top: this.getMessageOffset(),
         behavior: "smooth"
       })
-    }, 20)
+    }, step === QA.length ? 2020 : 20)
   }
 
   getMessageOffset() {
@@ -50,14 +61,18 @@ class JustBot extends Component {
     const {onAnswer} = this.props
     this.setState(prev => ({
       step: getStep(prev.step, answer),
-      answers: prev.answers.concat(answer)
+      answers: prev.answers.concat(answer),
+      isReady: false
     }))
+    setTimeout(() => (
+      this.setState({isReady: true})
+    ), getRandom())
     onAnswer(answer, QA[step].question, QA[step].answers[answer])
   }
 
   saveRef = ref => this.message = ref
 
-  render(props, {step, answers}) {
+  render(props, {step, answers, isReady}) {
     const isLast = step === QA.length
     return (
       <div class={style.smartTest}>
@@ -68,8 +83,8 @@ class JustBot extends Component {
           </div>
         ))}
         <div ref={this.saveRef}></div>
-        <Message message={isLast ? advice : QA[step].question} />
-        {!isLast && <Answer answers={QA[step].answers} onAnswer={this.handleAnswer} />}
+        <Message isReady={isReady} message={isLast ? advice : QA[step].question} />
+        {!isLast && <Answer isReady={isReady} answers={QA[step].answers} onAnswer={this.handleAnswer} />}
       </div>
     )
   }

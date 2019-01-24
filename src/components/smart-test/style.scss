@@ -1,6 +1,10 @@
 @import '../../style/mixins.scss';
 @import '../../style/variables.scss';
 
+@keyframes opacityAnimation {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
 .wrSmartTest {
   padding: 100px 0 75px; min-height: calc(100vh - 122px);
@@ -15,11 +19,29 @@
     }
 }
 
+.writing {
+  position: relative;
+  opacity: 0.7;
+
+  &:before {
+    content: '';
+    display: block; width: 30px; height: 8px; position: absolute; left: 30px; top: 13px;
+    background: url('/assets/img/800.gif') center center no-repeat;
+  }
+}
+
 .message {
   display: flex; margin-bottom: 25px;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &.waiting {
+    p {
+      opacity: 0;
+      transition: opacity 0s ease-out;
+    }
   }
 
   figure {
@@ -55,11 +77,24 @@
 
   p {
     font-family: $os-r;
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
   }
 }
 
 .answer {
   margin-bottom: 30px; padding-left: 140px;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+
+  &.waiting {
+    opacity: 0;
+    transition: opacity 0s ease-out;
+
+    button {
+      pointer-events: none;
+    }
+  }
 
   @include respond-to(sm) {
     padding-left: 100px;
