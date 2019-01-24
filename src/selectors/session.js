@@ -14,6 +14,12 @@ const bannerId = {
   w_45: 'bg10'
 }
 
+const definePlace = (fields, ipInfo, index = 0) => (
+  ipInfo[fields[index]].length > 0 ? ipInfo[fields[index]]
+   : index < fields.length - 1 ? definePlace(fields, ipInfo, index + 1)
+    : 'Ваш город'
+)
+
 export const showPush = ({session}) => session.showPush
 
 export const clientBanner = ({session}) => (
@@ -24,6 +30,12 @@ export const clientBanner = ({session}) => (
 export const getCity = ({session}) => (
   session.ipInfo ? session.ipInfo.city : 'Ваш город'
 )
+
+export const getPlace = ({session}) => {
+  const {ipInfo} = session
+  const fields = ["city", "region", "country", "continent"]
+  return ipInfo ? definePlace(fields, ipInfo) : 'Ваш город'
+}
 
 export const getLinksTail = ({session}) => {
   const {query, userId, clientId} = session

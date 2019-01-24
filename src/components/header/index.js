@@ -2,12 +2,12 @@ import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import style from './style.scss'
 
-const Header = ({city, showBot}) => (
+const Header = ({place, showBot}) => (
 	<div class={style.wrHeader}>
 		<div class="container">
 			<div class={style.header}>
 				<div class={style.contacts}>
-					<p><i class="if fa-marker"></i>{city}</p>
+					<p><i class="if fa-marker"></i>{place}</p>
 				</div>
 				{showBot ? <Link activeClassName={style.active} href="/">Автоподбор займов в вашем городе</Link>
 				 : <ul>
