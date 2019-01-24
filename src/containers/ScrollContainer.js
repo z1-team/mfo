@@ -19,7 +19,7 @@ class ScrollContainer extends Component {
     window.addEventListener('scroll', this.handleScroll)
     setTimeout(() => {
       this.setState({isAlowed: true})
-    }, 20000)
+    }, 42000)
   }
 
   componentWillUnmount() {

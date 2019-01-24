@@ -26,7 +26,7 @@ class ToTop extends Component{
 
   handleToTop = (event) => {
     event.preventDefault()
-    window.scrollTo({
+    window.scroll({
       top: 0,
       behavior: 'smooth'
     })

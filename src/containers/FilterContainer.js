@@ -20,10 +20,10 @@ const mapDispatchToProps = (dispatch) => ({
   onChange(name, value) {
     dispatch(changeFilter(name, value))
     dispatch(sendEvent(changeFilterEvent(name, JSON.stringify(value))))
-    // window.scrollTo({
-    //     top: 0,
-    //     behavior: "smooth"
-    // })
+    window.scroll({
+        top: 0,
+        behavior: "smooth"
+    })
   }
 })
 

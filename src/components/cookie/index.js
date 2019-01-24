@@ -5,7 +5,7 @@ import style from './style.scss'
 
 class Cookie extends Component {
   state = {
-    current: 'short',
+    current: '',
     show: ''
   }
 
@@ -34,7 +34,7 @@ class Cookie extends Component {
     }
 
     return (
-      <div class={`${style.cookie} ${style[show]} ${style[current]}`}>
+      <div class={`${style.cookie} ${show !== '' ? style[show] : ''} ${current !== '' ? style[current] : ''}`}>
         <div class={style.brief}>
           <div>
             <p>Сайт использует файлы cookies.</p>

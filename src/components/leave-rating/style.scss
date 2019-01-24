@@ -22,7 +22,7 @@
   @for $i1 from 1 through 5 {
     .rate-#{$i1} {
       @for $i2 from 1 through $i1 {
-        & li:nth-child(#{$i2}) {
+        & li:nth-child(#{$i2}) i {
           color: #f2a654 !important;
         }
       }

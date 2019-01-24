@@ -94,7 +94,7 @@ class App extends Component {
 		// this.appPadding()
 
 		if (typeof window !== 'undefined') {
-			window.scrollTo(0, 0)
+			window.scroll(0, 0)
 		}
 	}
 

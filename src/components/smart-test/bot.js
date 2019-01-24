@@ -33,7 +33,7 @@ class JustBot extends Component {
     }
 
     setTimeout(() => {
-      window.scrollTo({
+      window.scroll({
         top: this.getMessageOffset(),
         behavior: "smooth"
       })

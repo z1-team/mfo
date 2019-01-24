@@ -57,7 +57,7 @@ class Testimonials extends Component {
                       <Testi key={item.id} testiID={item.id} text={item.text} user={item.name} rating={item.rating} onDelete={onDelete} />
                     ))}
                   </Masonry>
-                : <h3>Отзывов пока нет.</h3>
+                : <h3>Загружаю отзывы...</h3>
               }
             <LeaveTesti id={partner ? partner.id : null} onSubmit={onSubmit}/>
           </div>
