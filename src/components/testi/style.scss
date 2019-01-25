@@ -93,6 +93,7 @@
 			}
 
 			li {
+				color: #c2c2c2;
 				margin-right: 2px;
 
 				&:last-child {
@@ -100,7 +101,7 @@
 				}
 
 				i {
-					color: #c2c2c2; font-size: 14px;
+					color: inherit; font-size: 14px;
 				}
 			}
 		}

@@ -25,7 +25,7 @@ function getUserId() {
   return saved
 }
 
-function makeSession(test) {
+function makeSession() {
   const query = typeof window !== 'undefined'
     ? queryString.parse(window.location.search.substr(1))
     : {}
@@ -35,7 +35,7 @@ function makeSession(test) {
     userId: getUserId(),
     showPush: false,
     browser: detect() || 'unknown',
-    botTest: test.value
+    botTest: {}
   }
 }
 
@@ -127,17 +127,17 @@ export const pushDecline = () => {
 
 export function initSession() {
   return async (dispatch, getState) => {
-    const test = getBotTest()
-    const session = makeSession(test)
+    // const test = getBotTest()
+    const session = makeSession()
     dispatch({type: SESSION_INIT, session})
     initGeoLocation(dispatch)
     try {
       const clientId = await getClientId()
       showPushRequest(dispatch)
-      if (!test.isAssigned) {
-        console.log('Assign test for this client')
-        assignTest(clientId, test.value)
-      }
+      // if (!test.isAssigned) {
+      //   console.log('Assign test for this client')
+      //   assignTest(clientId, test.value)
+      // }
       dispatch({type: SESSION_UPDATE, field: 'clientId', value: clientId})
       dispatch(sendEvent(enterLandingEvent()))
     } catch (error) {

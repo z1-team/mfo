@@ -294,14 +294,16 @@
           padding: 9px 14px;
         }
         @include respond-to(xs) {
-          font-size: 16px; text-align: center;
-          padding: 10px 16px; width: 100%;
-        }
+					font-size: 16px; text-align: center;
+					padding: 10px 16px; width: 100%;
+				}
 
-        &:hover {
-          color: #f96868;
-          background: $white;
-        }
+				@media (min-width: 992px) {
+					&:hover {
+						color: #f96868;
+						background: $white;
+					}
+				}
       }
 
       p {
@@ -399,17 +401,19 @@
       li {
         color: #f96868; font-size: 14px; font-family: $os-b; line-height: 20px;
 
-        button {
-          color: #484848; font-family: $os-r; text-transform: uppercase;
-          display: flex; align-items: center;
-          background: none;
-          cursor: pointer;
-
-          &:hover {
-            i {
-              color: #f96868;
-            }
-          }
+				button {
+					color: #484848; font-family: $os-r; text-transform: uppercase;
+					display: flex; align-items: center;
+					background: none;
+					cursor: pointer;
+					
+					@media (min-width: 992px) {
+						&:hover {
+							i {
+								color: #f96868;
+							}
+						}
+					}
 
           i {
             font-size: 20px;

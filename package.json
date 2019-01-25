@@ -44,6 +44,7 @@
     "react-masonry-component": "^6.2.1",
     "react-sticky-box": "https://github.com/vladimir-shalaev22/react-sticky-box.git",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "sticky-sidebar": "^3.3.1",
