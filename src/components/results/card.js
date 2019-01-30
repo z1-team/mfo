@@ -9,9 +9,9 @@ import icons from './icons.scss'
 
 class Card extends Component {
   handleOrder = (event) => {
-    const {onOrder} = this.props
+    const {item, onOrder} = this.props
     if (typeof onOrder === 'function') {
-      onOrder(this.props.item.title)
+      onOrder(item.id, item.main.title)
     }
   }
 

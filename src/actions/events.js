@@ -89,7 +89,7 @@ export const offerDetailsEvent = (id, name) => ({
 })
 
 export const enterLandingEvent = () => ({
-  name: 'enter_langing'
+  name: 'enter_landing'
 })
 
 export const changeDirectionEvent = (direction) => ({

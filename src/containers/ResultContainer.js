@@ -22,8 +22,8 @@ const mapDispatchToProps = (dispatch, {partners: type}) => ({
     // dispatch(fetchPartners())
   },
 
-  onOrder(partner) {
-    const event = clickOfferEvent(partner.id, partner.main.title)
+  onOrder(id, title) {
+    const event = clickOfferEvent(id, title)
     dispatch(sendEvent(event))
   },
 
