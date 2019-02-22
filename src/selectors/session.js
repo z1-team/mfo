@@ -46,7 +46,8 @@ export const getLinksTail = ({session}) => {
     ['utm_gbid', 'utm_gbid'],
     ['utm_content', 'ad_id'],
     ['utm_term', 'utm_term'],
-    ['utm_phrase', 'utm_phrase']
+    ['utm_phrase', 'utm_phrase'],
+    ['utm_region', 'utm_region'],
   ]
 
   const tail = queryParams.reduce((tail, param) => {
