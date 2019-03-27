@@ -84,7 +84,7 @@
 
       &:hover, &.active {
         color: $white;
-        background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border-color: transparent;
+        background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border-color: transparent;
       }
     }
   }

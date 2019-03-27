@@ -75,7 +75,7 @@
 		button {
 			color: $white; font-size: 16px; font-family: $m-sb; line-height: 22px;
 			margin: 0; display: block; padding: 7px 12px;
-			background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
+			background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
 			cursor: pointer;
 
 			@include respond-to(sm) {

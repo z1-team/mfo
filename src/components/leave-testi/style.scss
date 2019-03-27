@@ -59,7 +59,7 @@
 	button {
 		color: $white; font-size: 16px; font-family: $m-sb; line-height: 20px;
 		display: block; padding: 10px 16px;
-		background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 1px #fff; border-radius: 5px;
+		background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border: solid 1px #fff; border-radius: 5px;
 		cursor: pointer;
 
 		@include respond-to(xs) {

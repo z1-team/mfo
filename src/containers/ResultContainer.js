@@ -25,6 +25,10 @@ const mapDispatchToProps = (dispatch, {partners: type}) => ({
   onOrder(id, title) {
     const event = clickOfferEvent(id, title)
     dispatch(sendEvent(event))
+
+    if (typeof window.ym === 'function') {
+      ym(50978069, 'reachGoal', 'PARTNER_LINK')
+    }
   },
 
   onEdit(id) {

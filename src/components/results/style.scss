@@ -15,7 +15,7 @@
 .addNew {
   color: $white; font-size: 20px; font-family: $m-sb; line-height: 26px;
   margin: 0 auto 30px; display: block; padding: 10px 16px;
-  background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
+  background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
   cursor: pointer;
 
   &:hover {
@@ -152,6 +152,14 @@
           color: #BF5894; font-size: 18px;
           margin-right: 5px;
         }
+
+				a {
+					color: inherit;
+
+					&:hover {
+						color: #BF5894;
+					}
+				}
       }
 
       .rating {
@@ -300,8 +308,8 @@
 
 				@media (min-width: 992px) {
 					&:hover {
-						color: #BF5894;
-						background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border-color: #fff;
+						color: #fff;
+						background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border-color: #fff;
 					}
 				}
       }
