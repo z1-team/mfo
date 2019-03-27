@@ -15,12 +15,12 @@
 .addNew {
   color: $white; font-size: 20px; font-family: $m-sb; line-height: 26px;
   margin: 0 auto 30px; display: block; padding: 10px 16px;
-  background: #f96868; border: solid 2px #f96868; border-radius: 5px;
+  background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    color: #f96868;
-    background: $white;
+    color: #BF5894;
+    background: $white; border-color: #BF5894;
   }
 }
 
@@ -50,14 +50,14 @@
   }
 
 	&.unpublished {
-		border: solid 1px #f96868;
+		border: solid 1px #BF5894;
 		opacity: 0.7;
 	}
 
   .label {
     color: #fff; font-size: 10px; font-family: $m-sb; line-height: 20px; text-transform: uppercase; text-align: center;
     display: block; width: 400px; height: 20px; position: absolute; left: 60px; top: 60px; transform: translate(-50%, -50%) rotate(-45deg);
-    background: #f96868;
+    background: linear-gradient(to right, #dd669b 0%, #553d97 100%);
 
     @include respond-to(lg) {
       left: 50px; top: 50px;
@@ -149,7 +149,7 @@
         }
 
         i {
-          color: #f96868; font-size: 18px;
+          color: #BF5894; font-size: 18px;
           margin-right: 5px;
         }
       }
@@ -200,7 +200,7 @@
           }
 
           i {
-            color: #f96868; font-size: 20px;
+            color: #BF5894; font-size: 20px;
             position: absolute; left: 15px; top: 11px; transform: translate(-50%, -50%);
           }
 
@@ -209,19 +209,19 @@
           }
 
           em {
-            color: #f96868; font-size: 11px; font-family: $os-r; line-height: 14px;
+            color: #BF5894; font-size: 11px; font-family: $os-r; line-height: 14px;
             display: block; margin-left: -28px; padding-top: 4px;
           }
 
           .tooltip {
             color: $white; font-size: 12px; font-family: $m-r; white-space: nowrap;
             position: absolute; left: 0; top: -5px; transform: translateY(-100%); padding: 0 4px; display: none;
-            background: #f96868; border-radius: 4px;
+            background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border-radius: 4px;
 
             &:after {
               content: '';
               position: absolute; left: 9px; top: 100%;
-              border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #f96868; z-index: 3;
+              border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #995299; z-index: 3;
             }
           }
         }
@@ -277,16 +277,16 @@
       }
 
       button {
-        color: #f96868; font-size: 16px; line-height: 20px;
+        color: #BF5894; font-size: 16px; line-height: 20px;
         display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; position: absolute; right: 5px; top: 5px;
         background: none;
         cursor: pointer;
       }
 
       a {
-        color: $white; font-size: 16px; font-family: $m-sb; line-height: 20px;
+        color: #BF5894; font-size: 16px; font-family: $m-sb; line-height: 20px;
         display: inline-block; margin-bottom: 14px; padding: 10px 16px;
-        background: #f96868; border: solid 1px #f96868; border-radius: 5px;
+        background: transparent; border: solid 2px #BF5894; border-radius: 5px;
         transition: background 0.1s ease-out, color 0.1s ease-out;
 
         @include respond-to(lg) {
@@ -300,8 +300,8 @@
 
 				@media (min-width: 992px) {
 					&:hover {
-						color: #f96868;
-						background: $white;
+						color: #BF5894;
+						background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border-color: #fff;
 					}
 				}
       }
@@ -399,18 +399,18 @@
       display: flex; align-items: center; justify-content: space-between;
 
       li {
-        color: #f96868; font-size: 14px; font-family: $os-b; line-height: 20px;
+        color: #BF5894; font-size: 14px; font-family: $os-b; line-height: 20px;
 
 				button {
 					color: #484848; font-family: $os-r; text-transform: uppercase;
 					display: flex; align-items: center;
 					background: none;
 					cursor: pointer;
-					
+
 					@media (min-width: 992px) {
 						&:hover {
 							i {
-								color: #f96868;
+								color: #BF5894;
 							}
 						}
 					}
@@ -426,6 +426,6 @@
 }
 
 .loading {
-  	height: 300px;
-  	background: url("/assets/img/preloader.gif") center center no-repeat;
+	height: 300px;
+	background: url("/assets/img/preloader.gif") center center no-repeat;
 }

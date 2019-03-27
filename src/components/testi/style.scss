@@ -19,7 +19,7 @@
 	}
 
 	.delete {
-		color: #f96868; font-size: 16px;
+		color: #BF5894; font-size: 16px;
 		display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; position: absolute; right: 5px; top: 5px; z-index: 5;
 	}
 
@@ -59,12 +59,12 @@
 		button {
 			color: $white; font-size: 16px; font-family: $m-sb; line-height: 22px;
 			margin: 0; display: block; padding: 7px 12px;
-			background: #f96868; border: solid 2px #f96868; border-radius: 5px;
+			background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
 			cursor: pointer;
 
 			&:hover {
-				color: #f96868;
-				background: $white;
+				color: #BF5894;
+				background: $white; border-color: #BF5894;
 			}
 		}
 	}

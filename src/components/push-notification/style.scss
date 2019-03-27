@@ -2,12 +2,13 @@
 @import '../../style/variables.scss';
 
 .push {
-  position: fixed; left: 50%; top: 10px; width: 100%; max-width: 400px; padding: 15px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 30;
-  background: #fff; border: solid 1px #f96868; box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+  position: fixed; left: 50%; top: 10px; width: 100%; max-width: 400px; padding: 15px; transform: translate(-50%, calc(-100% - 15px)); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 30;
+  background: #fff; border: solid 1px #BF5894; box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
   opacity: 0; pointer-events: none;
   transition: opacity 0.2s ease-out, transform 0s 0.2s ease-out;
 
   &.active {
+    transform: translate(-50%, 0%);
     opacity: 1; pointer-events: auto;
     transition: opacity 0.2s ease-out, transform 0s 0s ease-out;
   }
@@ -30,14 +31,14 @@
   }
 
   a {
-    color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 22px;
+    color: #BF5894; font-size: 14px; font-family: $m-sb; line-height: 22px;
 
   }
 
   button {
     color: $white; font-size: 14px; font-family: $m-sb; line-height: 20px;
 		display: block; padding: 8px 12px;
-		background: #f96868; border: solid 1px #f96868; border-radius: 5px;
+		background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
 		cursor: pointer;
 
 		@include respond-to(xs) {
@@ -45,8 +46,8 @@
 		}
 
 		&:hover {
-			color: #f96868;
-			background: $white;
+			color: #BF5894;
+			background: $white; border-color: #BF5894;
 		}
   }
 }

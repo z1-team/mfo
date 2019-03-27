@@ -48,7 +48,7 @@
 
 .categories {
   width: 270px; flex-shrink: 0; margin-right: 30px; margin-bottom: 20px; padding: 19px;
-  border: solid 2px #f96868;
+  border: solid 2px #BF5894;
 
   @include respond-to(lg) {
     margin-right: 15px; padding: 10px; width: 250px;
@@ -98,20 +98,20 @@
       }
 
 			&.active {
-				color: #f96868;
+				color: #BF5894;
         pointer-events: auto;
 			}
 
       span {
         color: #fff; font-size: 12px; font-family: $m-r; line-height: 18px; text-transform: none; white-space: nowrap;
         padding: 1px 5px; position: absolute; left: 50%; top: -6px; transform: translate(-50%, -100%); display: none;
-        background: #f96868; border-radius: 4px;
+        background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border-radius: 4px;
         pointer-events: none;
 
         &:after {
           content: '';
           display: block; position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 100%);
-          border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: solid 4px #f96868;
+          border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: solid 4px #995299;
         }
       }
 		}

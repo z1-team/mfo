@@ -13,13 +13,13 @@
 		content: '';
 		color: $white; font-size: 12px; font-family: $m-r; white-space: nowrap;
 		display: none; position: absolute; left: 0; top: -10px; transform: translateY(-100%); padding: 0 4px; z-index: 2;
-		background: #f96868; box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+		background: linear-gradient(to right, #dd669b 0%, #553d97 100%); box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
 	}
 
 	&:after {
 		content: '';
 		display: none; position: absolute; left: 13px; top: -11px;
-		border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #f96868; z-index: 3;
+		border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #995299; z-index: 3;
 	}
 
 	&.alfaclick {

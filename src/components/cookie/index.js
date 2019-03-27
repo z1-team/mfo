@@ -35,12 +35,12 @@ class Cookie extends Component {
 
     return (
       <div class={`${style.cookie} ${show !== '' ? style[show] : ''} ${current !== '' ? style[current] : ''}`}>
+        <a href="#" class={style.close} onClick={this.handleAgree}></a>
         <div class={style.brief}>
           <div>
             <p>Сайт использует файлы cookies.</p>
             <a href="#" onClick={this.handleMore}>Подробнее</a>
           </div>
-          <button onClick={this.handleAgree}>Ок, спасибо</button>
         </div>
         <div class={style.full}>
           <section>

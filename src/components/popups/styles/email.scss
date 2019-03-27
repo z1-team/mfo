@@ -68,12 +68,12 @@
   button {
     color: $white; font-size: 16px; font-family: $m-sb; line-height: 22px; text-transform: uppercase;
     width: 40.18519%; padding: 14px 10px;
-    background: #f96868; border: solid 2px #f96868; border-radius: 5px;
+    background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
     cursor: pointer;
 
     &:hover {
-      color: #f96868;
-      background: $white;
+      color: #BF5894;
+      background: $white; border-color: #BF5894;
     }
 
     @include respond-to(xs) {
@@ -107,7 +107,7 @@
     }
 
     a {
-      color: #f96868; text-decoration: underline;
+      color: #BF5894; text-decoration: underline;
 
       &:hover {
         text-decoration: none;

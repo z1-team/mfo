@@ -80,10 +80,27 @@ class Card extends Component {
         {label === 'recommend' ? <span class={style.label}>Рекомендуют</span> : ''}
         <section>
           <figure>
-            <img src={item.main.logo} />
+            <a
+              target="_blank"
+              href={`${item.main.link}?${tail}`}
+              rel="nofollow noopener"
+              onClick={this.handleOrder}
+            >
+              <img src={item.main.logo} />
+            </a>
           </figure>
           <div class={style.info}>
-            <h3>{label === 'recommend' ? <i class="if fa-gripfire"></i> : ''}{item.main.title}</h3>
+            <h3>
+              <a
+                target="_blank"
+                href={`${item.main.link}?${tail}`}
+                rel="nofollow noopener"
+                onClick={this.handleOrder}
+              >
+                {label === 'recommend' ? <i class="if fa-gripfire"></i> : ''}
+                {item.main.title}
+              </a>
+            </h3>
             <div class={style.rating}>
               <StarRating rating={item.sortBy.rating} />
               <p><Link href={`/testimonials/${item.id}`}>{item.sortBy.testimonials_count} {this.getEnding()}</Link> {item.sortBy.rating && `(${rating} из 5)`}</p>

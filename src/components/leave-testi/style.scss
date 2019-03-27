@@ -37,7 +37,7 @@
     		}
 
     		p {
-    			color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 18px;
+    			color: #BF5894; font-size: 14px; font-family: $m-sb; line-height: 18px;
     			padding-top: 5px;
     		}
 			}
@@ -59,7 +59,7 @@
 	button {
 		color: $white; font-size: 16px; font-family: $m-sb; line-height: 20px;
 		display: block; padding: 10px 16px;
-		background: #f96868; border: solid 1px #f96868; border-radius: 5px;
+		background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 1px #fff; border-radius: 5px;
 		cursor: pointer;
 
 		@include respond-to(xs) {
@@ -67,8 +67,8 @@
 		}
 
 		&:hover {
-			color: #f96868;
-			background: $white;
+			color: #BF5894;
+			background: $white; border-color: #BF5894;
 		}
 	}
 }

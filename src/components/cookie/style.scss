@@ -14,9 +14,25 @@
   }
 }
 
+.close {
+  display: block; width: 20px; height: 20px; position: absolute; right: 5px; top: 5px; z-index: 5;
+
+  &:before, &:after {
+    content: '';
+    display: block; width: 20px; height: 4px; position: absolute; left: 50%; top: 50%;
+    background: #BF5894; border-radius: 10px;
+  }
+  &:before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  &:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
 .popup {
   position: relative; width: 100%; left: 0; bottom: 0; padding: 15px;
-  background: #ffffff; border: solid 1px #f96868;
+  background: #ffffff; border: solid 1px #BF5894;
 }
 
 .brief {
@@ -33,19 +49,7 @@
   }
 
   a {
-    color: #f96868; font-size: 12px;
-  }
-
-  button {
-    color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 18px;
-    display: inline-block; padding: 8px 15px;
-    background: #fff; border: solid 2px #f96868; border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-      color: #fff;
-      background: #f96868;
-    }
+    color: #BF5894; font-size: 12px;
   }
 }
 
@@ -104,18 +108,18 @@
   }
 
   a {
-    color: #f96868;
+    color: #BF5894;
   }
 
   button {
-    color: #f96868; font-size: 14px; font-family: $m-sb; line-height: 18px;
+    color: #fff; font-size: 14px; font-family: $m-sb; line-height: 18px;
     display: inline-block; padding: 8px 15px;
-    background: #fff; border: solid 2px #f96868; border-radius: 5px;
+    background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
     cursor: pointer;
 
     &:hover {
-      color: #fff;
-      background: #f96868;
+      color: #BF5894;
+      background: #fff; border-color: #BF5894;
     }
   }
 }
