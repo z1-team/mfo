@@ -5,10 +5,10 @@
 
 	& > div {
 		position: relative;
-		border: solid 1px grey; background: #f7f7f7;
+		border: solid 1px #e8e8f3; background: #fafafa;
 
 		input {
-			color: #BF5894; font-size: 16px; font-family: $m-sb; line-height: 20px;
+			color: $main; font-size: 16px; font-family: $m-sb; line-height: 20px;
 			margin-bottom: 10px; padding: 7px 10px 3px; width: 100%;
 			background: transparent;
 		}

@@ -3,7 +3,7 @@
 
 .wrMain {
   padding: 100px 0 56px; min-height: calc(100vh - 122px);
-  background: #fff;
+  background: linear-gradient(180deg, #f8f8ff 0%, #fbfbfe 100%);
 }
 
 .main {
@@ -22,7 +22,7 @@
   width: 100%;
 
   h2 {
-		color: #232935; font-size: 24px; font-family: $m-sb; line-height: 28px;
+		color: #111111; font-size: 24px; font-family: $m-sb; line-height: 28px;
 		margin-bottom: 35px;
 
 		@include respond-to(sm) {

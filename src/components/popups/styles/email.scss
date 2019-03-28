@@ -72,8 +72,7 @@
     cursor: pointer;
 
     &:hover {
-      color: #BF5894;
-      background: $white; border-color: #BF5894;
+      background: linear-gradient(to right, #dd669b 0%, #553d97 100%);
     }
 
     @include respond-to(xs) {
@@ -107,7 +106,7 @@
     }
 
     a {
-      color: #BF5894; text-decoration: underline;
+      color: $main; text-decoration: underline;
 
       &:hover {
         text-decoration: none;

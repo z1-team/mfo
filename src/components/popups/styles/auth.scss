@@ -31,7 +31,7 @@
   }
 
   p {
-    color: #BF5894; font-size: 16px; font-family: $m-sb; line-height: 20px; text-align: center;
+    color: $main; font-size: 16px; font-family: $m-sb; line-height: 20px; text-align: center;
     margin-bottom: 10px;
   }
 
@@ -42,8 +42,7 @@
     cursor: pointer;
 
     &:hover {
-      color: #BF5894;
-      background: #fff; border-color: #BF5894;
+      background: linear-gradient(to right, #dd669b 0%, #553d97 100%);
     }
   }
 }

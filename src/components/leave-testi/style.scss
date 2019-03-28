@@ -37,7 +37,7 @@
     		}
 
     		p {
-    			color: #BF5894; font-size: 14px; font-family: $m-sb; line-height: 18px;
+    			color: $main; font-size: 14px; font-family: $m-sb; line-height: 18px;
     			padding-top: 5px;
     		}
 			}
@@ -67,8 +67,8 @@
 		}
 
 		&:hover {
-			color: #BF5894;
-			background: $white; border-color: #BF5894;
+			color: $main;
+			background: $white; border-color: $main;
 		}
 	}
 }
