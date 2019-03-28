@@ -16,8 +16,7 @@
     cursor: pointer;
 
     &:hover {
-      color: #BF5894;
-      background: $white; border-color: #BF5894;
+      background: linear-gradient(to left, #dd669b 0%, #553d97 100%);
     }
   }
 }

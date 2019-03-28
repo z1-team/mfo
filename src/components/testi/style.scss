@@ -19,7 +19,7 @@
 	}
 
 	.delete {
-		color: #BF5894; font-size: 16px;
+		color: $main; font-size: 16px;
 		display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; position: absolute; right: 5px; top: 5px; z-index: 5;
 	}
 
@@ -63,8 +63,8 @@
 			cursor: pointer;
 
 			&:hover {
-				color: #BF5894;
-				background: $white; border-color: #BF5894;
+				color: $main;
+				background: $white; border-color: $main;
 			}
 		}
 	}

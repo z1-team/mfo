@@ -15,7 +15,7 @@
       }
 
       strong {
-        color: #BF5894;
+        color: $main;
       }
     }
 
@@ -26,7 +26,7 @@
 
       &:hover {
         &:before, &:after {
-          background: #BF5894;
+          background: $main;
         }
       }
 
@@ -72,9 +72,9 @@
     }
 
     button {
-      color: #BF5894; font-size: 16px; font-family: $m-sb; line-height: 20px;
+      color: $main; font-size: 16px; font-family: $m-sb; line-height: 20px;
       display: inline-block; padding: 10px 16px;
-      background: #fff; border: solid 2px #BF5894; border-radius: 5px;
+      background: #fff; border: solid 2px $main; border-radius: 5px;
       cursor: pointer;
 
       @include respond-to(xs) {

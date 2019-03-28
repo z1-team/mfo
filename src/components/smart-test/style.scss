@@ -136,7 +136,7 @@
 
     &:hover {
       color: #ffffff;
-      background: #BF5894; border-color: #BF5894;
+      background: $main; border-color: $main;
 
       @include respond-to(md) {
         color: #161616;
@@ -155,7 +155,7 @@
 
     &.active {
       color: #ffffff;
-      background: #BF5894; border-color: #BF5894;
+      background: $main; border-color: $main;
     }
   }
 }

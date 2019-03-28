@@ -3,7 +3,7 @@
 
 .sidebar {
   width: 270px; flex-shrink: 0; margin-right: 30px; margin-bottom: 20px; padding: 20px;
-  border: solid 1px #e2e2e2;
+  background: #fff; border: solid 1px #e8e8f3;
 
   @include respond-to(lg) {
     margin-right: 15px; padding: 10px; width: 250px;
@@ -20,9 +20,9 @@
   }
 
   & > p {
-    font-size: 12px; font-family: $m-l;
+    color: #3b4f72; font-size: 12px; font-family: $m-l;
     padding-bottom: 19px; margin-bottom: 19px;
-    border-bottom: solid 1px #f7f7f7;
+    border-bottom: solid 1px #e8e8f3;
 
   	&:last-child {
   		margin-bottom: 0; padding-bottom: 0;
@@ -30,7 +30,7 @@
   	}
 
     strong {
-      font-size: 16px; font-family: $os-b;
+      color: #111111; font-size: 16px; font-family: $os-b;
     }
 
     span {
@@ -48,7 +48,7 @@
 
 .categories {
   width: 270px; flex-shrink: 0; margin-right: 30px; margin-bottom: 20px; padding: 19px;
-  border: solid 2px #BF5894;
+  border: solid 2px $main;
 
   @include respond-to(lg) {
     margin-right: 15px; padding: 10px; width: 250px;
@@ -67,7 +67,7 @@
 
 .filter {
 	padding-bottom: 19px; margin-bottom: 19px;
-	border-bottom: solid 1px #f7f7f7;
+	border-bottom: solid 1px #e8e8f3;
 
 	&:last-child {
 		margin-bottom: 0; padding-bottom: 0;
@@ -81,7 +81,7 @@
 	}
 
 	h4 {
-		color: #161616; font-size: 14px; font-family: $m-sb; line-height: 18px;
+		color: #111111; font-size: 14px; font-family: $m-sb; line-height: 18px;
 		display: flex; justify-content: space-between; margin-bottom: 10px;
 
 		button {
@@ -98,7 +98,7 @@
       }
 
 			&.active {
-				color: #BF5894;
+				color: $main;
         pointer-events: auto;
 			}
 

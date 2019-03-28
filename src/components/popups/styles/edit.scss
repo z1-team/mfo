@@ -15,7 +15,7 @@
       }
 
       strong {
-        color: #BF5894;
+        color: $main;
       }
     }
 
@@ -31,7 +31,7 @@
       &:before, &:after {
         content: '';
         display: block; width: 20px; height: 4px; position: absolute; left: 50%; top: 50%;
-        background: #BF5894; border-radius: 100px;
+        background: $main; border-radius: 100px;
       }
 
       &:before {
@@ -446,9 +446,9 @@
     }
 
     button {
-      color: #BF5894; font-size: 16px; font-family: $m-sb; line-height: 20px;
+      color: $main; font-size: 16px; font-family: $m-sb; line-height: 20px;
       display: inline-block; padding: 10px 16px;
-      background: transparent; border: solid 2px #BF5894; border-radius: 5px;
+      background: transparent; border: solid 2px $main; border-radius: 5px;
       cursor: pointer;
 
       @include respond-to(xs) {

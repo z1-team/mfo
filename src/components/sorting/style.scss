@@ -9,7 +9,7 @@
   }
 
   p, ul li button {
-    color: #484848; font-size: 14px; font-family: $os-r; line-height: 18px; text-transform: uppercase;
+    color: #3b4f72; font-size: 14px; font-family: $os-r; line-height: 18px; text-transform: uppercase;
     position: relative;
     opacity: 0.8;
 
@@ -65,7 +65,7 @@
 
     li {
       margin-right: 20px; padding-right: 19px; position: relative;
-      border-right: solid 1px #c2c2c2;
+      border-right: solid 1px rgba(194, 194, 194, 0.6);
 
       @include respond-to(md) {
         margin-right: 10px; padding-right: 9px;

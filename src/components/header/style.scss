@@ -25,7 +25,7 @@
     }
 
 		a, p {
-			color: #fff; font-size: 12px; line-height: 14px; font-family: $m-r;
+			color: #fff; font-size: 12px; line-height: 14px; font-family: $m-sb;
 		}
 
 		a {
@@ -115,7 +115,7 @@
 		background: linear-gradient(to right, #dd669b 0%, #553d97 100%); box-shadow: 0 0 5px 0px rgba(0,0,0,0.5);
 
 		&:hover {
-			color: #BF5894;
+			color: $main;
 			background: #fff;
 		}
 
