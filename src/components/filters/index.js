@@ -91,7 +91,10 @@ class Filters extends Component {
     return (
       <StickyBox offsetTop={66} offsetBottom={20}>
         <div class={style.sidebar}>
-          <p>Всего микрозаймов: <strong>{total}</strong><br/>Найдено в: <strong>{location}</strong></p>
+          <div class={style.header}>
+            <p>Всего микрозаймов: <strong>{total}</strong></p>
+            <p>Найдено в: <strong>{location}</strong></p>
+          </div>
           {filtersNames.map(filter => (
             <SearchModule title={filter.title} name={filter.name} onChange={this.handleChange} isActive={this.isFilterActive(filters[filter.name], filter.type)}>
               {this.filtersType(filter)}
