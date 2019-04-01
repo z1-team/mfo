@@ -49,4 +49,26 @@
 			background: linear-gradient(to right, #dd669b 0%, #553d97 100%);
 		}
   }
+
+  .closeButton {
+    position: absolute; right: 5px; top: 5px; width: 20px; height: 20px; padding: 0;
+    background: none;
+
+    &:hover {
+      background: none;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block; width: 16px; height: 2px; position: absolute; left: 50%; top: 50%;
+      background: $main; border-radius: 10px;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
 }

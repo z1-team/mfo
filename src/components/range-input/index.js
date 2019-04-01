@@ -96,7 +96,7 @@ class RangeInput extends Component {
             <span class={style.point} style={{left: 100*position + '%'}}></span>
             </div>
           </div>
-          {label && <p>{label}</p>}
+          {label && <p class={style.caption}>{label}</p>}
       </div>
     )
   }

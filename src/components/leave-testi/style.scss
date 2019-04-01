@@ -67,8 +67,7 @@
 		}
 
 		&:hover {
-			color: $main;
-			background: $white; border-color: $main;
+			background: linear-gradient(to right, #dd669b 0%, #553d97 100%);
 		}
 	}
 }

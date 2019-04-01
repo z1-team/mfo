@@ -1,6 +1,11 @@
 @import '../../../style/mixins.scss';
 @import '../../../style/variables.scss';
 
+@keyframes buttonHoverGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 
 .email {
   .close {
@@ -70,9 +75,11 @@
     width: 40.18519%; padding: 14px 10px;
     background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
     cursor: pointer;
-
+    
     &:hover {
-      background: linear-gradient(to right, #dd669b 0%, #553d97 100%);
+      color: #fff;
+      background: linear-gradient(to right, #dd669b, #553d97); background-size: 200% 200%; border-color: #fff;
+      animation: buttonHoverGradient 10s ease infinite;
     }
 
     @include respond-to(xs) {
