@@ -45,16 +45,11 @@
   margin: 0 0 22px; max-width: 880px; width: 100%; position: relative;
   background: #fff; box-shadow: 0 0 0 1px #e8e8f3;
   overflow: hidden;
-	transition: box-shadow 0.2s ease-out;
   animation: showCards 0.5s ease-out 1;
 
   @include respond-to(lg) {
     max-width: 780px;
   }
-
-	&:hover {
-		box-shadow: 0px 0px 6px 3px rgba(72, 72, 77, 0.2);
-	}
 
   &:last-child {
     margin-bottom: 0;
@@ -66,10 +61,10 @@
 	}
 
   .label {
-    color: #fff; font-size: 10px; font-family: $m-sb; line-height: 20px; text-transform: uppercase; text-align: center;
-    display: block; width: 200px; height: 20px; position: absolute; left: 60px; top: 60px; transform: translate(-50%, -50%) rotate(-45deg);
-    background: linear-gradient(to right, #dd669b, #553d97); background-size: 200% 200%;
-		animation: buttonHoverGradient 20s ease infinite;
+		color: #fff; font-size: 10px; font-family: $m-sb; line-height: 20px; text-transform: uppercase; text-align: center;
+		display: block; width: 200px; height: 20px; position: absolute; left: 60px; top: 60px; transform: translate(-50%, -50%) rotate(-45deg);
+		background: #804a98; background-image: linear-gradient(to right, #dd669b, #553d97); background-size: 200% 200%;
+		// animation: buttonHoverGradient 20s ease infinite;
 
     @include respond-to(lg) {
       left: 50px; top: 50px;
@@ -321,7 +316,7 @@
 				@media (min-width: 992px) {
 					&:hover {
 						color: #fff;
-						background: linear-gradient(to right, #dd669b, #553d97); background-size: 200% 200%; border-color: #fff;
+						background: #804a98; background-image: linear-gradient(to right, #dd669b, #553d97); border-color: #fff;
 						animation: buttonHoverGradient 10s ease infinite;
 					}
 				}
