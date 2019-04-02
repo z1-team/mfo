@@ -5,7 +5,7 @@
 @import './icon-font.scss';
 
 html, body {
-	background: linear-gradient(180deg, #f8f8ff 0%, #fbfbfe 100%);
+	background: #fff;
 }
 
 body {
@@ -33,7 +33,7 @@ body {
 
 .app {
 	min-width: 320px;
-	background: #f8f8ff url('../assets/img/preloader.gif') center top 65px no-repeat;
+	background: #fff;
 
 	&.partners {
 		@include respond-to(sm) {padding-bottom: 50px;}
