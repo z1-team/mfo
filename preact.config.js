@@ -1,16 +1,13 @@
 import asyncPlugin from 'preact-cli-plugin-fast-async'
-import preactCliSwPrecachePlugin from 'preact-cli-sw-precache'
+import WorkboxPlugin from 'workbox-webpack-plugin'
 
 export default (config) => {
-  const precacheConfig = {
-    staticFileGlobs: [
-      'build/*.css',
-      'build/*.js'
-    ],
-    stripPrefix: 'build/',
-    runtimeCaching: []
-  }
-
   asyncPlugin(config)
-  return preactCliSwPrecachePlugin(config, precacheConfig)
+  config.plugins.push(
+    new WorkboxPlugin.InjectManifest({
+      swSrc: './service-worker.js',
+      swDest: './service-worker.js',
+      include: [/\.html$/, /\.js$/, /\.svg$/, /\.css$/, /\.png$/, /\.ico$/]
+    })
+  )
 }

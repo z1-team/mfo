@@ -7,7 +7,7 @@
     "start": "per-env",
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build --template src/template.html",
+    "build": "preact build --template src/template.html --no-service-worker",
     "serve": "preact build && preact serve",
     "dev": "preact watch --template src/template.html",
     "lint": "eslint src",
@@ -32,10 +32,12 @@
     "preact-cli-plugin-fast-async": "^1.0.1",
     "preact-cli-sw-precache": "^1.0.3",
     "preact-render-spy": "^1.2.1",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "workbox-webpack-plugin": "^4.2.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.6.3",
+    "copy-webpack-plugin": "^5.0.2",
     "detect-browser": "^4.0.3",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
