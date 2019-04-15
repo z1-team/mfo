@@ -45,9 +45,9 @@
     }
   }
 
-  p {
-    color: #161616; font-size: 17px; font-family: $m-sb; line-height: 22px; text-transform: uppercase;
-    margin-bottom: 5px; width: 100%;
+  h3 {
+    color: #161616; font-size: 20px; font-family: $m-sb; line-height: 26px; text-transform: uppercase;
+    margin-bottom: 15px; width: 100%;
 
     @include respond-to(sm) {
       font-size: 16px;
@@ -55,6 +55,11 @@
     @include respond-to(xs) {
       font-size: 14px; line-height: 20px;
     }
+  }
+
+  p {
+    color: #161616; font-size: 14px; font-family: $m-r; line-height: 20px;
+    margin-top: 5px; margin-bottom: 10px;
   }
 
   input[type="email"] {
@@ -71,11 +76,11 @@
   }
 
   button {
-    color: $white; font-size: 16px; font-family: $m-sb; line-height: 22px; text-transform: uppercase;
+    color: $white; font-size: 12px; font-family: $m-sb; line-height: 22px; text-transform: uppercase;
     width: 40.18519%; padding: 14px 10px;
     background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
     cursor: pointer;
-    
+
     &:hover {
       color: #fff;
       background: linear-gradient(to right, #dd669b, #553d97); background-size: 200% 200%; border-color: #fff;

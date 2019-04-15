@@ -5,21 +5,22 @@ import { openPopup } from '../actions/popup'
 
 const mapDispatchToProps = (dispatch) => ({
   onScroll() {
-    dispatch(openPopup("email"))
+    dispatch(openPopup('email'))
   }
 })
 
 class ScrollContainer extends Component {
   state = {
-    emailShowed: false,
-    isAlowed: false
+    emailShowed: false
   }
 
   componentDidMount(){
+    const {onScroll} = this.props
     window.addEventListener('scroll', this.handleScroll)
     setTimeout(() => {
-      this.setState({isAlowed: true})
-    }, 42000)
+      onScroll()
+      this.setState({emailShowed: true})
+    }, 16000)
   }
 
   componentWillUnmount() {
@@ -31,18 +32,18 @@ class ScrollContainer extends Component {
     const {partners, onScroll, url, showBot} = this.props
     const subscribed = localStorage.getItem('subscribed') === null ? true : false
 
-    if(!emailShowed && isAlowed && subscribed && url === '/') {
-      let scrollTop = document.documentElement.scrollTop
-      let windowHiehgt = window.innerHeight
-      let appHeight = document.getElementById('app').offsetHeight
-      let footer = document.getElementById('footer').offsetHeight
-      let itemTranslate = Math.min(0, scrollTop/3 - 60)
-
-      if((appHeight - windowHiehgt - footer - scrollTop) <= 0) {
-        onScroll()
-        this.setState({emailShowed: true})
-      }
-    }
+    // if(!emailShowed && subscribed && url === '/') {
+    //   let scrollTop = document.documentElement.scrollTop
+    //   let windowHiehgt = window.innerHeight
+    //   let appHeight = document.getElementById('app').offsetHeight
+    //   let footer = document.getElementById('footer').offsetHeight
+    //   let itemTranslate = Math.min(0, scrollTop/3 - 60)
+    //
+    //   if((appHeight - windowHiehgt - footer - scrollTop) <= 0) {
+    //     onScroll()
+    //     this.setState({emailShowed: true})
+    //   }
+    // }
   }
 
   render() {

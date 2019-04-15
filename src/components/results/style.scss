@@ -14,7 +14,7 @@
 
 @keyframes buttonHoverGradient {
     0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
+    50%{background-position:50% 50%}
     100%{background-position:0% 50%}
 }
 
@@ -63,8 +63,8 @@
   .label {
 		color: #fff; font-size: 10px; font-family: $m-sb; line-height: 20px; text-transform: uppercase; text-align: center;
 		display: block; width: 200px; height: 20px; position: absolute; left: 60px; top: 60px; transform: translate(-50%, -50%) rotate(-45deg);
-		background: #804a98; background-image: linear-gradient(to right, #dd669b, #553d97); background-size: 200% 200%;
-		// animation: buttonHoverGradient 20s ease infinite;
+		background: #804a98; background-image: linear-gradient(to right, #dd669b, #553d97); background-size: 150%; background-size: 200% 200%;
+		animation: buttonHoverGradient 20s ease infinite;
 
     @include respond-to(lg) {
       left: 50px; top: 50px;

@@ -110,15 +110,9 @@
   a {
     color: $main;
   }
+}
 
-  button {
-    color: #fff; font-size: 14px; font-family: $m-sb; line-height: 18px;
-    display: inline-block; padding: 8px 15px;
-    background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-      background: linear-gradient(to right, #dd669b 0%, #553d97 100%);
-    }
-  }
+.button {
+  font-size: 14px; line-height: 18px;
+  padding: 8px 15px;
 }

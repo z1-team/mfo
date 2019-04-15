@@ -3,6 +3,8 @@ import { Link } from 'preact-router/match'
 
 import style from './style.scss'
 
+import Button from '../utility/Button'
+
 class Cookie extends Component {
   state = {
     current: '',
@@ -18,9 +20,7 @@ class Cookie extends Component {
     this.setState({current: 'all'})
   }
 
-  handleAgree = (event) => {
-    event.preventDefault()
-
+  handleAgree = (id) => {
     const {onAccept} = this.props
     this.setState({show: ''})
     onAccept()
@@ -57,7 +57,7 @@ class Cookie extends Component {
             </ul>
           </section>
           <footer>
-            <button onClick={this.handleAgree}>Ок, спасибо</button>
+            <Button class={style.button} id="agree-cookie" onClick={this.handleAgree}>Ок, спасибо</Button>
             <Link href="/confidentiality">Политика конфиденциальности</Link>
           </footer>
         </div>

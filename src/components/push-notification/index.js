@@ -2,6 +2,8 @@ import { h, Component } from 'preact'
 
 import style from './style.scss'
 
+import Button from '../utility/Button'
+
 class Push extends Component {
   render({isOpen, onAccept, onDecline}) {
     return (
@@ -13,7 +15,7 @@ class Push extends Component {
             <a href="#" onClick={onDecline}>Нет, спасибо</a>
           </li>
           <li>
-            <button onClick={onAccept}>Продолжить</button>
+            <Button class={style.button} id="accept" onClick={onAccept}>Продолжить</Button>
           </li>
         </ul>
       </div>

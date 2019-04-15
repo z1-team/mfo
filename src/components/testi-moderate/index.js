@@ -2,6 +2,8 @@ import { h, Component } from 'preact'
 
 import style from './style.scss'
 
+import Button from '../utility/Button'
+
 class TestiModerate extends Component {
   constructor(props) {
     super(props)
@@ -26,17 +28,15 @@ class TestiModerate extends Component {
     this.setState({text: value})
   }
 
-  handleDelete = (event) => {
+  handleDelete = () => {
     const {item, onDelete} = this.props
-    event.preventDefault()
     if (typeof onDelete === 'function') {
       onDelete(item.id)
     }
   }
 
-  handlePublic = (event) => {
+  handlePublic = () => {
     const {item, onPublic} = this.props
-    event.preventDefault()
     if (typeof onPublic === 'function') {
       onPublic({...item, text: this.state.text, status: 'published'})
     }
@@ -64,8 +64,8 @@ class TestiModerate extends Component {
           </ul>
         </footer>
         <div class={style.actions}>
-          <button onClick={this.handleDelete}>Удалить</button>
-          <button onClick={this.handlePublic}>Опубликовать</button>
+          <Button id="delete" onClick={this.handleDelete}>Удалить</Button>
+          <Button id="public" onClick={this.handlePublic}>Опубликовать</Button>
         </div>
       </div>
     )

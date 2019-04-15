@@ -1,6 +1,7 @@
 import { h, Component } from 'preact'
 
 import LeaveRating from '../leave-rating'
+import Button from '../utility/Button'
 
 import style from './style.scss'
 
@@ -44,10 +45,10 @@ class Testi extends Component {
     this.setState({rating: value})
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = (param) => {
     const {name, email, text, rating} = this.state
     const {id, onSubmit} = this.props
-    event.preventDefault()
+
     if(name && email && text && rating !== 0) {
       if (typeof onSubmit === 'function') {
         onSubmit({partner: id, name, email, text, rating})
@@ -94,7 +95,7 @@ class Testi extends Component {
             </div>
           </section>
           <footer>
-            <button onClick={this.handleSubmit}>Отправить отзыв</button>
+            <Button id="leave-testi" onClick={this.handleSubmit}>Отправить отзыв</Button>
           </footer>
         </form>
       </div>
