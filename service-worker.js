@@ -16,18 +16,15 @@ self.addEventListener('push', function (event) {
   }
 
   var title = data.title || "Something Has Happened";
-  var message = data.message || "Here's something you might want to check out.";
-  var icon = "/assets/img/alfa-100-dnei.png";
+  var message = data.body || "Here's something you might want to check out.";
+  var icon = data.icon;
 
-  var notification = new self.Notification(title, {
-    body: message,
-    tag: 'simple-push-demo-notification',
-    icon: icon
-  });
+  return event.waitUntil(self.registration.showNotification(title, {
+      body: message,
+      icon: icon,
+      data: {
+        href: data.href
+      }
+  }))
 
-  notification.addEventListener('click', function() {
-    if (clients.openWindow) {
-      clients.openWindow('https://example.blog.com/2015/03/04/something-new.html');
-    }
-  });
 });
