@@ -32,22 +32,6 @@
 
   a {
     color: $main; font-size: 14px; font-family: $m-sb; line-height: 22px;
-
-  }
-
-  button {
-    color: $white; font-size: 14px; font-family: $m-sb; line-height: 20px;
-		display: block; padding: 8px 12px;
-		background: linear-gradient(to left, #dd669b 0%, #553d97 100%); border: solid 2px #fff; border-radius: 5px;
-		cursor: pointer;
-
-		@include respond-to(xs) {
-			width: 100%;
-		}
-
-		&:hover {
-			background: linear-gradient(to right, #dd669b 0%, #553d97 100%);
-		}
   }
 
   .closeButton {
@@ -71,4 +55,9 @@
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
+}
+
+.button {
+  font-size: 14px; line-height: 20px;
+  padding: 8px 12px;
 }

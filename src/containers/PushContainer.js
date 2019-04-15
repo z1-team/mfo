@@ -9,8 +9,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onAccept(event) {
-    event.preventDefault()
+  onAccept() {
     dispatch(pushAccept())
   },
   onDecline(event) {

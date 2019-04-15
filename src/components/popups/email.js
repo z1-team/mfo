@@ -31,16 +31,17 @@ class EmailPopups extends Component {
 		return (
 			<div class={style.email}>
 				<a href="#" class={style.close} onClick={this.handleClose}></a>
-				<figure>
+				{/* <figure>
 					<img src="/assets/img/email-catcher.png"/>
-				</figure>
+				</figure> */}
 				<form action="#" onSubmit={this.handleSubmit}>
-					<p>Вышлем спецпредложения от премиум-партнеров</p>
+					<h3>Только нашим подписчикам доступны акции и розыгрыши от партнеров!</h3>
 					<input name="email" type="email" placeholder="Ваш email" onChange={this.handleChange} value={email} required />
-					<button>Жду на почту</button>
+					<button>получить предложения</button>
+					<p>Мы будем писать вам не чаще 1 раза в неделю.</p>
 					<div class={style.agreement}>
 						<input id="email-agreement" type="checkbox" checked="checked" required />
-						<label htmlFor="email-agreement">Я согласен с <Link href="/confidentiality">политикой конфиденциальности</Link></label>
+						<label htmlFor="email-agreement">Я согласен(-сна) с <Link href="/confidentiality">политикой конфиденциальности</Link></label>
 					</div>
 				</form>
 			</div>
