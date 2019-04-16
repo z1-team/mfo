@@ -20,6 +20,10 @@ self.addEventListener('push', function (event) {
   var icon = data.icon;
 
   return event.waitUntil(self.registration.showNotification(title, {
+      actions: [{
+        action: 'go',
+        title: data.button || 'Перейти'
+      }],
       body: message,
       icon: icon,
       data: {
