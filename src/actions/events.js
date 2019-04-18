@@ -72,11 +72,12 @@ export const changeFilterEvent = (f, v) => ({
   }
 })
 
-export const clickOfferEvent = (id, name) => ({
+export const clickOfferEvent = (id, name, source) => ({
   name: 'click_offer',
   data: {
     partnerId: id,
-    partnerName: name
+    partnerName: name,
+    partnerSource: source
   }
 })
 
