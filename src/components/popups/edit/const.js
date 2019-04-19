@@ -83,6 +83,7 @@ export const filterNames = {
   get_ways: {
     title: "Способы получения",
     names: [
+      "Наличными",
       "Банковская карта",
       "Банковский счет",
       "Система Contact",
@@ -95,6 +96,7 @@ export const filterNames = {
   repayment_options: {
     title: "Способы погашения",
     names: [
+      "Наличными",
       "Банковская карта",
       "Банковский счет",
       "Евросеть",

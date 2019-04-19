@@ -6,7 +6,9 @@ class EditPopupFilter extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      values: props.values
+      values: props.name === 'get_ways' && props.values.length < 8 ? [true].concat(props.values)
+        : props.name === 'repayment_options' && props.values.length < 17 ? [true].concat(props.values)
+        : props.values
     }
   }
 
@@ -26,7 +28,7 @@ class EditPopupFilter extends Component {
     })
   }
 
-  render({title, names}, {values}) {
+  render({title, names, name}, {values}) {
     return (
       <div class={style.checkbox}>
         <h3>{title}</h3>

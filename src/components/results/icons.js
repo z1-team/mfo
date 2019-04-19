@@ -1,4 +1,5 @@
 export const getWays = [
+    "cash",
     "bankcard",
     "bankaccount",
     "contactsystem",

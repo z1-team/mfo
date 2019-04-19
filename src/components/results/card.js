@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import CardInfo from './info'
 import StarRating from '../star-rating'
-import { repaymentOptions, getWays } from './icons'
+import { getWays } from './icons'
 
 import style from './style.scss'
 import icons from './icons.scss'
@@ -37,7 +37,8 @@ class Card extends Component {
       const { get_ways } = item.filters
 
       if(get_ways) {
-        return get_ways.map((item, index) => (
+        const secureGetWays = get_ways.length < 8 ? [true].concat(get_ways) : get_ways
+        return secureGetWays.map((item, index) => (
           item ? getWays[index] : false
         )).filter(i => i)
       }
