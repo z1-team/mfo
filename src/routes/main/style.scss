@@ -2,8 +2,12 @@
 @import '../../style/variables.scss';
 
 .wrMain {
-  padding: 100px 0 56px; min-height: calc(100vh - 122px); position: relative; z-index: 2; margin-bottom: 122px;
+  padding: 100px 0 56px; min-height: calc(100vh - 122px); position: relative; z-index: 2; margin-bottom: 121px;
   background: #fff; border-bottom: solid 1px #e8e8f3;
+
+  @include respond-to(516px) {
+    margin-bottom: 139px;
+  }
 }
 
 .main {
