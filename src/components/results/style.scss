@@ -243,12 +243,12 @@
           .tooltip {
             color: $white; font-size: 12px; font-family: $m-r; white-space: nowrap;
             position: absolute; left: 0; top: -5px; transform: translateY(-100%); padding: 0 4px; display: none;
-            background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border-radius: 4px;
+            background: $main; border-radius: 4px;
 
             &:after {
               content: '';
               position: absolute; left: 9px; top: 100%;
-              border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #995299; z-index: 3;
+              border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid $main; z-index: 3;
             }
           }
         }
