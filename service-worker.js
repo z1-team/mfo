@@ -16,7 +16,7 @@ self.addEventListener('push', function (event) {
   }
 
   var title = data.title || "Something Has Happened";
-  var message = data.body || "Here's something you might want to check out.";
+  var message = data.body.join("\n");
   var icon = data.icon;
 
   return event.waitUntil(self.registration.showNotification(title, {
@@ -27,7 +27,9 @@ self.addEventListener('push', function (event) {
       body: message,
       icon: icon,
       data: {
-        href: data.href
+        href: data.href,
+        report: data.report,
+        clientId: data.clientId
       }
   }))
 
