@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import CardInfo from './info'
 import StarRating from '../star-rating'
-import { repaymentOptions, getWays } from './icons'
+import { getWays } from './icons'
 
 import style from './style.scss'
 import icons from './icons.scss'
@@ -10,8 +10,9 @@ import icons from './icons.scss'
 class Card extends Component {
   handleOrder = (event) => {
     const {item, onOrder} = this.props
+    const source = event.target.getAttribute('data-source')
     if (typeof onOrder === 'function') {
-      onOrder(item.id, item.main.title)
+      onOrder(item.id, item.main.title, source)
     }
   }
 
@@ -36,7 +37,8 @@ class Card extends Component {
       const { get_ways } = item.filters
 
       if(get_ways) {
-        return get_ways.map((item, index) => (
+        const secureGetWays = get_ways.length < 8 ? [true].concat(get_ways) : get_ways
+        return secureGetWays.map((item, index) => (
           item ? getWays[index] : false
         )).filter(i => i)
       }
@@ -84,6 +86,7 @@ class Card extends Component {
               target="_blank"
               href={`${item.main.link}?${tail}`}
               rel="nofollow noopener"
+              data-source="image"
               onClick={this.handleOrder}
             >
               <img src={item.main.logo} />
@@ -95,6 +98,7 @@ class Card extends Component {
                 target="_blank"
                 href={`${item.main.link}?${tail}`}
                 rel="nofollow noopener"
+                data-source="title"
                 onClick={this.handleOrder}
               >
                 {label === 'recommend' ? <i class="if fa-gripfire"></i> : ''}
@@ -127,7 +131,13 @@ class Card extends Component {
           </div>
           <div class={style.process}>
             {edit && <button onClick={this.handleEdit}><i class="if fa-edit"></i></button>}
-            <a target="_blank" href={`${item.main.link}?${tail}`} rel="nofollow noopener" onClick={this.handleOrder}>Оформить</a>
+            <a
+              target="_blank"
+              href={`${item.main.link}?${tail}`}
+              rel="nofollow noopener"
+              data-source="button"
+              onClick={this.handleOrder}
+            >Оформить</a>
           </div>
         </section>
         <CardInfo details={item.details} main={item.main} onOpen={this.handleOpen}/>

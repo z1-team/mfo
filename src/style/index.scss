@@ -33,7 +33,7 @@ body {
 
 .app {
 	min-width: 320px;
-	background: #fff;
+	background: #fafafa;
 
 	&.partners {
 		@include respond-to(sm) {padding-bottom: 50px;}

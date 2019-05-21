@@ -2,14 +2,14 @@
 @import '../../style/variables.scss';
 
 .wrTestimonials {
-  padding: 100px 0 75px; min-height: calc(100vh - 122px);
-  background: #fff;
+  padding: 100px 0 75px; min-height: calc(100vh - 122px); margin-bottom: 121px; position: relative; z-index: 2;
+  background: #fff; border-bottom: solid 1px #e8e8f3;
 }
 
 .testimonials {
 
 	.masonry {
-		margin: 0 -10px;
+		margin: 0 -10px; display: flex; align-items: flex-start; flex-wrap: wrap;
 
 		@include respond-to(xs) {
 			margin: 0;

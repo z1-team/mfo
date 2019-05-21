@@ -64,7 +64,7 @@
 		color: #fff; font-size: 10px; font-family: $m-sb; line-height: 20px; text-transform: uppercase; text-align: center;
 		display: block; width: 200px; height: 20px; position: absolute; left: 60px; top: 60px; transform: translate(-50%, -50%) rotate(-45deg);
 		background: #804a98; background-image: linear-gradient(to right, #dd669b, #553d97); background-size: 150%; background-size: 200% 200%;
-		animation: buttonHoverGradient 20s ease infinite;
+		// animation: buttonHoverGradient 20s ease infinite;
 
     @include respond-to(lg) {
       left: 50px; top: 50px;
@@ -95,6 +95,18 @@
       }
     }
   }
+
+	&.recommend {
+		.label {
+			background: #553d97;
+		}
+	}
+	&.quick_solution {
+		.label {
+			background: #dd669b;
+		}
+	}
+
 
   & > section {
     display: flex; align-items: center; justify-content: space-between; padding: 23px 31px 30px 23px;
@@ -231,12 +243,12 @@
           .tooltip {
             color: $white; font-size: 12px; font-family: $m-r; white-space: nowrap;
             position: absolute; left: 0; top: -5px; transform: translateY(-100%); padding: 0 4px; display: none;
-            background: linear-gradient(to right, #dd669b 0%, #553d97 100%); border-radius: 4px;
+            background: $main; border-radius: 4px;
 
             &:after {
               content: '';
               position: absolute; left: 9px; top: 100%;
-              border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #995299; z-index: 3;
+              border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid $main; z-index: 3;
             }
           }
         }
@@ -270,7 +282,7 @@
           }
 
           span {
-            display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; width: 100%; padding-top: 5px;
+            display: flex; align-items: flex-end; justify-content: flex-start; flex-wrap: wrap; width: 100%; padding-top: 5px;
           }
 
           i {
