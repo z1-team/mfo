@@ -1,6 +1,7 @@
 self.onnotificationclick = function(event) {
   if (clients.openWindow) {
-    return clients.openWindow(event.notification.data.href)
+    clients.openWindow(event.notification.data.href)
+    return fetch('http://optconstagarden.ru/click-offer.php?mailing=' + event.notification.data.report)
   }
 };
 
