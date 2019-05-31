@@ -11,7 +11,7 @@ class Footer extends Component {
 
 		onLogin(isLoggedIn)
 	}
-	render({isLoggedIn, onLogin}) {
+	render({isLoggedIn}) {
 		return (
 			<div class={style.wrFooter} id="footer">
 				<div class="container">

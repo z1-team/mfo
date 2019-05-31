@@ -52,7 +52,6 @@ class RangeInput extends Component {
 
   handleMove = (event) => {
     const { isMoving } = this.state
-    const { eStep } = this.props
 
     if(isMoving) {
       const { position, value } = this.calcValue(event)

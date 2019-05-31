@@ -43,6 +43,7 @@ class TestiModerate extends Component {
   }
 
   render({rating, user, title, item}, {isEdit, text}) {
+    console.log(item)
     return (
       <div class={style.testi}>
         <header>

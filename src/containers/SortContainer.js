@@ -10,10 +10,8 @@ const mapStateToProps = (state, {partners}) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onClick(event) {
-    const sortBy = event.target.getAttribute('data-id')
+  onClick(sortBy) {
     dispatch(changeSorting(sortBy))
-    event.preventDefault()
   }
 })
 

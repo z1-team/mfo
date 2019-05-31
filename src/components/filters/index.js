@@ -84,7 +84,7 @@ class Filters extends Component {
     return false
   }
 
-  render({url, total, location, onChange, filters}) {
+  render({url, total, location, filters}) {
     const filtersNames = filterName[url] || filterName.mfo
     const categories = categoriesNames[url] || categoriesNames.mfo
 

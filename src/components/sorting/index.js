@@ -15,14 +15,25 @@ class ResultsSort extends Component {
     return ''
   }
 
-  render({sortInfo, onClick, sortButtons}) {
+  handleClick = (event) => {
+    event.preventDefault()
+    const {onClick} = this.props
+    const sortBy = event.target.getAttribute('data-id')
+
+    if(typeof onClick === 'function') {
+      onClick(sortBy)
+    }
+  }
+
+  render({sortButtons}) {
+    console.log(sortButtons)
     return(
       <div class={style.sort}>
         <p>Сортировать:</p>
         <ul>
           {sortButtons.map(({id, title}) => (
             <li key={id}>
-              <button class={this.sortButtonClass(id)} onClick={onClick} data-id={id}>{title}</button>
+              <button class={this.sortButtonClass(id)} onClick={this.handleClick} data-id={id}>{title}</button>
             </li>
           ))}
         </ul>

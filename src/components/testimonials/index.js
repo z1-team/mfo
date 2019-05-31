@@ -33,6 +33,7 @@ class Testimonials extends Component {
 
     const rating = partner && partner.sortBy ? Math.round(partner.sortBy.rating*10)/10 : 0
     const starRate = partner && partner.sortBy ? partner.sortBy.rating : 0
+    console.log(testimonials)
 
     return (
       <div class={style.wrTestimonials}>
