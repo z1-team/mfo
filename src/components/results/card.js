@@ -136,6 +136,7 @@ class Card extends Component {
               <div class={style.process}>
                 {edit && <button onClick={this.handleEdit}><i class="if fa-edit"></i></button>}
                 <a
+                  class={`theme-${theme}-order`}
                   target="_blank"
                   href={`${item.main.link}?${tail}`}
                   rel="nofollow noopener"
@@ -144,7 +145,7 @@ class Card extends Component {
                   >Оформить</a>
                 </div>
               </section>
-              <CardInfo details={item.details} main={item.main} onOpen={this.handleOpen}/>
+              <CardInfo details={item.details} main={item.main} onOpen={this.handleOpen} theme={theme}/>
             </div>
         )}
       </ThemeContext.Consumer>

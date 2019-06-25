@@ -116,7 +116,7 @@ class App extends Component {
 
 	render(props, {app, isVisible}) {
 		const cookie = getCookieItem()
-		const value = {theme: 'scooter'}
+		const value = {theme: 'sunset'}
 		return (
 			<Provider store={store}>
 				<ThemeContext.Provider value={value}>
@@ -136,7 +136,7 @@ class App extends Component {
 						<Match>{displayPopups}</Match>
 						{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
 						{!cookie && <CookiesContainer />}
-						<ToTop />
+						<ToTop theme={value.theme} />
 						<PushContainer />
 						<Match>{scrollContainer}</Match>
 					</div>

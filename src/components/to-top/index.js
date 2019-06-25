@@ -32,9 +32,9 @@ class ToTop extends Component{
     })
   }
 
-  render(props, {isVisible}) {
+  render({theme}, {isVisible}) {
     return (
-      <a href="#" className={`${style.toTop} ${isVisible ? style.active : ''}`} onClick={this.handleToTop}>
+      <a href="#" className={`theme-${theme}-text ${style.toTop} ${isVisible ? style.active : ''}`} onClick={this.handleToTop}>
         <i className="if fa-arrow-up-alt"></i>
       </a>
     )

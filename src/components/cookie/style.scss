@@ -16,6 +16,8 @@
 
 .close {
   display: block; width: 20px; height: 20px; position: absolute; right: 5px; top: 5px; z-index: 5;
+  background: none;
+  cursor: pointer;
 
   &:before, &:after {
     content: '';

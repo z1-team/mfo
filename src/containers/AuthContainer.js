@@ -4,8 +4,9 @@ import Auth from '../components/popups/auth'
 import { isErrorOccurred } from '../selectors/auth'
 import { login } from '../actions/auth'
 
-const mapStateToProps = (state) => ({
-  error: isErrorOccurred(state)
+const mapStateToProps = (state, {theme}) => ({
+  error: isErrorOccurred(state),
+  theme
 })
 
 const mapDispatchToProps = (dispatch) => ({

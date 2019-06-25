@@ -6,9 +6,10 @@ import { sendTestimonial, deleteTestimonial,
 import { openPopup } from '../actions/popup'
 import { getTestimonials, getSelectedPartner } from '../selectors/testimonials'
 
-const mapStateToProps = (state, {id}) => ({
+const mapStateToProps = (state, {id, theme}) => ({
   partner: getSelectedPartner(state, id),
-  testimonials: getTestimonials(state)
+  testimonials: getTestimonials(state),
+  theme
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -33,11 +34,12 @@ class TestimonialsContainer extends Component {
     onEnter(id)
   }
 
-  render({partner, testimonials, onDelete, onSubmit}) {
+  render({partner, testimonials, theme, onDelete, onSubmit}) {
     return (
       <Testimonials
         partner={partner}
         testimonials={testimonials}
+        theme={theme}
         onDelete={onDelete}
         onSubmit={onSubmit}
       />

@@ -20,15 +20,15 @@ class Auth extends Component {
 		this.setState({[input.name]: input.value})
 	}
 
-  render({error}, {login, pass}) {
+  render({error, theme}, {login, pass}) {
     return (
       <div class={style.login}>
         <h2>Авторизация</h2>
         <form action="#" onSubmit={this.handleSubmit}>
           <label>Логин: <input type="text" name="login" onChange={this.handleChange} value={login} /></label>
           <label>Пароль: <input type="password" name="pass" onChange={this.handleChange} value={pass} /></label>
-          {error && <p>Не верно введен логин или пароль.</p>}
-          <button>Войти</button>
+          {error && <p class={`theme-${theme}-text`}>Не верно введен логин или пароль.</p>}
+          <button class={`theme-${theme}-button`}>Войти</button>
         </form>
       </div>
     )

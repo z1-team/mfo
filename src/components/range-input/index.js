@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import { ThemeContext } from '../app'
 
 import style from './style.scss'
 
@@ -86,17 +87,21 @@ class RangeInput extends Component {
 
   render({label}, {position, value}) {
     return(
-      <div class={style.range}>
-          <div>
-            <input type="text" value={value === -1 ? 'Все' : value} onChange={this.handleChange}/>
-          <div ref={this.saveRange}
-               onMouseDown={this.handleStart} onMouseUp={this.handleEnd} onMouseMove={this.handleMove} onMouseLeave={this.handleEnd} >
-              <span class={style.line}></span>
-            <span class={style.point} style={{left: 100*position + '%'}}></span>
+      <ThemeContext.Consumer>
+        {({theme}) => (
+          <div class={style.range}>
+            <div>
+              <input class={`theme-${theme}-text`} type="text" value={value === -1 ? 'Все' : value} onChange={this.handleChange}/>
+              <div ref={this.saveRange}
+                onMouseDown={this.handleStart} onMouseUp={this.handleEnd} onMouseMove={this.handleMove} onMouseLeave={this.handleEnd} >
+                <span class={`theme-${theme}-background ${style.line}`}></span>
+                <span class={style.point} style={{left: 100*position + '%'}}></span>
+              </div>
             </div>
+            {label && <p class={style.caption}>{label}</p>}
           </div>
-          {label && <p class={style.caption}>{label}</p>}
-      </div>
+        )}
+      </ThemeContext.Consumer>
     )
   }
 }
