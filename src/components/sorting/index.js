@@ -26,7 +26,6 @@ class ResultsSort extends Component {
   }
 
   render({sortButtons}) {
-    console.log(sortButtons)
     return(
       <div class={style.sort}>
         <p>Сортировать:</p>

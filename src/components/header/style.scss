@@ -31,11 +31,11 @@
       margin-bottom: 10px;
     }
 
-		a, p {
+		.contactsLink, .contactsText {
 			color: #fff; font-size: 12px; line-height: 14px; font-family: $m-sb;
 		}
 
-		a {
+		.contactsLink {
 			&:hover {
 				text-decoration: underline;
 			}
@@ -45,7 +45,7 @@
 			}
 		}
 
-		p {
+		.contactsText {
 			// padding-left: 14px; margin-left: 14px;
 			// border-left: solid 1px #fff;
 

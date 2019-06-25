@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import {ThemeContext} from '../app'
 import style from './styles/Button.scss'
 
 class Button extends Component {
@@ -14,9 +15,11 @@ class Button extends Component {
 
   render({type = "normal", class: mixin, children}) {
     return (
-      <button class={`${style[type]} ${mixin ? mixin : ''}`} onClick={this.handleClick}>
-        {children}
-      </button>
+      <ThemeContext.Consumer>
+        {({theme}) => (<button class={`theme-${theme}-button ${style[type]} ${mixin ? mixin : ''}`} onClick={this.handleClick}>
+          {children}
+        </button>)}
+      </ThemeContext.Consumer>
     )
   }
 }

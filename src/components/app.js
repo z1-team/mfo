@@ -2,6 +2,7 @@ import { h, Component } from 'preact'
 import { Router } from 'preact-router'
 import Match from 'preact-router/match'
 import { Provider } from 'preact-redux'
+import { createContext } from 'preact-context'
 import store from '../store'
 import '../counter'
 
@@ -73,6 +74,8 @@ const scrollContainer = ({url}) => (
 	<ScrollContainer url={url} />
 )
 
+export const ThemeContext = createContext({theme: 'default'})
+
 class App extends Component {
 	state = {
 		app: 'app'
@@ -105,7 +108,7 @@ class App extends Component {
 
 	appPadding = () => {
 		if(this.currentUrl === '/' || this.currentUrl === '/cards') {
-			this.setState({app: 'app partners'})
+			this.setState({app: `app ${style[color]}`})
 		} else {
 			this.setState({app: 'app'})
 		}
@@ -113,28 +116,31 @@ class App extends Component {
 
 	render(props, {app, isVisible}) {
 		const cookie = getCookieItem()
+		const value = {theme: 'scooter'}
 		return (
 			<Provider store={store}>
-				<div id="app" class="app">
-					<HeaderContainer />
-					<Router onChange={this.handleRoute}>
-						<BotTestContainer path="/" partners="mfo" />
-						<BotTestContainer path="/cards" partners="cards" />
-						<ModerationContainer path="/moderate" />
-						<TestimonialsContainer path="/testimonials/:id" />
-						<AboutProject path="/about" />
-						<Confidentiality path="/confidentiality" />
-						<NotFound default />
-					</Router>
-					<FooterContainer />
-					<Match>{guard}</Match>
-					<Match>{displayPopups}</Match>
-					{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
-					{!cookie && <CookiesContainer />}
-					<ToTop />
-					<PushContainer />
-					<Match>{scrollContainer}</Match>
-				</div>
+				<ThemeContext.Provider value={value}>
+					<div id="app" class={`app`}>
+						<HeaderContainer />
+						<Router onChange={this.handleRoute}>
+							<BotTestContainer path="/" partners="mfo" />
+							<BotTestContainer path="/cards" partners="cards" />
+							<ModerationContainer path="/moderate" />
+							<TestimonialsContainer path="/testimonials/:id" />
+							<AboutProject path="/about" />
+							<Confidentiality path="/confidentiality" />
+							<NotFound default />
+						</Router>
+						<FooterContainer />
+						<Match>{guard}</Match>
+						<Match>{displayPopups}</Match>
+						{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
+						{!cookie && <CookiesContainer />}
+						<ToTop />
+						<PushContainer />
+						<Match>{scrollContainer}</Match>
+					</div>
+				</ThemeContext.Provider>
 			</Provider>
 		)
 	}

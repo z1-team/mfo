@@ -16,7 +16,7 @@ class Footer extends Component {
 			<div class={style.wrFooter} id="footer">
 				<div class="container">
 					<div class={style.footer}>
-						<span class={style.logo}><img src="/assets/img/logo-footer.png"/></span>
+						<span class={style.logo}><img src={`/assets/img/logo-footer.png`}/></span>
 						<small>&copy; 2019 Moneyonline &mdash; все займы онлайн на карту или наличными в одном месте. 16+</small>
 						<ul class={style.admin}>
 							<li><button onClick={this.handleClick}>{isLoggedIn ? "Выйти" : "Войти"}</button></li>
