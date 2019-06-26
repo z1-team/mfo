@@ -141,7 +141,7 @@ class App extends Component {
 
 	render(props, {app, theme, isVisible}) {
 		const cookie = getCookieItem()
-		const value = {theme: 'default'}
+		const value = {theme}
 		return (
 			<Provider store={store}>
 				<ThemeContext.Provider value={value}>
