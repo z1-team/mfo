@@ -91,7 +91,7 @@ class RangeInput extends Component {
         {({theme}) => (
           <div class={style.range}>
             <div>
-              <input class={`theme-${theme}-text`} type="text" value={value === -1 ? 'Все' : value} onChange={this.handleChange}/>
+              <input class={`theme-${theme}-text`} type="text" value={value === -1 ? 'Все' : value} onInput={this.handleChange}/>
               <div ref={this.saveRange}
                 onMouseDown={this.handleStart} onMouseUp={this.handleEnd} onMouseMove={this.handleMove} onMouseLeave={this.handleEnd} >
                 <span class={`theme-${theme}-background ${style.line}`}></span>
