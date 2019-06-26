@@ -33,8 +33,22 @@ export function utmExtraValues({query}) {
     .reduce((r, p) => (r[camelCase(p)] = query[p], r), {})
 }
 
+const themeValues = {
+  scooter: 'Scooter',
+  green: 'Green Beach',
+  cherry: 'Cherry',
+  lush: 'Lush',
+  frost: 'Frost',
+  royal: 'Royal',
+  sunset: 'Ed’s Sunset Gradient'
+}
+
 function extraValues(session) {
   const extra = [
+    {
+      name: 'theme',
+      value: themeValues[session.theme] || 'Unknown'
+    },
     {
       name: 'userCountry',
       value: ipInfo('country', session)

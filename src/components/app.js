@@ -76,13 +76,38 @@ const scrollContainer = ({url}) => (
 
 export const ThemeContext = createContext({theme: 'default'})
 
+const themesNames = [
+	'scooter', 'green', 'cherry',
+	'lush', 'frost', 'royal', 'sunset'
+]
+
+function generateTheme() {
+	const index = Math.floor(Math.random() * themesNames.length)
+	return themesNames[index]
+}
+
+function loadTheme() {
+	const savedTheme = localStorage.getItem('themeName')
+	if (savedTheme) {
+		return savedTheme
+	}
+	const themeName = generateTheme()
+	localStorage.setItem('themeName', themeName)
+	return themeName
+}
+
 class App extends Component {
-	state = {
-		app: 'app'
+	constructor(props) {
+		super(props)
+		this.state = {
+			app: 'app',
+			theme: loadTheme()
+		}
 	}
 
 	componentDidMount() {
-		store.dispatch(initSession())
+		const {theme} = this.state
+		store.dispatch(initSession(theme))
 		store.dispatch(fetchPartners())
 	}
 
@@ -114,9 +139,9 @@ class App extends Component {
 		}
 	}
 
-	render(props, {app, isVisible}) {
+	render(props, {app, theme, isVisible}) {
 		const cookie = getCookieItem()
-		const value = {theme: 'sunset'}
+		const value = {theme}
 		return (
 			<Provider store={store}>
 				<ThemeContext.Provider value={value}>

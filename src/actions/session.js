@@ -25,7 +25,7 @@ function getUserId() {
   return saved
 }
 
-function makeSession() {
+function makeSession(theme) {
   const query = typeof window !== 'undefined'
     ? queryString.parse(window.location.search.substr(1))
     : {}
@@ -35,7 +35,8 @@ function makeSession() {
     userId: getUserId(),
     showPush: false,
     browser: detect() || 'unknown',
-    botTest: {}
+    botTest: {},
+    theme
   }
 }
 
@@ -125,10 +126,10 @@ export const pushDecline = () => {
   return {type: SESSION_UPDATE, field: 'showPush', value: false}
 }
 
-export function initSession() {
+export function initSession(theme) {
   return async (dispatch, getState) => {
     // const test = getBotTest()
-    const session = makeSession()
+    const session = makeSession(theme)
     dispatch({type: SESSION_INIT, session})
     initGeoLocation(dispatch)
     try {
