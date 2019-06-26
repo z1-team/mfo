@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
+import { ThemeContext } from '../app'
 
 import style from './style.scss'
 
@@ -13,19 +14,23 @@ class Footer extends Component {
 	}
 	render({isLoggedIn}) {
 		return (
-			<div class={style.wrFooter} id="footer">
-				<div class="container">
-					<div class={style.footer}>
-						<span class={style.logo}><img src={`/assets/img/logo-footer.png`}/></span>
-						<small>&copy; 2019 Moneyonline &mdash; все займы онлайн на карту или наличными в одном месте. 16+</small>
-						<ul class={style.admin}>
-							<li><button onClick={this.handleClick}>{isLoggedIn ? "Выйти" : "Войти"}</button></li>
-							{isLoggedIn && <li><Link href="/moderate">Модерация отзывов</Link></li>}
-							<li><Link activeClassName="active" href="/confidentiality">Политика конфиденциальности</Link></li>
-						</ul>
+			<ThemeContext.Consumer>
+				{({theme}) => (
+					<div class={style.wrFooter} id="footer">
+						<div class="container">
+							<div class={style.footer}>
+								<span class={style.logo}><img src={`/assets/img/logo-footer-${theme}.png`}/></span>
+								<small>&copy; 2019 Moneyonline &mdash; все займы онлайн на карту или наличными в одном месте. 16+</small>
+								<ul class={style.admin}>
+									<li><button onClick={this.handleClick}>{isLoggedIn ? "Выйти" : "Войти"}</button></li>
+									{isLoggedIn && <li><Link href="/moderate">Модерация отзывов</Link></li>}
+									<li><Link activeClassName="active" href="/confidentiality">Политика конфиденциальности</Link></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+				)}
+			</ThemeContext.Consumer>
 		)
 	}
 }

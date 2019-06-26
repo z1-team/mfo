@@ -73,12 +73,12 @@ class Card extends Component {
     const rating = Math.round(item.sortBy.rating*10)/10
     const star = Math.round(item.sortBy.rating*20)
     const label = item.main.special_label ? item.main.special_label : ''
-    const unpublished = item.main.isPublished || item.main.isPublished === undefined ? '' : style.unpublished
+    const unpublished = theme => item.main.isPublished || item.main.isPublished === undefined ? '' : `theme-${theme}-border ${style.unpublished}`
 
     return (
       <ThemeContext.Consumer>
         {({theme}) => (
-          <div class={`${style.card} ${style[label]} ${unpublished}`}>
+          <div class={`${style.card} ${style[label]} ${unpublished(theme)}`}>
             {label === 'big_summ' ? <span class={`theme-${theme}-label ${style.label}`}>На большую сумму</span> : ''}
             {label === 'long_term' ? <span class={`theme-${theme}-label ${style.label}`}>На долгий период</span> : ''}
             {label === 'quick_solution' ? <span class={`theme-${theme}-label ${style.label}`}>Быстрое решение</span> : ''}
@@ -134,7 +134,7 @@ class Card extends Component {
                 }
               </div>
               <div class={style.process}>
-                {edit && <button onClick={this.handleEdit}><i class="if fa-edit"></i></button>}
+                {edit && <button class={`theme-${theme}-text`} onClick={this.handleEdit}><i class="if fa-edit"></i></button>}
                 <a
                   class={`theme-${theme}-order`}
                   target="_blank"
