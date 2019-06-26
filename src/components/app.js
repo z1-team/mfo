@@ -87,6 +87,9 @@ function generateTheme() {
 }
 
 function loadTheme() {
+	if (typeof window === 'undefined') {
+		return 'default'
+	}
 	const savedTheme = localStorage.getItem('themeName')
 	if (savedTheme) {
 		return savedTheme
