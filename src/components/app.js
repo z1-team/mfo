@@ -77,7 +77,7 @@ const scrollContainer = ({url}) => (
 export const ThemeContext = createContext({theme: 'default'})
 
 const themesNames = [
-	'scooter', 'green', 'cherry',
+	'default', 'scooter', 'green', 'cherry',
 	'lush', 'frost', 'royal', 'sunset'
 ]
 
@@ -141,7 +141,7 @@ class App extends Component {
 
 	render(props, {app, theme, isVisible}) {
 		const cookie = getCookieItem()
-		const value = {theme}
+		const value = {theme: 'default'}
 		return (
 			<Provider store={store}>
 				<ThemeContext.Provider value={value}>
