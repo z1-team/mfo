@@ -77,7 +77,7 @@ const scrollContainer = ({url}) => (
 export const ThemeContext = createContext({theme: 'default'})
 
 const themesNames = [
-	'scooter', 'green', 'cherry',
+	'default', 'scooter', 'green', 'cherry',
 	'lush', 'frost', 'royal', 'sunset'
 ]
 
@@ -87,6 +87,9 @@ function generateTheme() {
 }
 
 function loadTheme() {
+	if (typeof window === 'undefined') {
+		return 'default'
+	}
 	const savedTheme = localStorage.getItem('themeName')
 	if (savedTheme) {
 		return savedTheme

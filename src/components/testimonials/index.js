@@ -29,10 +29,11 @@ class Testimonials extends Component {
     }
   }
 
-  render({partner, testimonials, onDelete, onSubmit}) {
+  render({partner, testimonials, isLoggedIn, onDelete, onSubmit}) {
 
     const rating = partner && partner.sortBy ? Math.round(partner.sortBy.rating*10)/10 : 0
     const starRate = partner && partner.sortBy ? partner.sortBy.rating : 0
+    console.log(isLoggedIn)
 
     return (
       <div class={style.wrTestimonials}>
@@ -54,7 +55,15 @@ class Testimonials extends Component {
               {testimonials.length ?
                   <Masonry class={style.masonry}>
                     {testimonials.map((item) => (
-                      <Testi key={item.id} testiID={item.id} text={item.text} user={item.name} rating={item.rating} onDelete={onDelete} />
+                      <Testi
+                        key={item.id}
+                        testiID={item.id}
+                        text={item.text}
+                        user={item.name}
+                        rating={item.rating}
+                        isLoggedIn={isLoggedIn}
+                        onDelete={onDelete}
+                      />
                     ))}
                   </Masonry>
                 : <h3>Загружаю отзывы...</h3>

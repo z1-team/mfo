@@ -11,14 +11,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fa-arrow-up-alt:before {
-  content: "\e90f";
-}
-.fa-credit-card:before {
-  content: "\e90e";
-}
-.fa-upload:before {
-  content: "\e90d";
+.fa-check-circle:before {
+  content: "\e910";
 }
 .fa-arrow-down:before {
   content: "\e900";
@@ -26,36 +20,45 @@
 .fa-arrow-up:before {
   content: "\e901";
 }
-.fa-calendar:before {
+.fa-arrow-up-alt:before {
   content: "\e902";
 }
-.fa-edit:before {
+.fa-calendar:before {
   content: "\e903";
 }
-.fa-gripfire:before {
+.fa-credit-card:before {
   content: "\e904";
 }
-.fa-marker:before {
+.fa-edit:before {
   content: "\e905";
 }
-.fa-money:before {
+.fa-gripfire:before {
   content: "\e906";
 }
-.fa-percent:before {
+.fa-marker:before {
   content: "\e907";
 }
-.fa-quote-left:before {
+.fa-money:before {
   content: "\e908";
 }
-.fa-quote-right:before {
+.fa-percent:before {
   content: "\e909";
 }
-.fa-star:before {
+.fa-quote-left:before {
   content: "\e90a";
 }
-.fa-times:before {
+.fa-quote-right:before {
   content: "\e90b";
 }
-.fa-close:before {
+.fa-star:before {
   content: "\e90c";
+}
+.fa-times:before {
+  content: "\e90d";
+}
+.fa-upload:before {
+  content: "\e90e";
+}
+.fa-close:before {
+  content: "\e90f";
 }

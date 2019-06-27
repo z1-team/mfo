@@ -403,9 +403,9 @@
           }
 
           &:before {
-            content: '';
-            display: block; width: 21px; height: 21px; position: absolute; left: 0; top: -2px;
-            background: url('/assets/img/check-circle.png') center center no-repeat;
+            content: '\e910';
+						color: $main; font-size: 21px; font-family: 'icon-font' !important; line-height: 21px;
+            position: absolute; left: 0; top: -2px;
 
             @include respond-to(lg) {
               top: -1px;

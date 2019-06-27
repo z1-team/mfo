@@ -34,6 +34,7 @@ export function utmExtraValues({query}) {
 }
 
 const themeValues = {
+  default: 'Default',
   scooter: 'Scooter',
   green: 'Green Beach',
   cherry: 'Cherry',

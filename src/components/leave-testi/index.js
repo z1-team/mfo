@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import { ThemeContext } from '../app'
 
 import LeaveRating from '../leave-rating'
 import Button from '../utility/Button'
@@ -69,36 +70,40 @@ class Testi extends Component {
 
   render({onSubmit}, {name, email, text, rating, isEditing}) {
     return(
-      <div class={style.leaveTesti}>
-        <h2>Оставьте свой отзыв</h2>
-        <form action="#" onSubmit={this.handleSubmit}>
-          <section>
-            <div class={style.formInput}>
-              <label>Ваше имя</label>
-              <input type="text" name="name" value={name} onChange={this.handleChange}/>
-              {isEditing.name && !name && <p>Пожалуйста, заполните поле.</p>}
-            </div>
-            <div class={style.formInput}>
-              <label>Ваш e-mail</label>
-              <input type="email" name="email" value={email} onChange={this.handleChange}/>
-              {isEditing.email && !email && <p>Пожалуйста, заполните поле.</p>}
-            </div>
-            <div class={style.formTextarea}>
-              <label>Ваш отзыв</label>
-              <textarea name="text" value={text} onChange={this.handleChange}></textarea>
-              {isEditing.text && !text && <p>Пожалуйста, заполните поле.</p>}
-            </div>
-            <div class={style.formInput}>
-              <label>Ваша оценка</label>
-              <LeaveRating onChange={this.handleRating} rating={rating} />
-              {isEditing.rating && rating === 0 && <p>Пожалуйста, поставьте свою оценку.</p>}
-            </div>
-          </section>
-          <footer>
-            <Button id="leave-testi" onClick={this.handleSubmit}>Отправить отзыв</Button>
-          </footer>
-        </form>
-      </div>
+      <ThemeContext.Consumer>
+        {({theme}) => (
+          <div class={style.leaveTesti}>
+            <h2>Оставьте свой отзыв</h2>
+            <form action="#" onSubmit={this.handleSubmit}>
+              <section>
+                <div class={style.formInput}>
+                  <label>Ваше имя</label>
+                  <input type="text" name="name" value={name} onChange={this.handleChange}/>
+                  {isEditing.name && !name && <p class={`theme-${theme}-text`}>Пожалуйста, заполните поле.</p>}
+                </div>
+                <div class={style.formInput}>
+                  <label>Ваш e-mail</label>
+                  <input type="email" name="email" value={email} onChange={this.handleChange}/>
+                  {isEditing.email && !email && <p class={`theme-${theme}-text`}>Пожалуйста, заполните поле.</p>}
+                </div>
+                <div class={style.formTextarea}>
+                  <label>Ваш отзыв</label>
+                  <textarea name="text" value={text} onChange={this.handleChange}></textarea>
+                  {isEditing.text && !text && <p class={`theme-${theme}-text`}>Пожалуйста, заполните поле.</p>}
+                </div>
+                <div class={style.formInput}>
+                  <label>Ваша оценка</label>
+                  <LeaveRating onChange={this.handleRating} rating={rating} />
+                  {isEditing.rating && rating === 0 && <p class={`theme-${theme}-text`}>Пожалуйста, поставьте свою оценку.</p>}
+                </div>
+              </section>
+              <footer>
+                <Button id="leave-testi" onClick={this.handleSubmit}>Отправить отзыв</Button>
+              </footer>
+            </form>
+          </div>
+        )}
+      </ThemeContext.Consumer>
     )
   }
 }
