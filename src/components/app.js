@@ -7,14 +7,12 @@ import store from '../store'
 import '../counter'
 
 import HeaderContainer from '../containers/HeaderContainer'
-import IntroContainer from '../containers/IntroContainer'
 import ModerationContainer from '../containers/ModerationContainer'
 import TestimonialsContainer from '../containers/TestimonialsContainer'
 import FooterContainer from '../containers/FooterContainer'
 import PopupsContainer from '../containers/PopupsContainer'
 import GuardContainer from '../containers/GuardContainer'
 import CookiesContainer from '../containers/CookiesContainer'
-import BotTestContainer from '../containers/BotTestContainer'
 import PushContainer from '../containers/PushContainer'
 import ScrollContainer from '../containers/ScrollContainer'
 
@@ -23,7 +21,7 @@ import AboutProject from '../routes/inner/about'
 import Confidentiality from '../routes/inner/confidentiality'
 import NotFound from '../routes/not-found'
 
-import ToTop from './to-top'
+import ToTop from 'common/components/ToTop'
 
 import api from '../api'
 
@@ -148,11 +146,11 @@ class App extends Component {
 		return (
 			<Provider store={store}>
 				<ThemeContext.Provider value={value}>
-					<div id="app" class={`app`}>
+					<div id="app" class={`app ${theme}`}>
 						<HeaderContainer />
 						<Router onChange={this.handleRoute}>
-							<BotTestContainer path="/" partners="mfo" />
-							<BotTestContainer path="/cards" partners="cards" />
+							<Main path="/" partners="mfo" />
+							<Main path="/cards" partners="cards" />
 							<ModerationContainer path="/moderate" />
 							<TestimonialsContainer path="/testimonials/:id" />
 							<AboutProject path="/about" />
@@ -164,7 +162,7 @@ class App extends Component {
 						<Match>{displayPopups}</Match>
 						{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
 						{!cookie && <CookiesContainer />}
-						<ToTop theme={value.theme} />
+						<ToTop />
 						<PushContainer />
 						<Match>{scrollContainer}</Match>
 					</div>

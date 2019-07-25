@@ -8,10 +8,9 @@ import { categoriesType, categoriesName,
 
 import { changeFilter } from '../actions/filters'
 
-const mapStateToProps = (state, {url, theme}) => ({
+const mapStateToProps = (state, {url}) => ({
   value: getCategoriesValue(state, url),
-  categories: categories[categoriesType(url)],
-  theme
+  categories: categories[categoriesType(url)]
 })
 
 const mapDispatchToProps = (dispatch, {url}) => ({

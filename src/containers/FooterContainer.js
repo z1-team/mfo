@@ -6,7 +6,8 @@ import { openPopup } from '../actions/popup'
 import { logout } from '../actions/auth'
 
 const mapStateToProps = (state) => ({
-  isLoggedIn: isLoggedIn(state)
+  isLoggedIn: isLoggedIn(state),
+  theme: state.session.theme
 })
 
 const mapDispatchToProps = (dispatch) => ({

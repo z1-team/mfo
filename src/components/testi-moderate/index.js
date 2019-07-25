@@ -1,9 +1,9 @@
 import { h, Component } from 'preact'
-import { ThemeContext } from '../app'
+import Icon from 'common/components/Icon'
 
 import style from './style.scss'
 
-import Button from '../utility/Button'
+import Button from 'common/components/Button'
 
 class TestiModerate extends Component {
   constructor(props) {
@@ -44,36 +44,31 @@ class TestiModerate extends Component {
   }
 
   render({rating, user, title, item}, {isEdit, text}) {
-    console.log(item)
     return (
-      <ThemeContext.Consumer>
-        {({theme}) => (
-          <div class={style.testi}>
-            <header>
-              <h3>Отзыв партнера &laquo;<span class={`theme-${theme}-text`}>{title}</span>&raquo;</h3>
-            </header>
-            <div>
-              <i class="if fa-quote-left"></i>
-              {isEdit ? <textarea value={text} tabIndex="1" autoFocus onBlur={this.handleBlur} onChange={this.handleChange}></textarea> : <p onClick={this.handleEdit}>{text}</p>}
-              <i class="if fa-quote-right"></i>
-            </div>
-            <footer>
-              <p>{user}</p>
-              <ul class={`rate-${rating}`}>
-                <li><i class="if fa-star"></i></li>
-                <li><i class="if fa-star"></i></li>
-                <li><i class="if fa-star"></i></li>
-                <li><i class="if fa-star"></i></li>
-                <li><i class="if fa-star"></i></li>
-              </ul>
-            </footer>
-            <div class={style.actions}>
-              <Button id="delete" onClick={this.handleDelete}>Удалить</Button>
-              <Button id="public" onClick={this.handlePublic}>Опубликовать</Button>
-            </div>
-          </div>
-        )}
-      </ThemeContext.Consumer>
+      <div class={style.testi}>
+        <header>
+          <h3>Отзыв партнера &laquo;<span>{title}</span>&raquo;</h3>
+        </header>
+        <div>
+          <Icon icon="quote-left" />
+          {isEdit ? <textarea value={text} tabIndex="1" autoFocus onBlur={this.handleBlur} onChange={this.handleChange}></textarea> : <p onClick={this.handleEdit}>{text}</p>}
+          <Icon icon="quote-right" />
+        </div>
+        <footer>
+          <p>{user}</p>
+          <ul class={`rate-${rating}`}>
+            <li><Icon icon="star" /></li>
+            <li><Icon icon="star" /></li>
+            <li><Icon icon="star" /></li>
+            <li><Icon icon="star" /></li>
+            <li><Icon icon="star" /></li>
+          </ul>
+        </footer>
+        <div class={style.actions}>
+          <Button id="delete" onClick={this.handleDelete}>Удалить</Button>
+          <Button id="public" onClick={this.handlePublic}>Опубликовать</Button>
+        </div>
+      </div>
     )
   }
 }

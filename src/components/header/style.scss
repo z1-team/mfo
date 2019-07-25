@@ -7,187 +7,75 @@
   100%{background-position:0% 50%}
 }
 
-.wrHeader {
-  padding: 15px 0; position: fixed; width: 100%; left: 0; top: 0; z-index: 30;
-  background: #804a98; background-image: linear-gradient(to right, #dd669b, #553d97); background-size: 150%; box-shadow: 0 0 5px 0px rgba(0,0,0,0.5);
-  animation: headerGradient 42s ease infinite;
+.contacts {
+  display: flex; align-items: center;
 
   @include respond-to(xs) {
-    padding: 10px 0;
-  }
-}
-
-.header {
-	display: flex; align-items: center; justify-content: space-between;
-
-  @include respond-to(xs) {
-    flex-direction: column;
+    margin-bottom: 10px;
   }
 
-	.contacts {
-		display: flex; align-items: center;
+  .contactsLink, .contactsText {
+    color: #fff; font-size: 12px; line-height: 14px; font-family: $m-sb;
+  }
 
-    @include respond-to(xs) {
-      margin-bottom: 10px;
-    }
-
-		.contactsLink, .contactsText {
-			color: #fff; font-size: 12px; line-height: 14px; font-family: $m-sb;
-		}
-
-		.contactsLink {
-			&:hover {
-				text-decoration: underline;
-			}
-
-			i {
-				margin-right: 5px;
-			}
-		}
-
-		.contactsText {
-			// padding-left: 14px; margin-left: 14px;
-			// border-left: solid 1px #fff;
-
-			i {
-				margin-right: 5px;
-			}
-		}
-	}
-
-  & > a {
-    color: #fff; font-size: 12px; font-family: $m-r; line-height: 25px; text-transform: uppercase;
-
-    &.active {
-      font-family: $m-sb;
-      pointer-events: none;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
+  .contactsLink {
     &:hover {
       text-decoration: underline;
     }
+
+    i {
+      margin-right: 5px;
+    }
   }
 
-	& > ul {
-		display: flex; align-items: center;
+  .contactsText {
 
-		li {
-			padding-right: 14px; margin-right: 15px;
-			border-right: solid 1px #fff;
+    i {
+      margin-right: 5px;
+    }
+  }
+}
 
-			@include respond-to(sm) {
-				padding-right: 9px; margin-right: 10px;
-			}
-			@include respond-to(xs) {
-			padding-right: 4px;	margin-right: 5px;
-			}
+.links {
+  display: flex; align-items: center;
 
-			&:last-child {
-				margin-right: 0; padding-right: 0;
-				border-right: none;
-			}
+  li {
+    padding-right: 14px; margin-right: 15px;
+    border-right: solid 1px #fff;
 
-			a, button {
-				color: #fff; font-size: 12px; line-height: 14px; font-family: $m-r; text-transform: uppercase;
-				background: none;
-				cursor: pointer;
+    @include respond-to(sm) {
+      padding-right: 9px; margin-right: 10px;
+    }
+    @include respond-to(xs) {
+      padding-right: 4px;	margin-right: 5px;
+    }
 
-				@include respond-to(xs) {
-					font-size: 10px;
-				}
+    &:last-child {
+      margin-right: 0; padding-right: 0;
+      border-right: none;
+    }
 
-				&.active {
-					font-family: $m-sb;
-          pointer-events: none;
+    a, button {
+      color: #fff; font-size: 12px; line-height: 14px; font-family: $m-r; text-transform: uppercase;
+      background: none;
+      cursor: pointer;
 
-          &:hover {
-            text-decoration: none;
-          }
-				}
+      @include respond-to(xs) {
+        font-size: 10px;
+      }
 
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-	}
+      &.active {
+        font-family: $m-sb;
+        pointer-events: none;
 
-	.categories-button {
-		color: #fff; font-size: 16px; font-family: $m-sb; line-height: 26px; text-align: center; text-transform: uppercase;
-		position: fixed; bottom: 0; left: 0; width: 100%; height: 50px; display: none;
-		background: linear-gradient(to right, #dd669b 0%, #553d97 100%); box-shadow: 0 0 5px 0px rgba(0,0,0,0.5);
+        &:hover {
+          text-decoration: none;
+        }
+      }
 
-		&:hover {
-			color: $main;
-			background: #fff;
-		}
-
-		@include respond-to(sm) {
-			display: block;
-		}
-	}
-
-	.categories {
-		position: absolute; left: 0; bottom: -10px; width: 100%; max-height: calc(100vh - 50px); transform: translateY(100%); display: flex; align-items: flex-start; padding: 40px 40px 25px;
-		background: #fff; border-radius: 8px;
-		opacity: 0; pointer-events: none;
-		transition: opacity 0.4s ease-out; overflow-y: auto;
-
-		@include respond-to(xs) {
-			padding: 30px 25px;
-		}
-
-		.headerCategories & {
-			opacity: 1; pointer-events: auto;
-		}
-
-		& > div {
-			width: 100%;
-		}
-
-		h2 {
-			color: #161616; font-size: 16px; font-family: $m-sb; line-height: 22px;
-			margin-bottom: 25px;
-		}
-
-		button {
-			color: #161616; font-size: 14px; font-family: $os-r; line-height: 18px; text-align: left;
-			padding-left: 15px; position: relative;
-			background: transparent;
-			cursor: pointer;
-
-			&:hover {
-				text-decoration: underline;
-			}
-
-			&:before {
-				content: '';
-				display: block; width: 5px; height: 5px; position: absolute; left: 0; top: 7px;
-				background: #161616; border-radius: 50%;
-			}
-		}
-
-		ul {
-			display: flex; align-items: flex-start; flex-wrap: wrap; width: 100%;
-
-			li {
-				margin-bottom: 15px; width: 33.33333%; padding-right: 15px;
-
-				@include respond-to(sm) {
-					width: 50%;
-				}
-				@include respond-to(xs) {
-					width: 100%;
-				}
-
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

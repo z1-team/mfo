@@ -5,7 +5,7 @@ import { mfoFilters, cardsFilters, categoriesNames } from './filters'
 import CheckboxFilter from './checkbox'
 import RadioFilter from './radio'
 import SearchModule from './module'
-import RangeInput from '../range-input'
+import RangeInput from 'common/components/RangeInput'
 import StickyBox from 'react-sticky-box/src'
 
 import style from './style.scss'

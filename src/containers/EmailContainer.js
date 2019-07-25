@@ -4,10 +4,6 @@ import { connect } from 'preact-redux'
 import { closePopup } from '../actions/popup'
 import { subscribeEmail } from '../actions/subscribe'
 
-const mapStateToProps = (state, {theme}) => ({
-  theme
-})
-
 const mapDispatchToProps = (dispatch) => ({
   onSubmit(email) {
     dispatch(subscribeEmail(email))

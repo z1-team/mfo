@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import Button from 'common/components/Button'
 
 import style from './styles/auth.scss'
 
@@ -20,15 +21,15 @@ class Auth extends Component {
 		this.setState({[input.name]: input.value})
 	}
 
-  render({error, theme}, {login, pass}) {
+  render({error}, {login, pass}) {
     return (
       <div class={style.login}>
         <h2>Авторизация</h2>
         <form action="#" onSubmit={this.handleSubmit}>
           <label>Логин: <input type="text" name="login" onChange={this.handleChange} value={login} /></label>
           <label>Пароль: <input type="password" name="pass" onChange={this.handleChange} value={pass} /></label>
-          {error && <p class={`theme-${theme}-text`}>Не верно введен логин или пароль.</p>}
-          <button class={`theme-${theme}-button`}>Войти</button>
+          {error && <p>Не верно введен логин или пароль.</p>}
+          <Button class={style.button}>Войти</Button>
         </form>
       </div>
     )

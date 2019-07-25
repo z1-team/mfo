@@ -52,379 +52,250 @@ body {
 
 .theme {
 	&-scooter {
-		&-button {
-			background: linear-gradient(to right, #36d1dc 0%, #5b86e5 100%) !important;
-
-			&:hover {
-				background: linear-gradient(to left, #36d1dc 0%, #5b86e5 100%) !important;
-			}
-		}
-		&-background {
-			background: linear-gradient(to right, #36d1dc 0%, #5b86e5 100%) !important;
-		}
-		&-label {
-			background: #5b86e5 !important;
-		}
 		&-tooltip {
 			&, &-2:before {
-				background: #36d1dc !important;
+
 			}
 
-			&-2:after, &:after {
-				border-top-color: #36d1dc !important;
+			 &:after, &-2:after {
+
 			}
 		}
 		&-text {
-			color: #36d1dc !important;
+
 
 			&-before:before {
 				color: #36d1dc !important;
 			}
 		}
 		&-hover {
-			&:hover, &:hover i {
-				color: #36d1dc !important;
-			}
+
 		}
 		&-order {
-			color: #36d1dc !important;
-			border-color: #36d1dc !important;
 
-			&:hover {
-				color: #fff !important;
-				background: linear-gradient(to right, #36d1dc 0%, #5b86e5 100%) !important; border-color: #fff !important;
-			}
 		}
 		&-border {
-			border-color: #36d1dc !important;
+
 		}
 		&-close {
 			&:before, &:after {
-				background: #36d1dc !important;
+
 			}
 		}
 	}
 
 	&-green {
-		&-button {
-			background: linear-gradient(to right, #02aab0 0%, #00cdac 100%) !important;
-
-			&:hover {
-				background: linear-gradient(to left, #02aab0 0%, #00cdac 100%) !important;
-			}
-		}
-		&-background {
-			background: linear-gradient(to right, #02aab0 0%, #00cdac 100%) !important;
-		}
 		&-label {
-			background: #02aab0 !important;
+
 		}
 		&-tooltip {
 			&, &-2:before {
-				background: #00cdac !important;
+
 			}
 
 			&:after, &-2:after {
-				border-top-color: #00cdac !important;
+
 			}
 		}
 		&-text {
-			color: #00cdac !important;
+
 
 			&-before:before {
 				color: #00cdac !important;
 			}
 		}
 		&-hover {
-			&:hover, &:hover i {
-				color: #00cdac !important;
-			}
+
 		}
 		&-order {
-			color: #00cdac !important;
-			border-color: #00cdac !important;
 
-			&:hover {
-				color: #fff !important;
-				background: linear-gradient(to right, #02aab0 0%, #00cdac 100%) !important; border-color: #fff !important;
-			}
 		}
 		&-border {
-			border-color: #00cdac !important;
+
 		}
 		&-close {
 			&:before, &:after {
-				background: #00cdac !important;
+
 			}
 		}
 	}
 
 	&-cherry {
-		&-button {
-			background: linear-gradient(to right, #eb3349 0%, #f45c43 100%) !important;
-
-			&:hover {
-				background: linear-gradient(to left, #eb3349 0%, #f45c43 100%) !important;
-			}
-		}
-		&-background {
-			background: linear-gradient(to right, #eb3349 0%, #f45c43 100%) !important;
-		}
 		&-label {
-			background: #eb3349 !important;
+
 		}
 		&-tooltip {
 			&, &-2:before {
-				background: #f45c43 !important;
+
 			}
 
 			&:after, &-2:after {
-				border-top-color: #f45c43 !important;
+
 			}
 		}
 		&-text {
-			color: #f45c43 !important;
+
 
 			&-before:before {
 				color: #f45c43 !important;
 			}
 		}
 		&-hover {
-			&:hover, &:hover i {
-				color: #f45c43 !important;
-			}
+
 		}
 		&-order {
-			color: #f45c43 !important;
-			border-color: #f45c43 !important;
 
-			&:hover {
-				color: #fff !important;
-				background: linear-gradient(to right, #eb3349 0%, #f45c43 100%) !important; border-color: #fff !important;
-			}
 		}
 		&-border {
-			border-color: #f45c43 !important;
+
 		}
 		&-close {
 			&:before, &:after {
-				background: #f45c43 !important;
+
 			}
 		}
 	}
 
 	&-lush {
-		&-button {
-			background: linear-gradient(to right, #56ab2f 0%, #a8e063 100%) !important;
-
-			&:hover {
-				background: linear-gradient(to left, #56ab2f 0%, #a8e063 100%) !important;
-			}
-		}
-		&-background {
-			background: linear-gradient(to right, #56ab2f 0%, #a8e063 100%) !important;
-		}
 		&-label {
-			background: #56ab2f !important;
+
 		}
 		&-tooltip {
 			&, &-2:before {
-				background: #a8e063 !important;
+
 			}
 
 			&:after, &-2:after {
-				border-top-color: #a8e063 !important;
+
 			}
 		}
 		&-text {
-			color: #a8e063 !important;
+
 
 			&-before:before {
 				color: #a8e063 !important;
 			}
 		}
 		&-hover {
-			&:hover, &:hover i {
-				color: #a8e063 !important;
-			}
+
 		}
 		&-order {
-			color: #a8e063 !important;
-			border-color: #a8e063 !important;
 
-			&:hover {
-				color: #fff !important;
-				background: linear-gradient(to right, #56ab2f 0%, #a8e063 100%) !important; border-color: #fff !important;
-			}
 		}
 		&-border {
-			border-color: #a8e063 !important;
+
 		}
 		&-close {
 			&:before, &:after {
-				background: #a8e063 !important;
+
 			}
 		}
 	}
 
 	&-frost {
-		&-button {
-			background: linear-gradient(to right, #000428 0%, #004e92 100%) !important;
-
-			&:hover {
-				background: linear-gradient(to left, #000428 0%, #004e92 100%) !important;
-			}
-		}
-		&-background {
-			background: linear-gradient(to right, #000428 0%, #004e92 100%) !important;
-		}
 		&-label {
-			background: #000428 !important;
+
 		}
 		&-tooltip {
 			&, &-2:before {
-				background: #004e92 !important;
+
 			}
 
 			&:after, &-2:after {
-				border-top-color: #004e92 !important;
+
 			}
 		}
 		&-text {
-			color: #004e92 !important;
+
 
 			&-before:before {
 				color: #004e92 !important;
 			}
 		}
 		&-hover {
-			&:hover, &:hover i {
-				color: #004e92 !important;
-			}
+
 		}
 		&-order {
-			color: #004e92 !important;
-			border-color: #004e92 !important;
 
-			&:hover {
-				color: #fff !important;
-				background: linear-gradient(to right, #000428 0%, #004e92 100%) !important; border-color: #fff !important;
-			}
 		}
 		&-border {
-			border-color: #004e92 !important;
+
 		}
 		&-close {
 			&:before, &:after {
-				background: #004e92 !important;
+
 			}
 		}
 	}
 
 	&-royal {
-		&-button {
-			background: linear-gradient(to right, #141e30 0%, #243b55 100%) !important;
-
-			&:hover {
-				background: linear-gradient(to left, #141e30 0%, #243b55 100%) !important;
-			}
-		}
-		&-background {
-			background: linear-gradient(to right, #141e30 0%, #243b55 100%) !important;
-		}
 		&-label {
-			background: #141e30 !important;
+
 		}
 		&-tooltip {
 			&, &-2:before {
-				background: #243b55 !important;
+
 			}
 
 			&:after, &-2:after {
-				border-top-color: #243b55 !important;
+
 			}
 		}
 		&-text {
-			color: #243b55 !important;
+
 
 			&-before:before {
 				color: #243b55 !important;
 			}
 		}
 		&-hover {
-			&:hover, &:hover i {
-				color: #243b55 !important;
-			}
+
 		}
 		&-order {
-			color: #243b55 !important;
-			border-color: #243b55 !important;
 
-			&:hover {
-				color: #fff !important;
-				background: linear-gradient(to right, #141e30 0%, #243b55 100%) !important; border-color: #fff !important;
-			}
 		}
 		&-border {
-			border-color: #243b55 !important;
+
 		}
 		&-close {
 			&:before, &:after {
-				background: #243b55 !important;
+
 			}
 		}
 	}
 
 	&-sunset {
-		&-button {
-			background: linear-gradient(to right, #ff7e5f 0%, #feb47b 100%) !important;
-
-			&:hover {
-				background: linear-gradient(to left, #ff7e5f 0%, #feb47b 100%) !important;
-			}
-		}
-		&-background {
-			background: linear-gradient(to right, #ff7e5f 0%, #feb47b 100%) !important;
-		}
 		&-label {
-			background: #ff7e5f !important;
+
 		}
 		&-tooltip {
 			&, &-2:before {
-				background: #feb47b !important;
+
 			}
 
 			&:after, &-2:after {
-				border-top-color: #feb47b !important;
+
 			}
 		}
 		&-text {
-			color: #feb47b !important;
+
 
 			&-before:before {
 				color: #feb47b !important;
 			}
 		}
 		&-hover {
-			&:hover, &:hover i {
-				color: #feb47b !important;
-			}
+
 		}
 		&-order {
-			color: #feb47b !important;
-			border-color: #feb47b !important;
 
-			&:hover {
-				color: #fff !important;
-				background: linear-gradient(to right, #ff7e5f 0%, #feb47b 100%) !important; border-color: #fff !important;
-			}
 		}
 		&-border {
-			border-color: #feb47b !important;
+
 		}
 		&-close {
 			&:before, &:after {
-				background: #feb47b !important;
+
 			}
 		}
 	}

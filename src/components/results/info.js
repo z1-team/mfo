@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import Icon from 'common/components/Icon'
 
 import CardDetails from './details'
 
@@ -17,13 +18,13 @@ class CardInfo extends Component {
 		this.setState(prev => ({isOpen: !prev.isOpen}))
 	}
 
-	render({details, main, theme}, {isOpen}) {
+	render({details, main}, {isOpen}) {
 		return (
 			<footer class={isOpen ? style.active : ''}>
-				<CardDetails details={details} theme={theme} />
+				<CardDetails details={details} />
 				<ul>
-					<li class={`theme-${theme}-text`}>{main.firstLoan && main.firstLoan}</li>
-					<li><button class={`theme-${theme}-hover`} onClick={this.handleClick}><span>Подробнее</span> <i class="if fa-arrow-down"></i></button></li>
+					<li>{main.firstLoan && main.firstLoan}</li>
+					<li><button onClick={this.handleClick}><span>Подробнее</span> <Icon icon="arrow-down" /></button></li>
 				</ul>
 			</footer>
 		)

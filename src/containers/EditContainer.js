@@ -6,9 +6,8 @@ import { getSelectedPartner } from '../selectors/partners'
 import { closePopup } from '../actions/popup'
 import { updatePartner, deletePartner } from '../actions/partners'
 
-const mapStateToProps = (state, {theme}) => ({
-  partner: getSelectedPartner(state),
-  theme
+const mapStateToProps = (state) => ({
+  partner: getSelectedPartner(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({
