@@ -39,7 +39,10 @@ class TestimonialsContainer extends Component {
   render({partner, testimonials, theme, isLoggedIn, onDelete, onSubmit}) {
     return (
       <Testimonials
-        partner={partner}
+        id={partner.id}
+        title={partner.main.title}
+        logo={partner.main.logo}
+        rating={partner.sortBy.rating}
         testimonials={testimonials}
         theme={theme}
         isLoggedIn={isLoggedIn}

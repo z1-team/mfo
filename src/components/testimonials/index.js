@@ -3,9 +3,12 @@ import TestimonialsCommon from 'common/components/Testimonials'
 
 import style from './style.scss'
 
-const Testimonials = ({partner, testimonials, isLoggedIn, onDelete, onSubmit}) => (
+const Testimonials = ({id, title, logo, rating, testimonials, isLoggedIn, onDelete, onSubmit}) => (
   <TestimonialsCommon
-    partner={partner}
+    id={id}
+    title={title}
+    logo={logo}
+    rating={rating}
     testimonials={testimonials}
     isLoggedIn={isLoggedIn}
     onDelete={onDelete}
