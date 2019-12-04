@@ -21,5 +21,6 @@ jobs:
         yarn build
     - name: Деплой на сервер
       run: |
+        mkdir ~/.ssh
         ssh-keyscan -t rsa wtfgames.ru > ~/.ssh/known_hosts
         rsync -rvz --delete -e 'ssh -i mfo.pem' ./build/ wtfgames@wtfgames.ru:mfo/client/
