@@ -1,7 +1,6 @@
 node_modules
 /build
 /*.log
-*.lock
 /server/vendor
 /server/logs
 /server/uploads
