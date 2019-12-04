@@ -22,5 +22,6 @@ jobs:
     - name: Деплой на сервер
       run: |
         mkdir ~/.ssh
+        chmod 600 mfo.pem
         ssh-keyscan -t rsa wtfgames.ru > ~/.ssh/known_hosts
         rsync -rvz --delete -e 'ssh -i mfo.pem' ./build/ wtfgames@wtfgames.ru:mfo/client/
