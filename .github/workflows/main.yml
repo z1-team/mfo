@@ -20,4 +20,4 @@ jobs:
         yarn install
         yarn build
     - name: Деплой на сервер
-      run: cat mfo.pem
+      run: ssh
