@@ -39,3 +39,275 @@
 		}
 	}
 }
+
+/*** Theme mixins **/
+@mixin themeBackground {
+	background: linear-gradient(to right, #dd669b, #553d97);
+
+	:global(.scooter) & {
+		background: linear-gradient(to right, #36d1dc 0%, #5b86e5 100%);
+	}
+	:global(.green) & {
+		background: linear-gradient(to right, #02aab0 0%, #00cdac 100%);
+	}
+	:global(.cherry) & {
+		background: linear-gradient(to right, #eb3349 0%, #f45c43 100%);
+	}
+	:global(.lush) & {
+		background: linear-gradient(to right, #56ab2f 0%, #a8e063 100%);
+	}
+	:global(.frost) & {
+		background: linear-gradient(to right, #000428 0%, #004e92 100%);
+	}
+	:global(.royal) & {
+		background: linear-gradient(to right, #141e30 0%, #243b55 100%);
+	}
+	:global(.sunset) & {
+		background: linear-gradient(to right, #feb47b 0%, #ff7e5f 100%);
+	}
+}
+
+@mixin themeLabelDark {
+	background: #553d97;
+
+	:global(.scooter) & {
+		background: #5b86e5;
+	}
+	:global(.green) & {
+		background: #02aab0;
+	}
+	:global(.cherry) & {
+		background: #eb3349;
+	}
+	:global(.lush) & {
+		background: #56ab2f;
+	}
+	:global(.frost) & {
+		background: #000428;
+	}
+	:global(.royal) & {
+		background: #141e30;
+	}
+	:global(.sunset) & {
+		background: #ff7e5f;
+	}
+}
+@mixin themeLabelLight {
+	background: #dd669b;
+
+	:global(.scooter) & {
+		background: #36d1dc;
+	}
+	:global(.green) & {
+		background: #00cdac;
+	}
+	:global(.cherry) & {
+		background: #f45c43;
+	}
+	:global(.lush) & {
+		background: #a8e063;
+	}
+	:global(.frost) & {
+		background: #004e92;
+	}
+	:global(.royal) & {
+		background: #243b55;
+	}
+	:global(.sunset) & {
+		background: #feb47b;
+	}
+}
+
+@mixin themeOrder {
+	color: #d0007d;
+	border-color: #d0007d;
+
+	&:hover {
+		color: #fff;
+		background: linear-gradient(to right, #dd669b, #553d97); border-color: #fff;
+	}
+
+	:global(.scooter) & {
+		color: #36d1dc;
+		border-color: #36d1dc;
+
+		&:hover {
+			color: #fff;
+			background: linear-gradient(to right, #36d1dc 0%, #5b86e5 100%);
+		}
+	}
+	:global(.green) & {
+		color: #00cdac;
+		border-color: #00cdac;
+
+		&:hover {
+			color: #fff;
+			background: linear-gradient(to right, #02aab0 0%, #00cdac 100%);
+		}
+	}
+	:global(.cherry) & {
+		color: #f45c43;
+		border-color: #f45c43;
+
+		&:hover {
+			color: #fff;
+			background: linear-gradient(to right, #eb3349 0%, #f45c43 100%);
+		}
+	}
+	:global(.lush) & {
+		color: #a8e063;
+		border-color: #a8e063;
+
+		&:hover {
+			color: #fff;
+			background: linear-gradient(to right, #56ab2f 0%, #a8e063 100%);
+		}
+	}
+	:global(.frost) & {
+		color: #004e92;
+		border-color: #004e92;
+
+		&:hover {
+			color: #fff;
+			background: linear-gradient(to right, #000428 0%, #004e92 100%);
+		}
+	}
+	:global(.royal) & {
+		color: #243b55;
+		border-color: #243b55;
+
+		&:hover {
+			color: #fff;
+			background: linear-gradient(to right, #141e30 0%, #243b55 100%);
+		}
+	}
+	:global(.sunset) & {
+		color: #feb47b;
+		border-color: #feb47b;
+
+		&:hover {
+			color: #fff;
+			background: linear-gradient(to right, #feb47b 0%, #ff7e5f 100%);
+		}
+	}
+}
+
+@mixin themeText {
+	color: #d0007d;
+
+	:global(.scooter) & {
+		color: #36d1dc;
+	}
+	:global(.green) & {
+		color: #00cdac;
+	}
+	:global(.cherry) & {
+		color: #f45c43;
+	}
+	:global(.lush) & {
+		color: #a8e063;
+	}
+	:global(.frost) & {
+		color: #004e92;
+	}
+	:global(.royal) & {
+		color: #243b55;
+	}
+	:global(.sunset) & {
+		color: #feb47b;
+	}
+}
+
+@mixin themeTextHover {
+	&:hover {
+		color: #d0007d;
+	}
+
+	:global(.scooter) & {
+		&:hover {
+			color: #36d1dc;
+		}
+	}
+	:global(.green) & {
+		&:hover {
+			color: #00cdac;
+		}
+	}
+	:global(.cherry) & {
+		&:hover {
+			color: #f45c43;
+		}
+	}
+	:global(.lush) & {
+		&:hover {
+			color: #a8e063;
+		}
+	}
+	:global(.frost) & {
+		&:hover {
+			color: #004e92;
+		}
+	}
+	:global(.royal) & {
+		&:hover {
+			color: #243b55;
+		}
+	}
+	:global(.sunset) & {
+		&:hover {
+			color: #feb47b;
+		}
+	}
+}
+
+@mixin themeTooltipBg {
+	background: #d0007d;
+
+	:global(.scooter) & {
+		background: #36d1dc;
+	}
+	:global(.green) & {
+		background: #00cdac;
+	}
+	:global(.cherry) & {
+		background: #f45c43;
+	}
+	:global(.lush) & {
+		background: #a8e063;
+	}
+	:global(.frost) & {
+		background: #004e92;
+	}
+	:global(.royal) & {
+		background: #243b55;
+	}
+	:global(.sunset) & {
+		background: #feb47b;
+	}
+}
+
+@mixin themeTooltipCorner {
+	border-top-color: #d0007d;
+
+	:global(.scooter) & {
+		border-top-color: #36d1dc;
+	}
+	:global(.green) & {
+		border-top-color: #00cdac;
+	}
+	:global(.cherry) & {
+		border-top-color: #f45c43;
+	}
+	:global(.lush) & {
+		border-top-color: #a8e063;
+	}
+	:global(.frost) & {
+		border-top-color: #004e92;
+	}
+	:global(.royal) & {
+		border-top-color: #243b55;
+	}
+	:global(.sunset) & {
+		border-top-color: #feb47b;
+	}
+}

@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import Icon from 'common/components/Icon'
 
 import style from './style.scss'
 
@@ -14,7 +15,16 @@ class SearchModule extends Component {
 	render({title, children, isActive}) {
 		return (
 			<div class={style.filter}>
-				<h4>{title} <button class={isActive ? style.active : ''} onClick={this.handleClick}><span>Сбросить фильтр</span><i class="if fa-close"></i></button></h4>
+				<h4>
+					{title}
+					<button
+						class={isActive ? style.active : ''}
+						onClick={this.handleClick}
+					>
+						<span>Сбросить фильтр</span>
+						<Icon icon="close" />
+					</button>
+				</h4>
 				{children}
 			</div>
 		)

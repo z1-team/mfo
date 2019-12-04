@@ -5,7 +5,7 @@ import { mfoFilters, cardsFilters, categoriesNames } from './filters'
 import CheckboxFilter from './checkbox'
 import RadioFilter from './radio'
 import SearchModule from './module'
-import RangeInput from '../range-input'
+import RangeInput from 'common/components/RangeInput'
 import StickyBox from 'react-sticky-box/src'
 
 import style from './style.scss'
@@ -84,7 +84,7 @@ class Filters extends Component {
     return false
   }
 
-  render({url, total, location, onChange, filters}) {
+  render({url, total, location, filters}) {
     const filtersNames = filterName[url] || filterName.mfo
     const categories = categoriesNames[url] || categoriesNames.mfo
 

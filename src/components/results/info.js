@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import Icon from 'common/components/Icon'
 
 import CardDetails from './details'
 
@@ -23,7 +24,7 @@ class CardInfo extends Component {
 				<CardDetails details={details} />
 				<ul>
 					<li>{main.firstLoan && main.firstLoan}</li>
-					<li><button onClick={this.handleClick}><span>Подробнее</span> <i class="if fa-arrow-down"></i></button></li>
+					<li><button onClick={this.handleClick}><span>Подробнее</span> <Icon icon="arrow-down" /></button></li>
 				</ul>
 			</footer>
 		)

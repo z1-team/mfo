@@ -1,7 +1,8 @@
 import { h, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import CardInfo from './info'
-import StarRating from '../star-rating'
+import StarRating from 'common/components/StarRating'
+import Icon from 'common/components/Icon'
 import { getWays } from './icons'
 
 import style from './style.scss'
@@ -72,10 +73,10 @@ class Card extends Component {
     const rating = Math.round(item.sortBy.rating*10)/10
     const star = Math.round(item.sortBy.rating*20)
     const label = item.main.special_label ? item.main.special_label : ''
-    const unpublished = item.main.isPublished || item.main.isPublished === undefined ? '' : style.unpublished
+    const unpublished = theme => item.main.isPublished || item.main.isPublished === undefined ? '' : `theme-${theme}-border ${style.unpublished}`
 
     return (
-      <div class={`${style.card} ${style[label]} ${unpublished}`}>
+      <div class={`${style.card} ${style[label]}`}>
         {label === 'big_summ' ? <span class={style.label}>На большую сумму</span> : ''}
         {label === 'long_term' ? <span class={style.label}>На долгий период</span> : ''}
         {label === 'quick_solution' ? <span class={style.label}>Быстрое решение</span> : ''}
@@ -88,39 +89,39 @@ class Card extends Component {
               rel="nofollow noopener"
               data-source="image"
               onClick={this.handleOrder}
-            >
-              <img src={item.main.logo} />
-            </a>
-          </figure>
-          <div class={style.info}>
-            <h3>
-              <a
-                target="_blank"
-                href={`${item.main.link}?${tail}`}
-                rel="nofollow noopener"
-                data-source="title"
-                onClick={this.handleOrder}
               >
-                {label === 'recommend' ? <i class="if fa-gripfire"></i> : ''}
-                {item.main.title}
+                <img src={item.main.logo} />
               </a>
-            </h3>
-            <div class={style.rating}>
-              <StarRating rating={item.sortBy.rating} />
-              <p><Link href={`/testimonials/${item.id}`}>{item.sortBy.testimonials_count} {this.getEnding()}</Link> {item.sortBy.rating && `(${rating} из 5)`}</p>
-            </div>
-            {item.type === 'mfo' && item.main &&
+            </figure>
+            <div class={style.info}>
+              <h3>
+                <a
+                  target="_blank"
+                  href={`${item.main.link}?${tail}`}
+                  rel="nofollow noopener"
+                  data-source="title"
+                  onClick={this.handleOrder}
+                  >
+                    {label === 'recommend' ? <Icon icon="gripfire" /> : ''}
+                    {item.main.title}
+                  </a>
+                </h3>
+                <div class={style.rating}>
+                  <StarRating rating={item.sortBy.rating} />
+                  <p><Link href={`/testimonials/${item.id}`}>{item.sortBy.testimonials_count} {this.getEnding()}</Link> {item.sortBy.rating && `(${rating} из 5)`}</p>
+                </div>
+                {item.type === 'mfo' && item.main &&
+                <ul class={style.pros}>
+                  {item.main.money && <li><Icon icon="money" /><strong>{item.main.money}</strong> руб.<div class={style.tooltip}>Сумма займа</div></li>}
+                  {item.main.term && <li><Icon icon="calendar" /><strong>{item.main.term}</strong><div class={style.tooltip}>Срок займа</div></li>}
+                  {item.main.minRate && <li><Icon icon="percent" />от <strong>{item.main.minRate}</strong> в день<div class={style.tooltip}>Процентная ставка</div></li>}
+                </ul>
+              }
+              {item.type === 'cards' && item.main &&
               <ul class={style.pros}>
-                {item.main.money && <li><i class="if fa-money"></i><strong>{item.main.money}</strong> руб.<div class={style.tooltip}>Сумма займа</div></li>}
-                {item.main.term && <li><i class="if fa-calendar"></i><strong>{item.main.term}</strong><div class={style.tooltip}>Срок займа</div></li>}
-                {item.main.minRate && <li><i class="if fa-percent"></i>от <strong>{item.main.minRate}</strong> в день<div class={style.tooltip}>Процентная ставка</div></li>}
-              </ul>
-            }
-            {item.type === 'cards' && item.main &&
-              <ul class={style.pros}>
-                {item.main.limit && <li><i class="if fa-credit-card"></i><strong>{item.main.limit}</strong> руб.<div class={style.tooltip}>Лимит по карте</div></li>}
-                {item.main.percent && <li><i class="if fa-percent"></i>от <strong>{item.main.percent}</strong><div class={style.tooltip}>Процентная ставка</div></li>}
-                {item.main.cashback && <li><i class="if fa-money"></i><strong>{item.main.cashback}</strong><div class={style.tooltip}>Кешбэк</div></li>}
+                {item.main.limit && <li><Icon icon="credit-card" /><strong>{item.main.limit}</strong> руб.<div class={style.tooltip}>Лимит по карте</div></li>}
+                {item.main.percent && <li><Icon icon="percent" />от <strong>{item.main.percent}</strong><div class={style.tooltip}>Процентная ставка</div></li>}
+                {item.main.cashback && <li><Icon icon="money" /><strong>{item.main.cashback}</strong><div class={style.tooltip}>Кешбэк</div></li>}
               </ul>
             }
             {this.getWays() &&
@@ -130,17 +131,17 @@ class Card extends Component {
             }
           </div>
           <div class={style.process}>
-            {edit && <button onClick={this.handleEdit}><i class="if fa-edit"></i></button>}
+            {edit && <button onClick={this.handleEdit}><Icon icon="edit" /></button>}
             <a
               target="_blank"
               href={`${item.main.link}?${tail}`}
               rel="nofollow noopener"
               data-source="button"
               onClick={this.handleOrder}
-            >Оформить</a>
+              >Оформить</a>
           </div>
         </section>
-        <CardInfo details={item.details} main={item.main} onOpen={this.handleOpen}/>
+        <CardInfo details={item.details} main={item.main} onOpen={this.handleOpen} />
       </div>
     )
   }

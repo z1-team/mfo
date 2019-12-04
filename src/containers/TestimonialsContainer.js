@@ -4,11 +4,14 @@ import Testimonials from '../components/testimonials'
 import { sendTestimonial, deleteTestimonial,
   fetchTestimonials } from '../actions/testimonials'
 import { openPopup } from '../actions/popup'
+import { isLoggedIn } from '../selectors/auth'
 import { getTestimonials, getSelectedPartner } from '../selectors/testimonials'
 
-const mapStateToProps = (state, {id}) => ({
+const mapStateToProps = (state, {id, theme}) => ({
+  isLoggedIn: isLoggedIn(state),
   partner: getSelectedPartner(state, id),
-  testimonials: getTestimonials(state)
+  testimonials: getTestimonials(state),
+  theme
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -33,11 +36,16 @@ class TestimonialsContainer extends Component {
     onEnter(id)
   }
 
-  render({partner, testimonials, onDelete, onSubmit}) {
+  render({partner, testimonials, theme, isLoggedIn, onDelete, onSubmit}) {
     return (
       <Testimonials
-        partner={partner}
+        id={partner.id}
+        title={partner.main.title}
+        logo={partner.main.logo}
+        rating={partner.sortBy.rating}
         testimonials={testimonials}
+        theme={theme}
+        isLoggedIn={isLoggedIn}
         onDelete={onDelete}
         onSubmit={onSubmit}
       />

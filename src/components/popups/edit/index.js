@@ -109,7 +109,7 @@ class EditPopup extends Component {
     }
   }
 
-  render({partner, url}, {tab}) {
+  render({partner}, {tab}) {
     if(!partner) return null
 
     return (

@@ -1,3 +1,4 @@
+@import '../../style/mixins.scss';
 @import '../../style/variables.scss';
 
 .icon {
@@ -13,13 +14,14 @@
 		content: '';
 		color: $white; font-size: 12px; font-family: $m-r; white-space: nowrap;
 		display: none; position: absolute; left: 0; top: -10px; transform: translateY(-100%); padding: 0 4px; z-index: 2;
-		background: $main;
+		@include themeTooltipBg();
 	}
 
 	&:after {
 		content: '';
 		display: none; position: absolute; left: 13px; top: -11px;
 		border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid $main; z-index: 3;
+		@include themeTooltipCorner();
 	}
 
 	&.cash {

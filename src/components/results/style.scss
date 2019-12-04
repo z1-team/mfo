@@ -98,12 +98,12 @@
 
 	&.recommend {
 		.label {
-			background: #553d97;
+			@include themeLabelDark();
 		}
 	}
 	&.quick_solution {
 		.label {
-			background: #dd669b;
+			@include themeLabelLight();
 		}
 	}
 
@@ -168,16 +168,14 @@
         }
 
         i {
-          color: $main; font-size: 18px;
+          font-size: 18px;
           margin-right: 5px;
+					@include themeText();
         }
 
 				a {
 					color: inherit;
-
-					&:hover {
-						color: $main;
-					}
+					@include themeTextHover();
 				}
       }
 
@@ -227,8 +225,9 @@
           }
 
           i {
-            color: $main; font-size: 20px;
+            font-size: 20px;
             position: absolute; left: 15px; top: 11px; transform: translate(-50%, -50%);
+						@include themeText();
           }
 
           strong {
@@ -244,12 +243,14 @@
             color: $white; font-size: 12px; font-family: $m-r; white-space: nowrap;
             position: absolute; left: 0; top: -5px; transform: translateY(-100%); padding: 0 4px; display: none;
             background: $main; border-radius: 4px;
+						@include themeTooltipBg();
 
             &:after {
               content: '';
               position: absolute; left: 9px; top: 100%;
               border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid $main; z-index: 3;
-            }
+							@include themeTooltipCorner();
+						}
           }
         }
       }
@@ -315,6 +316,7 @@
         display: inline-block; margin-bottom: 14px; padding: 10px 16px;
         background: transparent; border: solid 2px $main; border-radius: 5px;
 				cursor: pointer;
+				@include themeOrder();
 
         @include respond-to(lg) {
           font-size: 14px;
@@ -403,9 +405,10 @@
           }
 
           &:before {
-            content: '';
-            display: block; width: 21px; height: 21px; position: absolute; left: 0; top: -2px;
-            background: url('/assets/img/check-circle.png') center center no-repeat;
+            content: '\e910';
+						color: $main; font-size: 21px; font-family: 'icon-font' !important; line-height: 21px;
+            position: absolute; left: 0; top: -2px;
+						@include themeText();
 
             @include respond-to(lg) {
               top: -1px;
@@ -427,7 +430,8 @@
       display: flex; align-items: center; justify-content: space-between;
 
       li {
-        color: $main; font-size: 14px; font-family: $os-b; line-height: 20px;
+        font-size: 14px; font-family: $os-b; line-height: 20px;
+				@include themeText();
 
 				button {
 					color: #484848; font-size: 12px; font-family: $m-sb; text-transform: uppercase;
@@ -435,12 +439,14 @@
 					background: none;
 					cursor: pointer;
 
-					@media (min-width: 992px) {
-						&:hover {
-							i {
-								color: $main;
-							}
+					&:hover {
+						i {
+							@include themeText();
 						}
+					}
+
+					span {
+						color: #484848 !important;
 					}
 
           i {

@@ -1,10 +1,10 @@
 import { h, Component } from 'preact'
 import { connect } from 'preact-redux'
 
-import Popups from '../components/popups'
-import Popup from '../components/popups/popup'
-import Testimonials from '../components/popups/testimonials'
-import Subscribed from '../components/popups/subscribed'
+import PopupWrap from 'common/components/PopupWrap'
+import Popup from 'common/components/Popup'
+import Testimonials from 'common/components/PopupTestimonial'
+import Subscribed from 'common/components/PopupSubscribed'
 
 import AuthContainer from './AuthContainer'
 import CategoriesContainer from './CategoriesContainer'
@@ -20,7 +20,7 @@ const isOpened = (popups, name = null) => (
 )
 
 const PopupsContainer = ({popups, url, onClose}) => (
-  <Popups isOpened={isOpened(popups)} onClose={onClose}>
+  <PopupWrap isOpened={isOpened(popups)} onClose={onClose}>
     <Popup name="login" isOpened={isOpened(popups, 'login')}>
       <AuthContainer />
     </Popup>
@@ -39,7 +39,7 @@ const PopupsContainer = ({popups, url, onClose}) => (
     <Popup name="subscribed" isOpened={isOpened(popups, 'subscribed')}>
       <Subscribed onClose={onClose} />
     </Popup>
-  </Popups>
+  </PopupWrap>
 )
 
 const mapStateToProps = (state, {url}) => ({

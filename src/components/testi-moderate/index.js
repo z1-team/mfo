@@ -1,8 +1,9 @@
 import { h, Component } from 'preact'
+import Icon from 'common/components/Icon'
 
 import style from './style.scss'
 
-import Button from '../utility/Button'
+import Button from 'common/components/Button'
 
 class TestiModerate extends Component {
   constructor(props) {
@@ -49,18 +50,18 @@ class TestiModerate extends Component {
           <h3>Отзыв партнера &laquo;<span>{title}</span>&raquo;</h3>
         </header>
         <div>
-          <i class="if fa-quote-left"></i>
+          <Icon icon="quote-left" />
           {isEdit ? <textarea value={text} tabIndex="1" autoFocus onBlur={this.handleBlur} onChange={this.handleChange}></textarea> : <p onClick={this.handleEdit}>{text}</p>}
-          <i class="if fa-quote-right"></i>
+          <Icon icon="quote-right" />
         </div>
         <footer>
           <p>{user}</p>
           <ul class={`rate-${rating}`}>
-            <li><i class="if fa-star"></i></li>
-            <li><i class="if fa-star"></i></li>
-            <li><i class="if fa-star"></i></li>
-            <li><i class="if fa-star"></i></li>
-            <li><i class="if fa-star"></i></li>
+            <li><Icon icon="star" /></li>
+            <li><Icon icon="star" /></li>
+            <li><Icon icon="star" /></li>
+            <li><Icon icon="star" /></li>
+            <li><Icon icon="star" /></li>
           </ul>
         </footer>
         <div class={style.actions}>

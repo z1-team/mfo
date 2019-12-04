@@ -15,7 +15,7 @@ class Results extends Component {
 	}
 
 	handleScroll = () => {
-		const {cards, cardsCount, hasMore, onScroll} = this.props
+		const {hasMore, onScroll} = this.props
 
 		if(hasMore) {
 			if( this.results.clientHeight + this.results.getBoundingClientRect().top - window.innerHeight - 100  <= 0) {

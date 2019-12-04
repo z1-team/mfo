@@ -49,3 +49,254 @@ body {
 		display: block;
 	}
 }
+
+.theme {
+	&-scooter {
+		&-tooltip {
+			&, &-2:before {
+
+			}
+
+			 &:after, &-2:after {
+
+			}
+		}
+		&-text {
+
+
+			&-before:before {
+				color: #36d1dc !important;
+			}
+		}
+		&-hover {
+
+		}
+		&-order {
+
+		}
+		&-border {
+
+		}
+		&-close {
+			&:before, &:after {
+
+			}
+		}
+	}
+
+	&-green {
+		&-label {
+
+		}
+		&-tooltip {
+			&, &-2:before {
+
+			}
+
+			&:after, &-2:after {
+
+			}
+		}
+		&-text {
+
+
+			&-before:before {
+				color: #00cdac !important;
+			}
+		}
+		&-hover {
+
+		}
+		&-order {
+
+		}
+		&-border {
+
+		}
+		&-close {
+			&:before, &:after {
+
+			}
+		}
+	}
+
+	&-cherry {
+		&-label {
+
+		}
+		&-tooltip {
+			&, &-2:before {
+
+			}
+
+			&:after, &-2:after {
+
+			}
+		}
+		&-text {
+
+
+			&-before:before {
+				color: #f45c43 !important;
+			}
+		}
+		&-hover {
+
+		}
+		&-order {
+
+		}
+		&-border {
+
+		}
+		&-close {
+			&:before, &:after {
+
+			}
+		}
+	}
+
+	&-lush {
+		&-label {
+
+		}
+		&-tooltip {
+			&, &-2:before {
+
+			}
+
+			&:after, &-2:after {
+
+			}
+		}
+		&-text {
+
+
+			&-before:before {
+				color: #a8e063 !important;
+			}
+		}
+		&-hover {
+
+		}
+		&-order {
+
+		}
+		&-border {
+
+		}
+		&-close {
+			&:before, &:after {
+
+			}
+		}
+	}
+
+	&-frost {
+		&-label {
+
+		}
+		&-tooltip {
+			&, &-2:before {
+
+			}
+
+			&:after, &-2:after {
+
+			}
+		}
+		&-text {
+
+
+			&-before:before {
+				color: #004e92 !important;
+			}
+		}
+		&-hover {
+
+		}
+		&-order {
+
+		}
+		&-border {
+
+		}
+		&-close {
+			&:before, &:after {
+
+			}
+		}
+	}
+
+	&-royal {
+		&-label {
+
+		}
+		&-tooltip {
+			&, &-2:before {
+
+			}
+
+			&:after, &-2:after {
+
+			}
+		}
+		&-text {
+
+
+			&-before:before {
+				color: #243b55 !important;
+			}
+		}
+		&-hover {
+
+		}
+		&-order {
+
+		}
+		&-border {
+
+		}
+		&-close {
+			&:before, &:after {
+
+			}
+		}
+	}
+
+	&-sunset {
+		&-label {
+
+		}
+		&-tooltip {
+			&, &-2:before {
+
+			}
+
+			&:after, &-2:after {
+
+			}
+		}
+		&-text {
+
+
+			&-before:before {
+				color: #feb47b !important;
+			}
+		}
+		&-hover {
+
+		}
+		&-order {
+
+		}
+		&-border {
+
+		}
+		&-close {
+			&:before, &:after {
+
+			}
+		}
+	}
+}

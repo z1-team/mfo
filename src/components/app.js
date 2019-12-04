@@ -2,18 +2,17 @@ import { h, Component } from 'preact'
 import { Router } from 'preact-router'
 import Match from 'preact-router/match'
 import { Provider } from 'preact-redux'
+import { createContext } from 'preact-context'
 import store from '../store'
 import '../counter'
 
 import HeaderContainer from '../containers/HeaderContainer'
-import IntroContainer from '../containers/IntroContainer'
 import ModerationContainer from '../containers/ModerationContainer'
 import TestimonialsContainer from '../containers/TestimonialsContainer'
 import FooterContainer from '../containers/FooterContainer'
 import PopupsContainer from '../containers/PopupsContainer'
 import GuardContainer from '../containers/GuardContainer'
 import CookiesContainer from '../containers/CookiesContainer'
-import BotTestContainer from '../containers/BotTestContainer'
 import PushContainer from '../containers/PushContainer'
 import ScrollContainer from '../containers/ScrollContainer'
 
@@ -22,7 +21,7 @@ import AboutProject from '../routes/inner/about'
 import Confidentiality from '../routes/inner/confidentiality'
 import NotFound from '../routes/not-found'
 
-import ToTop from './to-top'
+import ToTop from 'common/components/ToTop'
 
 import api from '../api'
 
@@ -73,13 +72,43 @@ const scrollContainer = ({url}) => (
 	<ScrollContainer url={url} />
 )
 
+export const ThemeContext = createContext({theme: 'default'})
+
+const themesNames = [
+	'default', 'scooter', 'green', 'cherry',
+	'lush', 'frost', 'royal', 'sunset'
+]
+
+function generateTheme() {
+	const index = Math.floor(Math.random() * themesNames.length)
+	return themesNames[index]
+}
+
+function loadTheme() {
+	if (typeof window === 'undefined') {
+		return 'default'
+	}
+	const savedTheme = localStorage.getItem('themeName')
+	if (savedTheme) {
+		return savedTheme
+	}
+	const themeName = generateTheme()
+	localStorage.setItem('themeName', themeName)
+	return themeName
+}
+
 class App extends Component {
-	state = {
-		app: 'app'
+	constructor(props) {
+		super(props)
+		this.state = {
+			app: 'app',
+			theme: loadTheme()
+		}
 	}
 
 	componentDidMount() {
-		store.dispatch(initSession())
+		const {theme} = this.state
+		store.dispatch(initSession(theme))
 		store.dispatch(fetchPartners())
 	}
 
@@ -105,36 +134,39 @@ class App extends Component {
 
 	appPadding = () => {
 		if(this.currentUrl === '/' || this.currentUrl === '/cards') {
-			this.setState({app: 'app partners'})
+			this.setState({app: `app ${style[color]}`})
 		} else {
 			this.setState({app: 'app'})
 		}
 	}
 
-	render(props, {app, isVisible}) {
+	render(props, {app, theme, isVisible}) {
 		const cookie = getCookieItem()
+		const value = {theme}
 		return (
 			<Provider store={store}>
-				<div id="app" class="app">
-					<HeaderContainer />
-					<Router onChange={this.handleRoute}>
-						<BotTestContainer path="/" partners="mfo" />
-						<BotTestContainer path="/cards" partners="cards" />
-						<ModerationContainer path="/moderate" />
-						<TestimonialsContainer path="/testimonials/:id" />
-						<AboutProject path="/about" />
-						<Confidentiality path="/confidentiality" />
-						<NotFound default />
-					</Router>
-					<FooterContainer />
-					<Match>{guard}</Match>
-					<Match>{displayPopups}</Match>
-					{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
-					{!cookie && <CookiesContainer />}
-					<ToTop />
-					<PushContainer />
-					<Match>{scrollContainer}</Match>
-				</div>
+				<ThemeContext.Provider value={value}>
+					<div id="app" class={`app ${theme}`}>
+						<HeaderContainer />
+						<Router onChange={this.handleRoute}>
+							<Main path="/" partners="mfo" />
+							<Main path="/cards" partners="cards" />
+							<ModerationContainer path="/moderate" />
+							<TestimonialsContainer path="/testimonials/:id" />
+							<AboutProject path="/about" />
+							<Confidentiality path="/confidentiality" />
+							<NotFound default />
+						</Router>
+						<FooterContainer />
+						<Match>{guard}</Match>
+						<Match>{displayPopups}</Match>
+						{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
+						{!cookie && <CookiesContainer />}
+						<ToTop />
+						<PushContainer />
+						<Match>{scrollContainer}</Match>
+					</div>
+				</ThemeContext.Provider>
 			</Provider>
 		)
 	}

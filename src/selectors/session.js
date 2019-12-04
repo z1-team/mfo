@@ -38,7 +38,7 @@ export const getPlace = ({session}) => {
 }
 
 export const getLinksTail = ({session}) => {
-  const {query, userId, clientId} = session
+  const {theme, query, userId, clientId} = session
   const queryParams = [
     ['yclid', 'yclick_id'],
     ['utm_campaign', 'utm_campaign'],
@@ -67,6 +67,10 @@ export const getLinksTail = ({session}) => {
 
   if (clientId) {
     tail.client_id = clientId
+  }
+
+  if (theme) {
+    tail.theme = theme
   }
 
   return queryString.stringify(tail)
