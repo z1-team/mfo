@@ -109,7 +109,7 @@
 
 
   & > section {
-    display: flex; align-items: center; justify-content: space-between; padding: 23px 31px 30px 23px;
+    display: flex; align-items: center; justify-content: space-between; padding: 10px 42px 15px 20px;
 
     @include respond-to(lg) {
       padding: 20px 15px;
