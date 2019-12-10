@@ -14,23 +14,23 @@ class ScrollContainer extends Component {
     emailShowed: false
   }
 
-  componentDidMount(){
-    const {onScroll} = this.props
-    window.addEventListener('scroll', this.handleScroll)
-    setTimeout(() => {
-      onScroll()
-      this.setState({emailShowed: true})
-    }, 16000)
+  componentDidMount(){3
+    // const {onScroll} = this.props
+    // window.addEventListener('scroll', this.handleScroll)
+    // setTimeout(() => {
+    //   onScroll()
+    //   this.setState({emailShowed: true})
+    // }, 16000)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
+    // window.removeEventListener('scroll', this.handleScroll)
   }
 
   handleScroll = (event) => {
-    const {emailShowed, isAlowed} = this.state
-    const {partners, onScroll, url, showBot} = this.props
-    const subscribed = localStorage.getItem('subscribed') === null ? true : false
+    // const {emailShowed, isAlowed} = this.state
+    // const {partners, onScroll, url, showBot} = this.props
+    // const subscribed = localStorage.getItem('subscribed') === null ? true : false
 
     // if(!emailShowed && subscribed && url === '/') {
     //   let scrollTop = document.documentElement.scrollTop

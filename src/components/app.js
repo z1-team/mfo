@@ -12,8 +12,8 @@ import TestimonialsContainer from '../containers/TestimonialsContainer'
 import FooterContainer from '../containers/FooterContainer'
 import PopupsContainer from '../containers/PopupsContainer'
 import GuardContainer from '../containers/GuardContainer'
-import CookiesContainer from '../containers/CookiesContainer'
-import PushContainer from '../containers/PushContainer'
+// import CookiesContainer from '../containers/CookiesContainer'
+// import PushContainer from '../containers/PushContainer'
 import ScrollContainer from '../containers/ScrollContainer'
 
 import Main from '../routes/main'
@@ -68,9 +68,9 @@ const getCookieItem = () => {
 	}
 }
 
-const scrollContainer = ({url}) => (
-	<ScrollContainer url={url} />
-)
+// const scrollContainer = ({url}) => (
+// 	<ScrollContainer url={url} />
+// )
 
 export const ThemeContext = createContext({theme: 'default'})
 
@@ -127,11 +127,6 @@ class App extends Component {
 		}
 	}
 
-	handleCategories = (event) => {
-		event.preventDefault()
-		store.dispatch(openPopup('categories'))
-	}
-
 	appPadding = () => {
 		if(this.currentUrl === '/' || this.currentUrl === '/cards') {
 			this.setState({app: `app ${style[color]}`})
@@ -160,11 +155,10 @@ class App extends Component {
 						<FooterContainer />
 						<Match>{guard}</Match>
 						<Match>{displayPopups}</Match>
-						{/* <Match>{categoriesToggle(this.handleCategories)}</Match> */}
-						{!cookie && <CookiesContainer />}
+						{/* {!cookie && <CookiesContainer />} */}
 						<ToTop />
-						<PushContainer />
-						<Match>{scrollContainer}</Match>
+						{/* <PushContainer /> */}
+						{/* <Match>{scrollContainer}</Match> */}
 					</div>
 				</ThemeContext.Provider>
 			</Provider>
