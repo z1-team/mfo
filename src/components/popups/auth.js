@@ -9,8 +9,7 @@ class Auth extends Component {
     pass: ''
   }
 
-  handleSubmit = (event) => {
-		event.preventDefault()
+  handleSubmit = () => {
     const {onSubmit} = this.props
 		const {login, pass} = this.state
 		onSubmit(login, pass)
@@ -29,7 +28,7 @@ class Auth extends Component {
           <label>Логин: <input type="text" name="login" onChange={this.handleChange} value={login} /></label>
           <label>Пароль: <input type="password" name="pass" onChange={this.handleChange} value={pass} /></label>
           {error && <p>Не верно введен логин или пароль.</p>}
-          <Button class={style.button}>Войти</Button>
+          <Button class={style.button} onClick={this.handleSubmit}>Войти</Button>
         </form>
       </div>
     )
