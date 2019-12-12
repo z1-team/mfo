@@ -30,9 +30,7 @@ jobs:
         ssh-keyscan -t rsa wtfgames.ru > ~/.ssh/known_hosts
     - name: Деплой production-версии
       if: github.ref == 'refs/heads/master'
-      run: rsync -rvz --delete -e 'ssh -i masterkey.pem' \
-        build/ landmaster@wtfgames.ru:mfo/master/
+      run: rsync -rvz --delete -e 'ssh -i masterkey.pem' build/ landmaster@wtfgames.ru:mfo/master/
     - name: Деплой dev-версии
       if: github.ref == 'refs/heads/dev'
-      run: rsync -rvz --delete -e 'ssh -i masterkey.pem' \
-        build/ landmaster@wtfgames.ru:mfo/dev/
+      run: rsync -rvz --delete -e 'ssh -i masterkey.pem' build/ landmaster@wtfgames.ru:mfo/dev/
