@@ -7,7 +7,6 @@ import Testimonials from 'common/components/PopupTestimonial'
 import Subscribed from 'common/components/PopupSubscribed'
 
 import AuthContainer from './AuthContainer'
-import CategoriesContainer from './CategoriesContainer'
 import EditContainer from './EditContainer'
 import EmailContainer from './EmailContainer'
 
@@ -24,21 +23,18 @@ const PopupsContainer = ({popups, url, onClose}) => (
     <Popup name="login" isOpened={isOpened(popups, 'login')}>
       <AuthContainer />
     </Popup>
-    <Popup name="categories" isOpened={isOpened(popups, 'categories')}>
-      <CategoriesContainer url={url} />
-    </Popup>
     <Popup name="edit" isOpened={isOpened(popups, 'edit')}>
       <EditContainer />
     </Popup>
-    <Popup name="email" isOpened={isOpened(popups, 'email')}>
+    {/* <Popup name="email" isOpened={isOpened(popups, 'email')}>
       <EmailContainer />
-    </Popup>
+    </Popup> */}
     <Popup name="testimonial" isOpened={isOpened(popups, 'testimonial')}>
       <Testimonials onClose={onClose} />
     </Popup>
-    <Popup name="subscribed" isOpened={isOpened(popups, 'subscribed')}>
+    {/* <Popup name="subscribed" isOpened={isOpened(popups, 'subscribed')}>
       <Subscribed onClose={onClose} />
-    </Popup>
+    </Popup> */}
   </PopupWrap>
 )
 
