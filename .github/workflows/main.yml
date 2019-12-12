@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      with:
-        ref: ${{ github.ref }}
     - name: Кэширование node_modules
       uses: actions/cache@v1
       with:
@@ -31,10 +29,10 @@ jobs:
         chmod 600 masterkey.pem
         ssh-keyscan -t rsa wtfgames.ru > ~/.ssh/known_hosts
     - name: Деплой production-версии
-      if: github.ref == 'master'
+      if: github.ref == 'refs/heads/master'
       run: rsync -rvz --delete -e 'ssh -i masterkey.pem' \
         ./build/ landmaster@wtfgames.ru:mfo/master/
     - name: Деплой dev-версии
-      if: github.ref == 'dev'
+      if: github.ref == 'refs/heads/dev'
       run: rsync -rvz --delete -e 'ssh -i masterkey.pem' \
         ./build/ landmaster@wtfgames.ru:mfo/dev/
