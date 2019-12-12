@@ -28,7 +28,7 @@ jobs:
     - name: Подготовка к деплою
       run: |
         mkdir ~/.ssh
-        chmod 600 mfo.pem
+        chmod 600 masterkey.pem
         ssh-keyscan -t rsa wtfgames.ru > ~/.ssh/known_hosts
     - name: Деплой production-версии
       if: github.ref == 'master'
