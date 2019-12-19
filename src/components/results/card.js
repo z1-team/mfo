@@ -141,7 +141,7 @@ class Card extends Component {
               >Оформить</a>
           </div>
         </section>
-        <CardInfo details={item.details} main={item.main} onOpen={this.handleOpen} />
+        <CardInfo details={item.details} onOpen={this.handleOpen} />
       </div>
     )
   }

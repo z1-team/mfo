@@ -18,12 +18,11 @@ class CardInfo extends Component {
 		this.setState(prev => ({isOpen: !prev.isOpen}))
 	}
 
-	render({details, main}, {isOpen}) {
+	render({details}, {isOpen}) {
 		return (
 			<footer class={isOpen ? style.active : ''}>
 				<CardDetails details={details} />
 				<ul>
-					<li>{main.firstLoan && main.firstLoan}</li>
 					<li><button onClick={this.handleClick}><span>Подробнее</span> <Icon icon="arrow-down" /></button></li>
 				</ul>
 			</footer>
