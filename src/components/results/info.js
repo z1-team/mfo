@@ -7,23 +7,51 @@ import style from './style.scss'
 
 class CardInfo extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    height: 33
+  }
+
+  saveDetails = ref => this.details = ref
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  handleResize = event => {
+    const {isOpen, height} = this.state
+    const {clientHeight} = this.details.base
+
+    if (height !== clientHeight + 33 && isOpen) {
+      this.setState({height: clientHeight + 33})
+    }
   }
 
 	handleClick = () => {
 		const {onOpen} = this.props
-		if (typeof onOpen === 'function' && !this.state.isOpen) {
+    const {isOpen} = this.state
+    const {clientHeight} = this.details.base
+		if (typeof onOpen === 'function' && !isOpen) {
 			onOpen()
 		}
-		this.setState(prev => ({isOpen: !prev.isOpen}))
+    const height = !isOpen
+      ? this.details.base.clientHeight + 33
+      : 33
+		this.setState(prev => ({
+      isOpen: !prev.isOpen,
+      height
+    }))
 	}
 
-	render({details}, {isOpen}) {
+	render({details}, {isOpen, height}) {
 		return (
-			<footer class={isOpen ? style.active : ''}>
-				<CardDetails details={details} />
+			<footer class={isOpen ? style.active : ''} style={{height: `${height}px`}}>
+				<CardDetails details={details} ref={this.saveDetails} />
 				<ul>
-					<li><button onClick={this.handleClick}><span>Подробнее</span> <Icon icon="arrow-down" /></button></li>
+					<li><button onClick={this.handleClick}><Icon icon="arrow-down" /> <span>Подробнее</span></button></li>
 				</ul>
 			</footer>
 		)

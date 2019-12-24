@@ -80,7 +80,7 @@ class Card extends Component {
         {label === 'big_summ' ? <span class={style.label}>На большую сумму</span> : ''}
         {label === 'long_term' ? <span class={style.label}>На долгий период</span> : ''}
         {label === 'quick_solution' ? <span class={style.label}>Быстрое решение</span> : ''}
-        {label === 'recommend' ? <span class={style.label}>Рекомендуют</span> : ''}
+        {label === 'recommend' ? <span class={style.label}>Рекомендуем!</span> : ''}
         <section>
           <figure>
             <a

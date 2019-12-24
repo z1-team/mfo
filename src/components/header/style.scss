@@ -7,6 +7,54 @@
   100%{background-position:0% 50%}
 }
 
+.header {
+  background-image: repeating-linear-gradient(0deg,rgba(85,61,151,.2),rgba(85,61,151,.2) 1px,transparent 0,transparent 7px),
+  repeating-linear-gradient(90deg,rgba(85,61,151,.2),rgba(85,61,151,.2) 1px,transparent 0,transparent 7px),
+  linear-gradient(to right, #553d97, #dd669b); background-size: 100%;
+
+  :global(.scooter) & {
+    background-image: repeating-linear-gradient(0deg,rgba(91,134,229,.2),rgba(91,134,229,.2) 1px,transparent 0,transparent 7px),
+    repeating-linear-gradient(90deg,rgba(91,134,229,.2),rgba(91,134,229,.2) 1px,transparent 0,transparent 7px),
+    linear-gradient(to right, #5b86e5, #36d1dc);
+  }
+
+  :global(.green) & {
+    background-image: repeating-linear-gradient(0deg,rgba(2,170,176,.2),rgba(2,170,176,.2) 1px,transparent 0,transparent 7px),
+    repeating-linear-gradient(90deg,rgba(2,170,176,.2),rgba(2,170,176,.2) 1px,transparent 0,transparent 7px),
+    linear-gradient(to right, #02aab0, #00cdac);
+  }
+
+  :global(.cherry) & {
+    background-image: repeating-linear-gradient(0deg,rgba(235,51,73,.2),rgba(235,51,73,.2) 1px,transparent 0,transparent 7px),
+    repeating-linear-gradient(90deg,rgba(235,51,73,.2),rgba(235,51,73,.2) 1px,transparent 0,transparent 7px),
+    linear-gradient(to right, #eb3349, #f45c43);
+  }
+
+  :global(.lush) & {
+    background-image: repeating-linear-gradient(0deg,rgba(86,171,47,.2),rgba(86,171,47,.2) 1px,transparent 0,transparent 7px),
+    repeating-linear-gradient(90deg,rgba(86,171,47,.2),rgba(86,171,47,.2) 1px,transparent 0,transparent 7px),
+    linear-gradient(to right, #56ab2f, #a8e063);
+  }
+
+  :global(.frost) & {
+    background-image: repeating-linear-gradient(0deg,rgba(0,4,40,.2),rgba(0,4,40,.2) 1px,transparent 0,transparent 7px),
+    repeating-linear-gradient(90deg,rgba(0,4,40,.2),rgba(0,4,40,.2) 1px,transparent 0,transparent 7px),
+    linear-gradient(to right, #000428, #004e92);
+  }
+
+  :global(.royal) & {
+    background-image: repeating-linear-gradient(0deg,rgba(20,30,48,.2),rgba(20,30,48,.2) 1px,transparent 0,transparent 7px),
+    repeating-linear-gradient(90deg,rgba(20,30,48,.2),rgba(20,30,48,.2) 1px,transparent 0,transparent 7px),
+    linear-gradient(to right, #141e30, #243b55);
+  }
+
+  :global(.sunset) & {
+    background-image: repeating-linear-gradient(0deg,rgba(255,126,95,.2),rgba(255,126,95,.2) 1px,transparent 0,transparent 7px),
+    repeating-linear-gradient(90deg,rgba(255,126,95,.2),rgba(255,126,95,.2) 1px,transparent 0,transparent 7px),
+    linear-gradient(to right, #ff7e5f, #feb47b);
+  }
+}
+
 .contacts {
   display: flex; align-items: center;
 
@@ -41,7 +89,7 @@
 
   li {
     padding-right: 14px; margin-right: 15px;
-    border-right: solid 1px #fff;
+    border-right: solid 1px rgba(255,255,255,0.5);
 
     @include respond-to(sm) {
       padding-right: 9px; margin-right: 10px;
@@ -57,6 +105,7 @@
 
     a, button {
       color: #fff; font-size: 12px; line-height: 14px; font-family: $m-r; text-transform: uppercase;
+      position: relative; padding-left: 32px;
       background: none;
       cursor: pointer;
 
@@ -81,6 +130,6 @@
 }
 
 .icon {
-  font-size: 14px;
-  margin-right: 2px;
+  font-size: 24px;
+  position: absolute; left: 0; top: 40%; transform: translateY(-50%);
 }

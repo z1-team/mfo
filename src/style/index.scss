@@ -5,7 +5,7 @@
 @import './icon-font.scss';
 
 html, body {
-	background: #fff;
+	background: #fafafa;
 }
 
 body {
@@ -33,7 +33,6 @@ body {
 
 .app {
 	min-width: 320px;
-	background: #fafafa;
 
 	&.partners {
 		@include respond-to(sm) {padding-bottom: 50px;}
