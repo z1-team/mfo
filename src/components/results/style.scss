@@ -340,7 +340,7 @@
   }
 
   & > footer {
-    padding: 6px 25px 6px 22px; display: flex; flex-direction: column; justify-content: flex-end; height: 33px;
+    display: block; padding: 6px 25px 6px 22px; height: 33px; position: relative;
     background: #fafafa; border-top: solid 1px #e8e8f3;
 		overflow: hidden; transition: height 0.5s ease;
 
@@ -366,7 +366,7 @@
     }
 
     .details {
-      display: flex; align-items: flex-start; padding: 25px 0;
+      display: flex; width: 100%; align-items: flex-start; padding: 25px 25px 25px 22px; position: absolute; left: 0; bottom: 26px;
 
       @include respond-to(md) {
         flex-wrap: wrap;
@@ -417,9 +417,11 @@
     }
 
     & > ul {
-      display: flex; align-items: center; justify-content: flex-start; padding-left: 233px;
+      display: flex; align-items: center; justify-content: flex-start; padding-left: 255px; position: absolute; left: 0; bottom: 6px;
 
-			@include respond-to(md) {padding-left: 0; justify-content: center;}
+			@include respond-to(md) {
+				padding-left: 0; left: 50%; transform: translateX(-50%);
+			}
 
       li {
         font-size: 14px; font-family: $os-b; line-height: 20px;
