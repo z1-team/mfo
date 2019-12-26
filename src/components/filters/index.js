@@ -62,7 +62,7 @@ class Filters extends Component {
         )
       case 'range':
         return (
-          <RangeInput key={counter[filter.name]}
+          <RangeInput key={counter[filter.name]} class={style.rangeInput}
             name={filter.name} label={filter.label}
             start={filter.start} end={filter.end} step={filter.step}
             onChange={onChange} />

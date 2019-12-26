@@ -195,3 +195,9 @@
     }
 	}
 }
+
+.rangeInput {
+  input {
+    @include themeText();
+  }
+}

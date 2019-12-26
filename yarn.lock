@@ -2301,7 +2301,7 @@ common-tags@^1.8.0:
 
 "common@https://github.com/z1-team/common.git":
   version "0.0.0"
-  resolved "https://github.com/z1-team/common.git#ba737524e2bdda32a63a1ed98ed11955b45add96"
+  resolved "https://github.com/z1-team/common.git#222fe36f12d23b27d3199ff5a1680962afac084e"
 
 commondir@^1.0.1:
   version "1.0.1"

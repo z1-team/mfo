@@ -80,7 +80,7 @@
 		background: #eb3349;
 	}
 	:global(.lush) & {
-		background: #a8e063;
+		background: #56ab2f;
 	}
 	:global(.frost) & {
 		background: #000428;
@@ -93,25 +93,25 @@
 	}
 }
 @mixin themeLabelLight {
-	background: #553d97;
+	background: #d0007d;
 
 	:global(.scooter) & {
-		background: #5b86e5;
+		background: #36d1dc;
 	}
 	:global(.green) & {
-		background: #02aab0;
+		background: #00cdac;
 	}
 	:global(.cherry) & {
-		background: #eb3349;
+		background: #f45c43;
 	}
 	:global(.lush) & {
-		background: #56ab2f;
+		background: #a8e063;
 	}
 	:global(.frost) & {
-		background: #000428;
+		background: #004e92;
 	}
 	:global(.royal) & {
-		background: #141e30;
+		background: #243b55;
 	}
 	:global(.sunset) & {
 		background: #ff7e5f;
@@ -225,22 +225,22 @@
 
 	:global(.scooter) & {
 		&:hover {
-			color: #36d1dc;
+			color: #5b86e5;
 		}
 	}
 	:global(.green) & {
 		&:hover {
-			color: #00cdac;
+			color: #02aab0;
 		}
 	}
 	:global(.cherry) & {
 		&:hover {
-			color: #f45c43;
+			color: #eb3349;
 		}
 	}
 	:global(.lush) & {
 		&:hover {
-			color: #a8e063;
+			color: #56ab2f;
 		}
 	}
 	:global(.frost) & {
@@ -255,7 +255,7 @@
 	}
 	:global(.sunset) & {
 		&:hover {
-			color: #feb47b;
+			color: #ff7e5f;
 		}
 	}
 }
@@ -264,16 +264,16 @@
 	background: #d0007d;
 
 	:global(.scooter) & {
-		background: #36d1dc;
+		background: #5b86e5;
 	}
 	:global(.green) & {
-		background: #00cdac;
+		background: #02aab0;
 	}
 	:global(.cherry) & {
 		background: #f45c43;
 	}
 	:global(.lush) & {
-		background: #a8e063;
+		background: #56ab2f;
 	}
 	:global(.frost) & {
 		background: #004e92;
@@ -282,7 +282,7 @@
 		background: #243b55;
 	}
 	:global(.sunset) & {
-		background: #feb47b;
+		background: #ff7e5f;
 	}
 }
 
@@ -290,16 +290,16 @@
 	border-top-color: #d0007d;
 
 	:global(.scooter) & {
-		border-top-color: #36d1dc;
+		border-top-color: #5b86e5;
 	}
 	:global(.green) & {
-		border-top-color: #00cdac;
+		border-top-color: #02aab0;
 	}
 	:global(.cherry) & {
 		border-top-color: #f45c43;
 	}
 	:global(.lush) & {
-		border-top-color: #a8e063;
+		border-top-color: #56ab2f;
 	}
 	:global(.frost) & {
 		border-top-color: #004e92;
@@ -308,6 +308,6 @@
 		border-top-color: #243b55;
 	}
 	:global(.sunset) & {
-		border-top-color: #feb47b;
+		border-top-color: #ff7e5f;
 	}
 }

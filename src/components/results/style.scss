@@ -327,14 +327,6 @@
 					font-size: 16px; text-align: center;
 					padding: 10px 16px; width: 100%;
 				}
-
-				@media (min-width: 992px) {
-					&:hover {
-						color: #fff;
-						background: #804a98; background-image: linear-gradient(to right, #dd669b, #553d97); border-color: #fff;
-						animation: buttonHoverGradient 10s ease infinite;
-					}
-				}
       }
 
       p {
