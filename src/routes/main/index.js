@@ -20,7 +20,7 @@ const Main = ({partners}) => (
 		<div class="container">
 			<div class={style.main}>
 				<div class={style.results} id="results">
-					<h2>Рейтинг {getTitle(partners)} <em>Рунета 2019 года</em></h2>
+					<h2>Рейтинг {getTitle(partners)} <em>Рунета 2020 года<img class={style.hat} src="/assets/img/hat.png" alt="С новым годом!"/></em></h2>
 					<SortContainer partners={partners} />
 					<ResultContainer partners={partners} />
 				</div>

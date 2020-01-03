@@ -38,6 +38,13 @@
 
 		em {
 			font-family: $m-l; white-space: nowrap;
+      position: relative; z-index: -1;
 		}
 	}
+}
+
+.hat {
+  position: absolute; right: 58px; top: -16px; width: 29px;
+
+  @include respond-to(xs) {right: 51px;}
 }

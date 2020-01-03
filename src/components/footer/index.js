@@ -17,7 +17,7 @@ class Footer extends Component {
     return (
       <FooterCommon >
         <span class={style.logo}><img src={`/assets/img/logo-footer-${theme}.png`}/></span>
-        <small class={style.copy}>&copy; 2019 Moneyonline &mdash; все займы онлайн на карту или наличными в одном месте. 16+</small>
+        <small class={style.copy}>&copy; 2020 Moneyonline &mdash; все займы онлайн на карту или наличными в одном месте. 16+</small>
         <ul class={style.admin}>
           <li><button onClick={this.handleClick} class={style.link}>{isLoggedIn ? "Выйти" : "Войти"}</button></li>
           {isLoggedIn && <li><Link href="/moderate" class={style.link}>Модерация отзывов</Link></li>}
