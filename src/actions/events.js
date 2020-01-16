@@ -21,7 +21,7 @@ export function getDateTime() {
   const seconds = date.getSeconds()
   const f = v => v < 10 ? '0' + v : v
   return {
-    local: `${year}-${f(month)}-${f(day)} ${f(hours)}:${f(minutes)}:${f(seconds)}`,
+    local: `${year}-${f(month + 1)}-${f(day)} ${f(hours)}:${f(minutes)}:${f(seconds)}`,
     utcDateTime: date.toISOString().slice(0, 19).replace('T', ' '),
     utcDate: date.toISOString().slice(0, 10)
   }
@@ -129,7 +129,7 @@ export function makeFullEvent(event, {session}) {
     userRegion: ipInfo('region', session),
     userLocalTime: datetime.local,
     extraValues: extraValues(session),
-    eventVersion: 1
+    eventVersion: 2
   }
 }
 
