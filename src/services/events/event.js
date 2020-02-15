@@ -81,14 +81,14 @@ function removeNullProps(value) {
 }
 
 function getIpInfo(session) {
-  if (typeof session.ipInfo === 'object') {
+  if (typeof session.ipInfo === 'object' && session.ipInfo !== null) {
     return session.ipInfo
   } else if (typeof session.ipInfo === 'string') {
     return {
       city: session.ipInfo
     }
   }
-  return undefined
+  return {}
 }
 
 function getBrowserInfo(session) {

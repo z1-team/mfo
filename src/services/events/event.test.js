@@ -77,7 +77,7 @@ describe('makeFullEvent(event, session)', () => {
   }
   
   beforeAll(() => {
-    MockDate.set('2019-01-30 14:47:00', 7)
+    MockDate.set('2019-01-30 14:47:00', -420)
   })
   
   afterAll(() => {
