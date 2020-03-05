@@ -33,18 +33,11 @@
 			text-align: center;
 		}
 		@include respond-to(xs) {
-			font-size: 22px; line-height: 32px;
+			font-size: 22px;
 		}
 
 		em {
 			font-family: $m-l; white-space: nowrap;
-      position: relative;
 		}
 	}
-}
-
-.hat {
-  position: absolute; right: 63px; top: -12px; width: 25px;
-
-  @include respond-to(xs) {right: 55px; top: -13px;}
 }
