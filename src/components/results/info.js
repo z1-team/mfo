@@ -46,11 +46,12 @@ class CardInfo extends Component {
     }))
 	}
 
-	render({details}, {isOpen, height}) {
+	render({details, firstLoan}, {isOpen, height}) {
 		return (
 			<footer class={isOpen ? style.active : ''} style={{height: `${height}px`}}>
 				<CardDetails details={details} ref={this.saveDetails} />
 				<ul>
+          {firstLoan && <li>{firstLoan}</li>}
 					<li><button onClick={this.handleClick}><Icon icon="arrow-down" /> <span>Подробнее</span></button></li>
 				</ul>
 			</footer>

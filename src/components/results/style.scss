@@ -336,6 +336,16 @@
           font-size: 13px;
         }
       }
+
+			&FirstLoan {
+				font-size: 14px; font-family: $os-b; line-height: 20px;
+				@include themeText();
+				display: none;
+
+				@include respond-to(xs) {
+					display: block;
+				}
+			}
     }
   }
 
@@ -420,12 +430,26 @@
       display: flex; align-items: center; justify-content: flex-start; padding-left: 255px; position: absolute; left: 0; bottom: 6px;
 
 			@include respond-to(md) {
-				padding-left: 0; left: 50%; transform: translateX(-50%);
+				padding-left: 0; width: 100%; justify-content: center;
 			}
 
       li {
         font-size: 14px; font-family: $os-b; line-height: 20px;
 				@include themeText();
+
+				&:first-child {
+					color: #fff; white-space: nowrap;
+					position: absolute; left: 0; padding: 0 15px 0 25px;
+					@include themeBackground();
+
+					@include respond-to(xs) {display: none;}
+				}
+				&:last-child {
+					position: relative;
+					background: none !important;
+
+					@include respond-to(xs) {display: block !important;}
+				}
 
 				button {
 					color: #484848; font-size: 12px; font-family: $m-sb; text-transform: uppercase;

@@ -38,6 +38,8 @@
 
 		em {
 			font-family: $m-l; white-space: nowrap;
+
+      @include respond-to(xs) {white-space: normal;}
 		}
 	}
 }
