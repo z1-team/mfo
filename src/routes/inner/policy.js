@@ -2,7 +2,7 @@ import { h } from 'preact'
 
 import style from './style.scss'
 
-const Confidentiality = () => (
+const Policy = () => (
 	<div class={style.wrInnerText}>
 		<div class="container">
 			<div class={style.innerText}>
@@ -171,4 +171,4 @@ const Confidentiality = () => (
 	</div>
 )
 
-export default Confidentiality
+export default Policy

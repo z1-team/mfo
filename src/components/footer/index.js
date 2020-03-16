@@ -22,7 +22,7 @@ class Footer extends Component {
         <ul class={style.admin}>
           <li><button onClick={this.handleClick} class={style.link}>{isLoggedIn ? "Выйти" : "Войти"}</button></li>
           {isLoggedIn && <li><Link href="/moderate" class={style.link}>Модерация отзывов</Link></li>}
-          <li><Link activeClassName="active" href="/confidentiality" class={style.link}>Политика конфиденциальности</Link></li>
+          <li><Link activeClassName="active" href="/policy" class={style.link}>Политика конфиденциальности</Link></li>
         </ul>
       </FooterCommon>
     )
