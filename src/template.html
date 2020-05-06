@@ -35,6 +35,24 @@
     <link rel="image_src" href="/assets/img/social_img.jpg">
 	</head>
 	<body>
+		<script>
+			window.THEME_NAME = (function theme() {
+				var themes = [
+					'default', 'scooter', 'green', 'cherry',
+					'lush', 'frost', 'royal', 'sunset'
+				]
+				var theme = localStorage.getItem('themeName')
+				if (!theme) {
+					theme = themes[
+						Math.floor(Math.random() * themes.length)
+					]
+					localStorage.setItem('themeName', theme)
+				}
+				return theme
+			})()
+			document.documentElement.setAttribute('class', '')
+			document.documentElement.classList.add(window.THEME_NAME)
+		</script>
 		<%= htmlWebpackPlugin.options.ssr({
 			url: '/'
 		}) %>

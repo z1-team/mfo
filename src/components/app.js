@@ -74,27 +74,11 @@ const getCookieItem = () => {
 
 export const ThemeContext = createContext({theme: 'default'})
 
-const themesNames = [
-	'default', 'scooter', 'green', 'cherry',
-	'lush', 'frost', 'royal', 'sunset'
-]
-
-function generateTheme() {
-	const index = Math.floor(Math.random() * themesNames.length)
-	return themesNames[index]
-}
-
 function loadTheme() {
-	if (typeof window === 'undefined') {
-		return 'default'
+	if (typeof window !== 'undefined') {
+		return window.THEME_NAME
 	}
-	const savedTheme = localStorage.getItem('themeName')
-	if (savedTheme) {
-		return savedTheme
-	}
-	const themeName = generateTheme()
-	localStorage.setItem('themeName', themeName)
-	return themeName
+	return 'default'
 }
 
 class App extends Component {
@@ -141,7 +125,7 @@ class App extends Component {
 		return (
 			<Provider store={store}>
 				<ThemeContext.Provider value={value}>
-					<div id="app" class={`app ${theme}`}>
+					<div id="app" class="app">
 						<HeaderContainer />
 						<Router onChange={this.handleRoute}>
 							<Main path="/" partners="mfo" />
