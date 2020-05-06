@@ -139,9 +139,10 @@ class Card extends Component {
               data-source="button"
               onClick={this.handleOrder}
               >Оформить</a>
+            {item.main.firstLoan && <span class={style.processFirstLoan}>{item.main.firstLoan}</span>}
           </div>
         </section>
-        <CardInfo details={item.details} onOpen={this.handleOpen} />
+        <CardInfo firstLoan={item.main.firstLoan} details={item.details} onOpen={this.handleOpen} />
       </div>
     )
   }

@@ -9,7 +9,9 @@
 }
 
 .admin {
-  display: flex; align-items: center; justify-content: center; margin-top: 5px;
+  display: flex; align-items: center; justify-content: center; margin-top: 5px; margin-bottom: 5px;
+
+  &:last-child {margin-bottom: 0;}
 
   li {
     margin-right: 8px; padding-right: 7px;

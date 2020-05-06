@@ -73,9 +73,14 @@
   }
 
   .contactsText {
+    width: 270px;
+
+    @include respond-to(lg) {width: 250px;}
+    @include respond-to(md) {width: 220px;}
+    @include respond-to(sm) {width: auto;}
 
     i {
-      margin-right: 10px;
+      margin-right: 11px;
     }
   }
 }

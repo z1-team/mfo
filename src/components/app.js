@@ -18,7 +18,7 @@ import ScrollContainer from '../containers/ScrollContainer'
 
 import Main from '../routes/main'
 import AboutProject from '../routes/inner/about'
-import Confidentiality from '../routes/inner/confidentiality'
+import Policy from '../routes/inner/policy'
 import NotFound from '../routes/not-found'
 
 import ToTop from 'common/components/ToTop'
@@ -133,7 +133,7 @@ class App extends Component {
 							<ModerationContainer path="/moderate" />
 							<TestimonialsContainer path="/testimonials/:id" />
 							<AboutProject path="/about" />
-							<Confidentiality path="/confidentiality" />
+							<Policy path="/policy" />
 							<NotFound default />
 						</Router>
 						<FooterContainer />

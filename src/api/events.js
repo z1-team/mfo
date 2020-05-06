@@ -3,7 +3,7 @@ import fullURL from './config'
 
 export default {
   send(event) {
-    return fetch(fullURL('v1/event'), {
+    return fetch('https://wtfgames.ru/api/events', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=UTF-8'

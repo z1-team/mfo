@@ -1,6 +1,7 @@
 import { sessionInfo } from '../selectors/session'
 import { authToken } from '../selectors/auth'
 import api from '../api'
+import {makeFullEvent} from '../services/events/event'
 
 const camelCase = s => s.replace(/_([a-z])/g, g => g[1].toUpperCase())
 const ipInfo = (info, {ipInfo}) => ipInfo ? ipInfo[info] || null : null
@@ -113,34 +114,14 @@ export const changeDirectionEvent = (direction) => ({
   data: {direction}
 })
 
-export function makeFullEvent(event, {session}) {
-  const datetime = getDateTime()
-  return {
-    eventName: event.name,
-    yClickId: queryParam('yclick_id', session),
-    clientId: session.clientId || null,
-    utmCampaign: queryParam('utm_campaign', session),
-    utmExtraValues: utmExtraValues(session),
-    eventExtraValues: event.data || {},
-    eventDate: datetime.utcDate,
-    eventDateTime: datetime.utcDateTime,
-    userIP: ipInfo('ip', session),
-    userCity: ipInfo('city', session),
-    userRegion: ipInfo('region', session),
-    userLocalTime: datetime.local,
-    extraValues: extraValues(session),
-    eventVersion: 2
-  }
-}
-
 export function sendEvent(event) {
   return async (dispatch, getState) => {
     if (process.env.NODE_ENV === 'production') {
       if (!window.location.href.match(/\/\/dev\./)) {
         const state = getState()
         const token = authToken(state)
-        const fullEvent = makeFullEvent(event, state)
-        if (token === null) {
+        const fullEvent = makeFullEvent(event, state.session)
+        if (token === null && fullEvent !== null) {
           try {
             const status = await api.events.send(fullEvent)
             console.log(status)
