@@ -30,7 +30,7 @@ jobs:
         ssh-keyscan -t rsa 95.217.162.46 > ~/.ssh/known_hosts
     - name: Деплой production-версии
       if: github.ref == 'refs/heads/master'
-      run: rsync -rvz --delete -e 'ssh -i masterkey.pem' build/ mfo@95.217.162.46:mfo/landing/
+      run: rsync -rvz --delete -e 'ssh -i masterkey.pem' build/ mfo@95.217.162.46:landing/
     - name: Деплой dev-версии
       if: github.ref == 'refs/heads/dev'
-      run: rsync -rvz --delete -e 'ssh -i masterkey.pem' build/ mfo@95.217.162.46:mfo/dev/
+      run: rsync -rvz --delete -e 'ssh -i masterkey.pem' build/ mfo@95.217.162.46:dev/
