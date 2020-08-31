@@ -22,7 +22,7 @@ const Main = ({partners}) => (
 				<div class={style.results} id="results">
 					<h2>
 						{/* Рейтинг {getTitle(partners)} <em>Рунета 2020 года</em> */}
-						<em>При отправке трех и более заявк</em> шанс получить {getTitle(partners)} 99%<em></em></h2>
+						<em>При отправке трех и более заявок</em> шанс получить {getTitle(partners)} 99%<em></em></h2>
 					<SortContainer partners={partners} />
 					<ResultContainer partners={partners} />
 				</div>
